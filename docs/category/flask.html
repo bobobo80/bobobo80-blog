@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>On the wing 展翼 - Articles in the flask category</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="blog-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Category flask</h1>
+        <span class="blog-description">Posts: 2</span>
+            <div class="blog-cover cover" style="background-image: url('/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<div id="index" class="container">
+  <main class="content" role="main">
+    <div class="extra-pagination">
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+    </div>
+
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="/flaskyi-ci-ke-hu-duan-qing-qiu-de-guo-cheng.html" rel="bookmark" title="Permalink to flask一次客户端请求的过程">flask一次客户端请求的过程</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="/author/bobobo80.html">Bobobo80</a>
+                     | <time datetime="Sun 14 May 2017">Sun 14 May 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        按照Werkzeug的示例，继承封装了标准库http中的HTTPServer和BaseHTTPRequestHandler。在客户端发出请求后，会触发到Handler类中的handle()方法，然后是一连串的handle_one_request()-->run_wsgi()方法，run_wsgi在werkzeug中重写了会收集环境信息environ，并定义了write，start_response，execute内置方法，然后会执行execute方法，这里app(environ,...
+                    </p>
+                </section>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">
+                <h2 class="post-title"><a href="/xiu-shi-qi-ji-flaskde-routexiu-shi-qi.html" rel="bookmark" title="Permalink to 修饰器及flask的route修饰器">修饰器及flask的route修饰器</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="/author/bobobo80.html">Bobobo80</a>
+                     | <time datetime="Sun 30 April 2017">Sun 30 April 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        python的修饰器是python的一个特色，也是比较难理解的地方，不过运用得当的话会非常优雅和简洁。 通常的两种修饰器形式是无参数的双层结构，即 def decorator(f): def wrapper(*args, **kwargs): # do some thing before f return f(*args, **kwargs) return wrapper 这样，即定义了一个无参的修饰器，使用时在对应函数的前面加上@decorator即可。 @decorator def...
+                    </p>
+                </section>
+            </div>
+        </article>
+
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+  </main>
+</div>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>
