@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Scrapy和pyspider框架浅谈</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="/" rel="canonical" />
+
+  <!-- Feed -->
+
+  <link href="/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="/theme/css/code_blocks/github.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+  <link href="/scrapyhe-pyspiderkuang-jia-qian-tan.html" rel="canonical" />
+
+    <meta name="description" content="自己现在也算是小小抓取工程师了，在公司也在撸自己的框架，在这之前也有使用和了解过python语言实现的最著名的两个框架，先来简单说一说。 scrapy...">
+
+    <meta name="author" content="bobobo80">
+
+    <meta name="tags" content="python">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="On the wing 展翼"/>
+<meta property="og:title" content="Scrapy和pyspider框架浅谈"/>
+<meta property="og:description" content="自己现在也算是小小抓取工程师了，在公司也在撸自己的框架，在这之前也有使用和了解过python语言实现的最著名的两个框架，先来简单说一说。 scrapy..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="/scrapyhe-pyspiderkuang-jia-qian-tan.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-09-01 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="/author/bobobo80.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="python"/>
+<meta property="og:image" content="/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Scrapy和pyspider框架浅谈",
+  "headline": "Scrapy和pyspider框架浅谈",
+  "datePublished": "2018-09-01 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "bobobo80",
+    "url": "/author/bobobo80.html"
+  },
+  "image": "/theme/images/post-bg.jpg",
+  "url": "/scrapyhe-pyspiderkuang-jia-qian-tan.html",
+  "description": "自己现在也算是小小抓取工程师了，在公司也在撸自己的框架，在这之前也有使用和了解过python语言实现的最著名的两个框架，先来简单说一说。 scrapy..."
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Scrapy和pyspider框架浅谈</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="/author/bobobo80.html">Bobobo80</a>
+            | <time datetime="Sat 01 September 2018">Sat 01 September 2018</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>自己现在也算是小小抓取工程师了，在公司也在撸自己的框架，在这之前也有使用和了解过python语言实现的最著名的两个框架，先来简单说一说。</p>
+<h3>scrapy</h3>
+<p>scrapy框架应该算是最著名的框架了，不用它也应该对其有所了解吧。scrapy基于twisted异步框架编写，理论上爬取的过程中都是在同一个线程中的，利用异步的机制实现下载和后处理不堵塞，所以在解析和存储过程中，如果数据库操作时间长，需要使用twisted的数据库连接进行操作。在中间件等中使用time.sleep这种操作肯定也是会堵塞所有的操作的。</p>
+<p>在我看来scrapy最好的设计是中间件设计（<a href="https://docs.scrapy.org/en/latest/faq.html#did-scrapy-steal-x-from-django">和django插件思路很像</a>），在下载、解析、存储中提供了可组合的模块化配置，为各种复用提供了帮助。</p>
+<p>scrapy的结构组成非常的经典了，分成引擎，调度器，下载器，解析器spider，item pipeline结果处理几个部分，虽然基本所有框架都是这么划分的，但是和pyspider比还是有所不同的。scrapy是一个进程集成所有内容，如果是需要分布式，依靠调度器的队列来分布式处理。这种情况就是分布式的每个节点上都包含引擎，下载，解析等。当然可以使用另外的策略，让scrapy只下载，通过其他方式来处理其他的部分。</p>
+<h3>pyspider</h3>
+<p>那么其实从结构上来说，pyspider从这个层面和scrapy是完全的不同的。pyspider将调度，下载，解析按进程分开，使用消息队列进行连接，所以说pyspider的各个功能是相对独立的，分布式情况下，各个功能进程可以拆分开部署等，所以结构上分开的。</p>
+<p>另一个明显的区别是pyspider对不同任务的管理，相对于scrapy能够在更高一个层级的进行管理，pyspider中的webui管理相当于对多个项目进行管理，这一点在scrapy是没有这个层级的东西的，scrapyd配合相关的webui管理项目（比如gerapy）才是这个层级的一个实现。</p>
+<p>在项目开发上，pyspider一般是单文件上进行开发，还没有原生中间件机制，如果需要利用模块化的方式重用一些功能，好像无法完全通过webui的那个管理系统实现，需要在终端部署依赖的各种重用功能的文件。所以其实比较偏向于大量简单爬虫项目的集中管理。而scrapy本身可以更方便的扩展，更容易完成复杂的需求。</p>
+<p>源码上来说，pyspider还很单薄，不过好处是也比较容易读，而scrapy再配合上其依赖的twisted，嗯，够喝一壶的了。</p>
+<h3>小结</h3>
+<p>所以两个框架还是有很大不同的，从结构上说我更倾向于pyspider，因为各个爬虫的核心功能能够更大的解耦。不过仅就pyspider，可能还是相对偏向简单任务，对于功能的复用等方面，还比较好的支持。</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Scrapy和pyspider框架浅谈&amp;url=/scrapyhe-pyspiderkuang-jia-qian-tan.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=/scrapyhe-pyspiderkuang-jia-qian-tan.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=/scrapyhe-pyspiderkuang-jia-qian-tan.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="/tag/python.html">python</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script type="text/javascript" src="/theme/js/script.js"></script>
+
+</body>
+</html>
