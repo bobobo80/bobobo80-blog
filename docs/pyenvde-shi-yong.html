@@ -133,72 +133,59 @@
 <h2>安装</h2>
 <p>注意提前需要装一些编译python需要的</p>
 <p>rpm系</p>
-<div class="highlight"><pre><span></span>yum install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel gcc
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>yum install zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel gcc
+</code></pre></div>
 
 <p>deb系</p>
-<div class="highlight"><pre><span></span>apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev
+</code></pre></div>
 
 <p>安装非常简单，一条语句搞定</p>
-<div class="highlight"><pre><span></span>curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer <span class="p">|</span> bash
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer <span class="p">|</span> bash
+</code></pre></div>
 
 <p>*一些老版本的机器可能会出现git clone错误，需要更新nss，</p>
-<div class="highlight"><pre><span></span>yum update nss
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>yum update nss
+</code></pre></div>
 
 <p>脚本完成后在~/.bashrc_profile中添加，这样重启bash，就可以使用pyenv命令了</p>
-<div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;~/.pyenv/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;~/.pyenv/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
 <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">&quot;</span>
 <span class="nb">eval</span> <span class="s2">&quot;</span><span class="k">$(</span>pyenv virtualenv-init -<span class="k">)</span><span class="s2">&quot;</span>
-</pre></div>
-
+</code></pre></div>
 
 <h2>使用</h2>
 <p>查看可以安装哪些版本的python</p>
-<div class="highlight"><pre><span></span>pyenv install --list
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pyenv install --list
+</code></pre></div>
 
 <p>查看当前已安装的版本</p>
-<div class="highlight"><pre><span></span>pyenv versions
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pyenv versions
+</code></pre></div>
 
 <p>安装指定版本</p>
-<div class="highlight"><pre><span></span>pyenv install <span class="m">3</span>.6.4
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pyenv install <span class="m">3</span>.6.4
+</code></pre></div>
 
 <p>切换到指定版本</p>
-<div class="highlight"><pre><span></span>pyenv global <span class="m">2</span>.7.14
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pyenv global <span class="m">2</span>.7.14
+</code></pre></div>
 
 <p>使用某个指定版本创建虚拟环境</p>
-<div class="highlight"><pre><span></span>pyenv virtualenv <span class="m">2</span>.7.14 virtualenv_name
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pyenv virtualenv <span class="m">2</span>.7.14 virtualenv_name
+</code></pre></div>
 
 <p>激活创建的虚拟环境</p>
-<div class="highlight"><pre><span></span>pyenv activate virtualenv_name
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pyenv activate virtualenv_name
+</code></pre></div>
 
 <p>取消激活虚拟环境</p>
-<div class="highlight"><pre><span></span>pyenv deactivate
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>pyenv deactivate
+</code></pre></div>
 
 <p>在脚本中使用时，虚拟环境的路径是</p>
-<div class="highlight"><pre><span></span>~/.pyenv/versions/2.7.14/envs/virtualenv_name/bin/python
-</pre></div>
-
+<div class="highlight"><pre><span></span><code>~/.pyenv/versions/2.7.14/envs/virtualenv_name/bin/python
+</code></pre></div>
 
 <p>安装时，从python.org下载的速度比较慢，可以使用国内源进行下载后，放到~/.pyenv/cache/文件夹下，再进行本地安装。原来可以使用搜狐的镜像网站，不过貌似现在搜狐镜像关闭了，所以好像现在还真没有哪个镜像站提供python的安装包镜像了，所以一般是翻墙后下载，然后cp到cache目录下。</p>
 <h2>参考</h2>

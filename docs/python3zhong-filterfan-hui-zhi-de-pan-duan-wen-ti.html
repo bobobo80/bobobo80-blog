@@ -138,19 +138,18 @@
 转而返回生成器类型。</p>
 <p>这就需要在使用if判断时注意了，比如filter方法，如果使用if判断，
 就需要注意了，比如下面的情况</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]):</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;if True&#39;</span><span class="p">)</span>
-</pre></div>
-
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;if True&#39;</span><span class="p">)</span>
+</code></pre></div>
 
 <p>在python2中，因为filter返回的是一个空数组[]，if判断将是False。</p>
 <p>而在python3中，filter返回为filter对象，if判断将是True，
 将执行if中的语句。</p>
 <p>不过对于dict的keys等方法，则不是这样，当dict为{}空字典时，
 dict.keys()返回的dict_keys对象会根据里面是否有内容而进行对应的判断。</p>
-<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">adict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;dict a is not empty.&#39;</span><span class="p">)</span>
-</pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">adict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dict a is not empty.&#39;</span><span class="p">)</span>
+</code></pre></div>
             </section>
 
             <section class="post-info">

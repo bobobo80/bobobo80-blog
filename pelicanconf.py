@@ -36,7 +36,9 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 # theme
-THEME = '../attila'
+THEME = 'attila'
+HEADER_COVERS_BY_TAG  = {}
+HEADER_COVERS_BY_CATEGORY = {}
 
 # Analytics
 GOOGLE_ANALYTICS = None
