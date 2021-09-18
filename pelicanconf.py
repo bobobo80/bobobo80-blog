@@ -3,7 +3,6 @@
 
 AUTHOR = 'bobobo80'
 SITENAME = 'On the wing 展翼'
-SITEURL = 'https://bobobo80.com'
 
 PATH = 'content'
 
@@ -27,13 +26,6 @@ DEFAULT_PAGINATION = 3
 THEME = 'attila'
 HEADER_COVERS_BY_TAG  = {}
 HEADER_COVERS_BY_CATEGORY = {}
-
-# Analytics
-GOOGLE_ANALYTICS = 'G-NVEBH5JMJB'
-
-# Disqus
-DISQUS_SITENAME = 'bobobo80'
-
 
 STATIC_PATHS = ['assets', 'images']
 EXTRA_PATH_METADATA = {

@@ -3,7 +3,7 @@ Date: 2021-09-18
 Category: Tech
 Tags: pelican, disqus, github actions
 
-虽然博客应该也不会有人留言，但是还是集成了一下disqus。这其中还挺坑的，一个找了很久。先说结论，应该是由于用了github actions自动发布，那个插件没有读取publishconf里的配置，导致siteurl是空，所以导致disqus的那个div没有显示。所以需要把配置写道pelicanconf里。
+虽然博客应该也不会有人留言，但是还是集成了一下disqus。这其中还挺坑的，一个找了很久。先说结论，应该是由于用了github actions自动发布，那个插件没有读取publishconf里的配置，导致siteurl是空，所以导致disqus的那个div没有显示。所以需要配置发布使用publishconf文件。
 
 对于使用github actions自动push gh-pages分支，用到了这个nelsonjchen/gh-pages-pelican-action，这里面需要注意配置GITHUB_TOKEN，如果有自己域名，还要配置CNAME。
 
