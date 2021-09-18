@@ -68,7 +68,8 @@ AUTHORS_BIO = {
   "bobobo80": {
       "name": "bobobo80",
       "image": "images/avatar.png",
-      "website": "https://github.com/bobobo80",
+      "website": "https://about.me/bobobo80",
+      "github": "bobobo80",
       "location": "Singapore",
     }
 }
