@@ -13,3 +13,5 @@ git submodule update --init --recursive
 ```
 
 具体github actions文件可以参考[pelican github action](https://github.com/bobobo80/bobobo80-blog/blob/master/.github/workflows/main.yml)
+
+续：又一个坑，从原始的attila主题repos clone下来会有"hljs" is not defined jquery的问题，看起来是页面没有加载highlight.js，使用[其他大神的fork](https://github.com/coldnight/attila)解决了
