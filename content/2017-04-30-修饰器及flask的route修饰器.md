@@ -1,6 +1,7 @@
 Title: 修饰器及flask的route修饰器
 Date: 2017-04-30
-Category: flask
+Category: Tech
+Tags: flask
 
 python的修饰器是python的一个特色，也是比较难理解的地方，不过运用得当的话会非常优雅和简洁。
 通常的两种修饰器形式是无参数的双层结构，即

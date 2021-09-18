@@ -1,6 +1,7 @@
 Title: 使用Django+Vue组合开发Restful风格的家用收纳系统
 Date: 2017-06-26
-Category: django
+Category: Tech
+Tags: django, python
 
 为了进一步学习web开发相关内容，自己想了个需求，就开始干了。
 [github项目链接](https://github.com/bobobo80/RightThingsInRightPlaces)

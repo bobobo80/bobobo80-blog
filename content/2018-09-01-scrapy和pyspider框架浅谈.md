@@ -1,5 +1,6 @@
 Title: Scrapy和pyspider框架浅谈
 Date: 2018-09-01
+Category: Tech
 Tags: python
 
 自己现在也算是小小抓取工程师了，在公司也在撸自己的框架，在这之前也有使用和了解过python语言实现的最著名的两个框架，先来简单说一说。

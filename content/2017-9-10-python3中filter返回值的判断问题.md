@@ -1,6 +1,7 @@
 Title: python3中filter返回值的判断问题
 Date: 2017-09-10
-Category: python
+Category: Tech
+Tags: python
 
 最早接触python3来说，最明显的变化就是print方法了，另一个非常大的变化
 是返回值生成器类型的使用。

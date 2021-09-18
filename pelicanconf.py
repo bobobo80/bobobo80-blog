@@ -3,7 +3,7 @@
 
 AUTHOR = 'bobobo80'
 SITENAME = 'On the wing 展翼'
-# SITEURL = 'https://bobobo80.com'
+SITEURL = 'https://bobobo80.com'
 
 PATH = 'content'
 
@@ -69,6 +69,6 @@ AUTHORS_BIO = {
       "name": "bobobo80",
       "image": "images/avatar.png",
       "website": "https://github.com/bobobo80",
-    #   "location": "Beijing",
+      "location": "Singapore",
     }
 }
