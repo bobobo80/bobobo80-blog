@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block title %}{{ article.title }}{% endblock %}
 
 {# <!-- Choosing cover image --> #}
@@ -14,22 +15,22 @@
   {% else %}
     {% set selected_cover = SITEURL+"/"+article.og_image %}
   {% endif %}
+{% elif article.color %}
+  {% set selected_color = article.color %}
 {% elif HEADER_COVER %}
   {% if HEADER_COVER|lower|truncate(4, True, '') == "http" %}
     {% set selected_cover = HEADER_COVER %}
   {% else %}
     {% set selected_cover = SITEURL+"/"+HEADER_COVER %}
   {% endif %}
-{% elif article.color %}
-  {% set selected_color = article.color %}
 {% elif HEADER_COLOR %}
   {% set selected_color = HEADER_COLOR %}
 {% endif %}
 
+{% block canonical_url %}<link href="{{ SITEURL }}/{{ article.url }}" rel="canonical" />{% endblock canonical_url %}
 {% block head %}
   {{ super() }}
 
-  <link href="{{ SITEURL }}/{{ article.url }}" rel="canonical" />
   {% for keyword in article.keywords %}
     <meta name="keywords" content="{{keyword}}" >
   {% endfor %}
@@ -62,7 +63,7 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header id="post-header" class="has-cover">
+    <header id="post-header" {% if selected_cover or selected_color %}class="has-cover"{% endif %}>
       <div class="inner">
         <nav id="navigation">
           {% if SITE_LOGO %}
@@ -81,7 +82,7 @@
         <h1 class="post-title">{{ article.title }}</h1>
         <!-- TODO : Proper class for headline -->
         {% if article.headline %}
-            <span class="blog-description">{{ article.headline }}</h3>
+            <span class="blog-description">{{ article.headline }}</span>
         {% endif %}
         <span class="post-meta">
             {% for author in article.authors %}
@@ -101,8 +102,6 @@
             <div class="post-cover cover" style="background-image: url('{{ selected_cover }}')">
         {% elif selected_color %}
             <div class="post-cover cover" style="background-color: {{ selected_color }}">
-        {% else %}
-            <div class="post-cover cover" style="background-image: url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/post-bg.jpg')">
         {% endif %}
       </div>
     </header>

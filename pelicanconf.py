@@ -9,9 +9,7 @@ PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
 
-DEFAULT_LANG = 'cn'
-
-OUTPUT_PATH = 'docs/'
+DEFAULT_LANG = 'en'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -30,7 +28,7 @@ LINKS = (('Pelican', 'https://getpelican.com/'),
 SOCIAL = (('github', 'https://github.com/bobobo80'),
          )
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 3
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
