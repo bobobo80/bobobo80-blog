@@ -3,7 +3,7 @@
 
 AUTHOR = 'bobobo80'
 SITENAME = 'On the wing 展翼'
-SITEURL = ''
+# SITEURL = 'https://bobobo80.com'
 
 PATH = 'content'
 
@@ -17,16 +17,6 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-
-# Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),
-         )
-
-# Social widget
-SOCIAL = (('github', 'https://github.com/bobobo80'),
-         )
 
 DEFAULT_PAGINATION = 3
 
@@ -43,3 +33,42 @@ GOOGLE_ANALYTICS = 'G-NVEBH5JMJB'
 
 # Disqus
 DISQUS_SITENAME = 'bobobo80'
+
+
+STATIC_PATHS = ['assets', 'images']
+EXTRA_PATH_METADATA = {
+    'assets/CNAME': {'path': 'CNAME'},
+    'assets/favicon.ico': {'path': 'favicon.ico'},
+    'assets/robots.txt': {'path': 'robots.txt'},
+}
+HOME_COVER = 'images/post-bg.jpg'
+
+COLOR_SCHEME_CSS = 'tomorrow.css'
+
+PLUGIN_PATHS = ["pelican-plugins"]
+
+PLUGINS = [
+    "sitemap",
+]
+
+SITEMAP = {
+    "format": "xml",
+    "priorities": {"articles": 0.7, "indexes": 0.5, "pages": 0.3},
+    "changefreqs": {"articles": "monthly", "indexes": "daily", "pages": "monthly"},
+}
+
+# Blogroll
+LINKS = ()
+
+# Social widget
+SOCIAL = (('github', 'https://github.com/bobobo80'),
+         )
+
+AUTHORS_BIO = {
+  "bobobo80": {
+      "name": "bobobo80",
+      "image": "images/avatar.png",
+      "website": "https://github.com/bobobo80",
+    #   "location": "Beijing",
+    }
+}
