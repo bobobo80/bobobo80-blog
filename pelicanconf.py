@@ -65,3 +65,10 @@ AUTHORS_BIO = {
       "location": "Singapore",
     }
 }
+
+# Post and Pages path
+ARTICLE_URL = '{date:%Y}/{slug}.html'
+ARTICLE_SAVE_AS = '{date:%Y}/{slug}.html'
+# PAGE_URL = 'pages/{slug}/'
+# PAGE_SAVE_AS = 'pages/{slug}/index.html'
+YEAR_ARCHIVE_SAVE_AS = '{date:%Y}/index.html'
