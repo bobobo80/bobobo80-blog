@@ -17,14 +17,14 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-DEFAULT_PAGINATION = 3
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
 # theme
 THEME = 'attila'
-HEADER_COVERS_BY_TAG  = {}
+HEADER_COVERS_BY_TAG = {}
 HEADER_COVERS_BY_CATEGORY = {}
 
 STATIC_PATHS = ['assets', 'images']
@@ -54,15 +54,15 @@ LINKS = ()
 
 # Social widget
 SOCIAL = (('github', 'https://github.com/bobobo80'),
-         )
+          )
 
 AUTHORS_BIO = {
-  "bobobo80": {
-      "name": "bobobo80",
-      "image": "images/avatar.png",
-      "website": "https://about.me/bobobo80",
-      "github": "bobobo80",
-      "location": "Singapore",
+    "bobobo80": {
+        "name": "bobobo80",
+        "image": "images/avatar.png",
+        "website": "https://about.me/bobobo80",
+        "github": "bobobo80",
+        "location": "Singapore",
     }
 }
 
