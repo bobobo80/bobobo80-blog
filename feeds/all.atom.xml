@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>On the wing 展翼</title><link href="https://bobobo80.com/" rel="alternate"></link><link href="https://bobobo80.com/feeds/all.atom.xml" rel="self"></link><id>https://bobobo80.com/</id><updated>2023-02-19T00:00:00+08:00</updated><subtitle></subtitle><entry><title>部署 gotosocial</title><link href="https://bobobo80.com/2023/bu-shu-gotosocial.html" rel="alternate"></link><published>2023-02-19T00:00:00+08:00</published><updated>2023-02-19T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2023-02-19:/2023/bu-shu-gotosocial.html</id><summary type="html">&lt;p&gt;自马斯克收购 twitter 后幺蛾子不断，最近更是封杀了第三方客户端，这下我常用的 tweetbot 也不能用了。所以有些人已经开始转向其 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;自马斯克收购 twitter 后幺蛾子不断，最近更是封杀了第三方客户端，这下我常用的 tweetbot 也不能用了。所以有些人已经开始转向其他平台了，其中以 mastodon 和 nostr 最为流行，我大概了解了一下两个平台，感觉 mastodon 的方式相对更为合理，所以也开始试用了一下。当然 nostr 的 damus 客户端我也下载试用了。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://joinmastodon.org/"&gt;mastodon&lt;/a&gt; 只是基于 activitypub 协议的一种最为流行的实现。目前社区应该还挺活跃的，中文用户有很多。不过 mastodon 是使用 ruby 开发的，而且算是面向人数较多的一个大平台，我又想自己部署，所以又找了消耗资源相对较少的其他实现，这其中 &lt;a href="https://github.com/superseriousbusiness/gotosocial"&gt;gotosocial&lt;/a&gt; 算是以此目的一种实现。我这里就只简单记录一下我自己是如何部署 gotosocial 的。&lt;/p&gt;
+&lt;p&gt;我之前已经有一套基于 &lt;a href="https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html"&gt;docker swarn 的环境&lt;/a&gt;，在此基础上新开一个 gotosocial 是非常简单快速的。官方文档给出了如何使用 docker 部署，我参考了 docker compose 的 yaml 文件创建了自己的 stacks 配置完成的部署。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;先建好 volume，因为 gotosocial 使用 sqlite，还要存很多图片所以会占用比较大的空间，可以设置单独一个新的硬盘，如果你和我一样是使用低配 vps 的话，因为我的 vps 只有 10GB，加上系统和其他服务，剩余的空间不多了，所以我又单独加了一块硬盘空间给 gotosocial 使用。&lt;/li&gt;
+&lt;li&gt;新建 stacks，我是参考了官方的 yaml。network 是使用了已有的 nginx 网络，因为会由 nginx 转给相当于在 docker 内网的 gotosocial，所以 gotosocial 也不配置 https 证书，不设置 port。volume 使用上一步创建的 vol。剩下的就是 host 和 db type 和 db path 了，使用默认的就好。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;version&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;3.3&amp;quot;&lt;/span&gt;
+
+&lt;span class="nt"&gt;services&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;gotosocial&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;superseriousbusiness/gotosocial:latest&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;networks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;nginx-net&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;environment&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;GTS_HOST&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;mb.bobobo80.com&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;GTS_DB_TYPE&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;sqlite&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;GTS_DB_ADDRESS&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;/gotosocial/storage/sqlite.db&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;GTS_LETSENCRYPT_ENABLED&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;false&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;GTS_LETSENCRYPT_EMAIL_ADDRESS&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;## For reverse proxy setups:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="c1"&gt;# GTS_TRUSTED_PROXIES: &amp;quot;172.x.x.x&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;volumes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;gotosocial_data:/gotosocial/storage&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;restart&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s"&gt;&amp;quot;always&amp;quot;&lt;/span&gt;
+
+&lt;span class="nt"&gt;volumes&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;gotosocial_data&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;external&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+
+&lt;span class="nt"&gt;networks&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;nginx-net&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;external&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;stack 建好后，启动服务，gotosocial 就在 docker 内网里启动起来了。之后就是 nginx 的设置了，使用已有的 &lt;a href="https://nginxproxymanager.com/"&gt;nginx proxy manager&lt;/a&gt;，把 mb.bobobo80.com 转发给 gotosocial 的 8080 端口（是 gotosocial 的默认端口），开启强制 https 并自动续期签名，就可以和外网连接起来了。&lt;/li&gt;
+&lt;li&gt;gotosocial 的第一个用户是需要用命令行创建的，所以还要按照官网的命令创建第一个用户。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;至此，整个 gotosocial 就算是搭建好了。因为 gotosocial 没有提供前端页面（实际是有几个页面的，但是不能发推），所以要使用其他客户登录，然后才能使用。我用网页版 pinafore 和 mastodon ios 客户端都可是正常使用。&lt;/p&gt;
+&lt;p&gt;最后，再说 2 个需要注意的地方。服务内存占用不大，我现在还没怎么使用内存占用应该再 20-50MB，不过硬盘占用会相对大一点，所以主要硬盘空间。第二点，目前 gotosocial 还没有开发迁移功能，现在还不能迁出，所以如果开始自己的服务时还是想好域名，因为一旦开始写内容了，发现域名不合适就改不了了。&lt;/p&gt;
+&lt;p&gt;欢迎关注我的 activitypub 账号@me@mb.bobobo80.com&lt;/p&gt;</content><category term="Tech"></category><category term="docker"></category><category term="gotosocial"></category><category term="mastodon"></category><category term="twitter"></category><category term="portainer"></category></entry><entry><title>Backend as a service(BAAS)的几个项目</title><link href="https://bobobo80.com/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html" rel="alternate"></link><published>2022-03-28T00:00:00+08:00</published><updated>2022-03-28T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2022-03-28:/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html</id><summary type="html">&lt;p&gt;又停更了一段时间，主要是沉迷 switch 游戏，有一段时间没有写点什么了。最近看了看可以快速搭建 rest 接口到 db 访问的几种不 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;又停更了一段时间，主要是沉迷 switch 游戏，有一段时间没有写点什么了。最近看了看可以快速搭建 rest 接口到 db 访问的几种不同的开源工具，这个有点算是 lowcode 或者 BAAS（backend as a service）的领域，据说在最近也很火啊？起因是我发现在做记单词的程序中，我还是很希望能够有一个快速搭建出基于 db 表的增删改查的接口平台，同时类似 data admin 的后台，可以方便的通过界面来查看和直接修改 db 数据。其实 django 已经能很接近地提供类似的功能，django admin 只需要通过设定一些配置，就可以自动在后台增加数据表的 UI,而通过 DRF（django rest framework）也可以快速地创建 rest 接口。不过我还是看了看其他几个项目。&lt;/p&gt;
+&lt;h2&gt;directus&lt;/h2&gt;
+&lt;p&gt;同类型的更出名的项目应该是 strapi，他们叫 headless cms。&lt;a href="https://github.com/directus/directus"&gt;directus&lt;/a&gt; 代码更简单一些，所以我试用了一下并简单地看了下 directus 的代码结构。如果实际使用的话，需要注意，strapi 的免费部署有 role 个数限制，而 directus 没有。不过要二次开发的话，注意 strapi 是 MIT 协议，而 directus 是 GPL 协议。
+这类 headless cms 特点是 web UI 比较好看，对数据表的字段编辑非常的图形化，并且更偏向外观显示，比如是可视化编辑文本，还是简单的 text，还可以设置图表等。而不是直接设置 varchar(64)这种。所以这类产品应该是更倾向于面向非程序员群体来操作和编辑后台的。这样业务需求方可以直接创建和修改所需要的表结构，然后框架就是自动具备这些表的 rest api。或者可以通过 admin 的角色分类，提供一个可供非程序员的 admin 后台，来让这些人来查看和编辑数据。
+directus 是一个单体代码仓库。express+vue 组成。原理应该是通过 knex 来生成 sql，实现自定义数据表的 rest api。同时在创建和修改自定义表的字段时，也会生成对应的 sql DDL 语句来创建或修改数据表。同时还有自带的用户和权限管理，可以对接口进行鉴权。还有静态文件管理。相当于 directus 是一个在图形界面上定义数据 model,然后自动生成 rest api 和 admin 管理页面，还附带用户和文件管理的加强版 django admin。对于博客，内容管理平台类型的系统开发应该是非常适用，只需要开发对应的前端即可，还附带了后台系统。&lt;/p&gt;
+&lt;h2&gt;supabase&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://github.com/supabase/supabase"&gt;supabase&lt;/a&gt; 是对标 firebase 。但是在我看来，和 headless cms 还是有一些相似的。不过对于 supabase,我觉得更偏向于有程序背景的人适用。适用的人群确实是和 firebase 的 cloud storge/realtime/auth 部分近似。
+不过从技术上看，supabase 和 firebase 应该还是有很大不同的。supabase 是基于 postgresql 来做的扩展，其中应该有不少特性是基于 postgresql 的，所以只能适用 postgresql。
+supabase 不是单体应用，而且各个模块好像来不同的项目组成，他们的整合能力还挺厉害。而且使用的语言都不一样。lua/go/haskell/Elixir/TS。不知道是不是有意为之。
+设计理念上，他们是强依赖 postgresql 的。比如数据的验证是在 sql 里定义的，并且也是依赖 db 来校验的。如果要是想要复杂的 db 操作，可以创建存储过程。他们的 graphql 模块，也是要准备借助 PLpgSQL 来实现。
+从它提供 js/ts/flutter 等等客户端 lib 来看，supabase 是面向程序开发者使用的。他们的 admin 也是更偏向开发来使用，数据查看更像是在使用类似 mysql workbench。&lt;/p&gt;
+&lt;h2&gt;总结&lt;/h2&gt;
+&lt;p&gt;如果想快速地搭建一个增删改查的接口，专注于前端的工作，那么这两种工具都是可以的。如果有需求给使用方开发后台，那么 directus/strapi 更合适。如果是需要类似 realtime,或是相对复杂的 sql 查询，或是对 db 有更底层的控制，那么 supabase 应该更合适。
+一点感想，这些项目和在一个大型公司，在一个接口里要塞大量逻辑的行为很不相同。在互联网程序开发盛行的今天，其实还有大量的领域可以有非常不同的设计和开发思路。比如，外键，这两个项目应该说是比较依赖外键来构建数据表之间的联系的。比如，supabase 中，竟然把大量的逻辑放到 db 中，比如数据字段验证，我之前甚至不知道 sql 还有 check 语句；比如存储过程，这个应该是很复古的一种方式了；比如用户验证，要用到 db 的 row level security；他们还要在 postgresql 里设置自定义的 function 来实现自定义功能。我想这和我们大部分人接触的‘原则’是截然相反的吧，为了数据库性能，我们会拦截无效的请求，缓存请求，就是为了尽量减少 db 的消耗。而其实，当 db 不是瓶颈的时候，大可以将一些工作交给 db，来减少自己服务的开发成本。就像数据库反范式设计一样，这也是一种‘反原则’实现。&lt;/p&gt;</content><category term="Tech"></category><category term="baas"></category><category term="nocode"></category><category term="lowcode"></category><category term="directus"></category><category term="supabase"></category><category term="postgrest"></category><category term="prest"></category></entry><entry><title>说说新加坡 2</title><link href="https://bobobo80.com/2021/shuo-shuo-xin-jia-po-2.html" rel="alternate"></link><published>2021-12-29T00:00:00+08:00</published><updated>2021-12-29T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2021-12-29:/2021/shuo-shuo-xin-jia-po-2.html</id><summary type="html">&lt;h2&gt;银行&lt;/h2&gt;
+&lt;p&gt;新加坡的银行业在世界应该还挺有名吧。我在北京见到过 DBS 和 UOB 的网点。不过实际体验上来说，真的是不怎么样。我办 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;银行&lt;/h2&gt;
+&lt;p&gt;新加坡的银行业在世界应该还挺有名吧。我在北京见到过 DBS 和 UOB 的网点。不过实际体验上来说，真的是不怎么样。我办的是 UOB, 最开始的开户挺麻烦的，对于外地人来说，要到实体网点办理，同时也要有公司的介绍信和签证文件。所以对于游客，这个流程是办不了的，对于外国游客，应该是有其他流程。办理过程中花了得有一个小时，业务员会说中文，介绍一下产品，同时还推销了他们的超长期储蓄业务，几十年期的年化 4%的储蓄产品，我们婉拒了，所以后面业务员有点不高兴，哈哈。这里银行卡和账户的分离的，就是说我要先开一个现金账户，账户会有个号码，然后在开一个卡，一般是一个借记卡，有 visa 和 master。之后应该还可以在申请信用卡。工资什么的是发到现金账户上，你给公司的银行号码是账户号码。而在商场刷卡，网上购物，是填写银行卡号码。所以就是花钱用卡号码，收钱用账户号码，这点和国内不太一样。&lt;/p&gt;
+&lt;p&gt;这边记账会比较慢，比如当你在商场刷卡后，这个余额变动不会立刻反映到你的账户上，当然一般那笔交易会立刻出现的手机银行上，而余额一般要在一天后才变。UOB 的网银和手机银行应该算做的不怎么样的，手机 app 上这 2 年变化还挺大的，还在不断加新功能。网银不用 u 盾，好评。&lt;/p&gt;
+&lt;p&gt;来说说用户信息被盗的事。我是从新闻得知的，大概是 UOB 的员工被骗，把 1 千多人的用户信息发给了 Hacker &lt;a href="https://www.zaobao.com.sg/realtime/singapore/story20210508-1145298"&gt;https://www.zaobao.com.sg/realtime/singapore/story20210508-1145298&lt;/a&gt;。而我就是这其中之一，受此影响，我的网银密码被重置，我要到 atm 机上修改密码，是的，atm 上还能修改密码，也是挺厉害的，我忘了是不是只能先设置数字密码，然后用数字密码登陆后再改成字母密码。反正需要在 atm 机上重设密码，然后用这个密码登陆网银再重新设置一个网银密码。这还没完，在那几个月时间中，每次给房东转钱交房租，或者往证券公司转钱，都会在当天或第二天接到银行的电话确认是不是自己的操作，即使转钱的帐号都是同一个，如果漏接了电话，那么密码又会被重置。我漏接了一次，然后又去 atm 改了一次密码。之后大概知道了，会留意有没有电话。前些时候，一个宽带和移动通信公司也有一起网络安全事故，也有 1 万多人的信息被泄露，好在我不是用的那家宽带。所以这边公司的网络安全意识应该是还挺薄弱的。&lt;/p&gt;
+&lt;p&gt;也许你会说如果办理的 DBS 就没这些事了。是的，DBS 好像是比 UOB 厉害一点，网银和 app 好像做的要比 UOB 好。但是，最近几个月，他们也经常系统故障，一挂就是一整天，无法转账。还有扣两次钱的故障。只能说是半斤八两吧。&lt;/p&gt;
+&lt;p&gt;这里的银行促销挺爱搞 cashback 的，就是消费后，给 x%的返现。信用卡的活动比较多，我还没有申请，准备明年申请一张。从 cashback 信息上看，是会得到一点优惠。&lt;/p&gt;
+&lt;h2&gt;医疗&lt;/h2&gt;
+&lt;p&gt;由于疫情，我在这 2 年没去看过病，陪我老婆去过几次医院做检查。只是简单说说见闻。新加坡这边就和传说中的外国一样，看病分公立和私立医院，不像国内大部分都是走公立医院，这边可能是对半吧。考虑到疫情少接触，我们去的是私立医院看的。我想象中的私立医院是高级，人少的公立医院，但是实际上和我想象的一点都不一样，这里私立医院就是在一个大楼里，里面有不同的医生的门诊，没有挂号，科室，引导。你需要查好需要看的科室和对应的医生，然后到他对应的那个房间。（当然，正常流程应该是，你先到家楼下的小诊所看，然后让诊所的医生推荐到这些专科的医生这里。）所以，私立医院就相当于一个松散的组织，只是给各个医生提供场所，和一些公用的机构，比如验血的 lab。医生有点像在医院租了个屋子，挂在医院名下，登记，叫号都在不同医生门诊内部。所以这里没有什么 1 楼内科，2 楼外科什么的，医院也只是个挂名，都是去直接找医生。我不知道公立医院是什么情况。我们去做检查只是定期的甲状腺检查，所以就是验血和 b 超。b 超是直接在医生诊所就有，可以当场做，而验血好处是不用自己跑了，会有流动人员在各个诊室跑，去抽血，然后送到实验室。至于 x 光什么的，在诊所应该没有，应该也是到医院公用的地方去做。所以医院的作用大概就是提供这些公共的资源，但是医生自力更生。至于住院，我也不太清楚，我估计就是手术室，病房公用，医生租用。医生相当于向医院租手术台几小时做手术，然后租病房给自己的病人。&lt;/p&gt;
+&lt;p&gt;至于费用，贵，挺贵的。私立医院看一次医生要 150-250 新币一次。所以就是 1000 多 RMB 的门诊费。然后验血和 b 超应该得 2000 吧。所以，我大概知道这里的本地人为什么喜欢运动了，尽量少生病吧。至于保险，挺复杂的，没有国内医保方便。医保这种不住院的医疗费用，由公司保险报销。而如果要住院了，公司的额度就不够用了，需要自行购买住院保险。主要保险会分公立私立，还有些额外的一些范围。一般来说会买个全套的公立或私立的住院险，这样，住院的费用会报销 95%。所以自己仍然要交 5%，如果费用总额很高的话，那其实 5%还是挺贵的。&lt;/p&gt;
+&lt;p&gt;从其他人来新加坡对于医疗的看法来看，大部分人都是认为新加坡医疗要好于之前在国内。不过我和北京做对比，感觉可能不如北京。虽然，从体验上来说，可能新加坡人少，不排队，等的时间短。不过从方便程度，医生的专业性，方面看，在北京还是更安心一点。可能是我还没有适应在一个小诊所看病无法给人带来的权威感和安全感。&lt;/p&gt;
+&lt;p&gt;再来说说体检，公司有安排每年的免费体检。不过这个体检应该是我经历的最少项目的体检了。好像只有献血验尿验屎，身高体重视力色盲。所以今年我没有报名，因为体检还要去诊所排队，为了避免接触，所以我放弃了今年的体检。&lt;/p&gt;</content><category term="Life"></category><category term="Singapore"></category></entry><entry><title>说说新加坡</title><link href="https://bobobo80.com/2021/shuo-shuo-xin-jia-po.html" rel="alternate"></link><published>2021-11-30T00:00:00+08:00</published><updated>2021-11-30T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2021-11-30:/2021/shuo-shuo-xin-jia-po.html</id><summary type="html">&lt;p&gt;现在是 2021 年 11 月下旬。目前新加坡以及“开放”2-3 个月了，印象中日均 2000-4000 确诊已经一个多月了。我想在这个时候聊聊新加坡，作 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;现在是 2021 年 11 月下旬。目前新加坡以及“开放”2-3 个月了，印象中日均 2000-4000 确诊已经一个多月了。我想在这个时候聊聊新加坡，作为新博客的第一篇生活类文章。一些概况性的东西我就不介绍了，可以参考之我同事的&lt;a href="https://wsgzao.github.io/post/singapore/"&gt;介绍 1&lt;/a&gt;和&lt;a href="https://cmgs.me/life/life-in-singapore"&gt;介绍 2&lt;/a&gt;，别人写的比较全面，我只说说别人可能没说的地方和我觉得特别的地方。当然由于我也没什么朋友，所以很多意见只是我个人看到的情况，并不代表全部，仅供参考。&lt;/p&gt;
+&lt;h2&gt;个人历程与公司&lt;/h2&gt;
+&lt;p&gt;我来新加坡已经 1 年多快 2 年了。我的情况有点特殊。是在疫情前面试和申请签证的，然后疫情开始后才入的境。公司嘛，是的，就是那个烂大街的 shopee。我是后端开发，目前在公司主要用 go 开发增删改查，有 python 的老服务，但是快被替换掉了。我所在的是支付部门，现在已经在规划中的 seamoney 公司了，算是对应蚂蚁金服，不过基本还完全是在 shopee 下，基本没啥分别。内推嘛可以找我，不过我觉得和自己投差不多，不过我能拿 2000-5000 新的内推费，我们可以平分。&lt;/p&gt;
+&lt;h2&gt;新加坡还是 996？&lt;/h2&gt;
+&lt;p&gt;可能你会从各种渠道听说新加坡也很卷，和 996 差不多，实际是这样吗？如上文说的，我只能说我认识的人少样本不是很全。只能说大部分的情况是：华人多的地方加班是会更多一些。所以说，shopee 在新加坡是个很特殊的存在了，普遍的情况是 shopee 在新加坡应该平均来说是加班较多的，因为华人多，另一个据说是新加坡字节。不过我觉得大部分组应该比国内加班要好很多。每天全组平均干到 9，10 点钟应该不存在吧。我所在组平均 8 点前应该大部分会回家了，不过由于疫情，在办公室的时候屈指可数，样本很少。总之，具体情况看组，平均来比加班应该会比国内大厂好的多。另外，卷不卷其实也看自己，身体力行，从我做起，带动周围人拒绝 996，哈哈。&lt;/p&gt;
+&lt;h2&gt;疫情很严重？&lt;/h2&gt;
+&lt;p&gt;是的。本来还要加上和国内比，疫情很严重，现在不用了。和欧洲，美国，隔壁马来印尼，都要严重。你可以想象一下，假如北京朝阳区每天新增 2000-4000 是怎样一种体验。现在每日新增又有些回落，政府又放宽了一些政策，应该是想再“加速”一下感染速度。这边政府的思路就是以病房能容纳的速度，让大家都尽快的感染上，不想评价这种做法是好是坏。总之要待下去就要转变心态，应该是早晚都要感染上的。即便如此，我现在还是尽量少出门。当前这波疫情我两三个月没出门。全年刚开始在家办公时我应该有连续 3 个月没出门。结合新加坡的情况，我对未来中国何时开放边境不容乐观，明年甚至后年回国都不会容易（新变种来了，明年肯定没戏了）。中国大部分地区的人均病房和 icu 数量和新加坡应该有挺大差距。在没有新疫苗和特效药的情况下，不太可能开放边境。&lt;/p&gt;
+&lt;h2&gt;日常消费&lt;/h2&gt;
+&lt;p&gt;这个应该几乎所有人关注的一个重点。相比国内大厂，新加坡工资水平并没有质的增长，中高阶职位甚至差不多或更少，那么花费问题呢？相信从其他渠道你也了解到了，新加坡物价还是很高的，但是每个人的消费习惯其实很不相同，所以每个人得出的结论也可能差别很大。我这里感觉大部分常规消费物价是北京的 1.5-2 倍左右。比如房租，北京四环内的一居室，较新且良好装修的房子可能在 7000-1 万。那么这里呢，热门地铁线附近较新的一居公寓大概也应该要 1 万 1 到 1 万 7 吧。蔬菜可能要 2 倍，肉，蛋，奶很难差不多，或贵一点。那种看起来是义乌产的东西就贵的多了。应该不止 2 倍，可能 5 倍都有了。不过如果国内本来比较贵的东西，这里也许差不多，尤其是那些国内税高的东西。同时国际品牌，可能差不多价格，比如 iPhone，迪卡侬，优衣库(原价应该新加坡略贵一点，双 11 就)。如果你要打算保持北京的生活水平，那么还真得要预计 1.5 倍的支出。如果你是刚毕业，要攒钱，倒也不是不可以，比如租组屋的一间卧室，吃食阁，理论上，除了房租略贵，可能花费差不多。但是怎么说，我不建议这样。&lt;/p&gt;
+&lt;h2&gt;现在来还合适吗？&lt;/h2&gt;
+&lt;p&gt;这个很难说。疫情是一方面，看你能不能接受这种政策了，这不新变种又来了，未来又多了很多不确定。本来新加坡在东南亚的中心，去哪里都很方便，但是现在只能昆困在这个小地方，非常的不爽。另一方面，看公司。拿 shopee 来说，两年前股价翻 10 的机会已经没有了，即使翻倍都很难。同时，来的难度也提高了。shopee 的面试难度应该是在增加的，政府这边签证审批也是越来越难了，我的签证要续签了，据说续签还有不过的。我的签证要是没下来，就回家了。如果你是以财富为主要衡量标准，那么加入这里的电商，出行，游戏等国内那些已经成熟的领域，那么可能机会已经错过了，可能还有机会的是区块链？不过我不太了解这方面。如果是以移民为主要考虑，那么现在也是在变难的，未来应该会越来越难。同时也要考虑新加坡是不是一个适合移民目标，反全球化潮流下，同时考虑到疫情的持续，新加坡这么小，在持续疫情的情况下，这种小国家还是有其特殊的难点或者说是劣势。&lt;/p&gt;
+&lt;h2&gt;小结&lt;/h2&gt;
+&lt;p&gt;写了一些发现有些写不动了，准备分开写吧，写多少先发多少，后面的想到了再补充先说这么多吧。下一篇还想说说新加坡的银行（我的个人信息被银行泄漏），医疗（配老婆看病和公司体检）和其他能想到的。&lt;/p&gt;</content><category term="Life"></category><category term="Singapore"></category></entry><entry><title>Fastapi中dependency的生命周期</title><link href="https://bobobo80.com/2021/fastapizhong-dependencyde-sheng-ming-zhou-qi.html" rel="alternate"></link><published>2021-11-07T00:00:00+08:00</published><updated>2021-11-07T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2021-11-07:/2021/fastapizhong-dependencyde-sheng-ming-zhou-qi.html</id><summary type="html">&lt;h2&gt;发现问题&lt;/h2&gt;
+&lt;p&gt;最近使用fastapi时，出现了一个alchemysql数据库连接池的错误。超过了默认的连接池限制。按理说自己的服务只有一个人在用，应该不会出现这种问 …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;发现问题&lt;/h2&gt;
+&lt;p&gt;最近使用fastapi时，出现了一个alchemysql数据库连接池的错误。超过了默认的连接池限制。按理说自己的服务只有一个人在用，应该不会出现这种问题。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/14/3o7r)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;联想到最近的修改是增加了一个文件下载接口，所以查到了原因，是这个接口占用了db连接池。&lt;/p&gt;
+&lt;p&gt;我最开始是用了fastapi作者在fullstack模板里给的&lt;a href="https://github.com/tiangolo/full-stack-fastapi-postgresql/blob/490c554e23343eec0736b06e59b2108fdd057fdc/%7B%7Bcookiecutter.project_slug%7D%7D/backend/app/app/api/deps.py#L46"&gt;方法&lt;/a&gt;写的验证用户登陆状态的dependency。比如下面这个接口，调用了Depends(deps.get_current_active_user)，来验证jwt里的用户。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@router&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/&lt;/span&gt;&lt;span class="si"&gt;{id}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response_model&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;schemas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Item&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;read_item&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Session&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Depends&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_db&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;current_user&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;User&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Depends&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_current_active_user&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Any&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="sd"&gt;    Get item by ID.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;get_current_active_user函数在最里层，使用了get_db，这个函数使用了Generator，在调用时返回db连接，在结束时关闭db连接。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_db&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Generator&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SessionLocal&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="k"&gt;yield&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;
+    &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;问题就出在了关闭连接这里。那这个get_db举例，当depends调用get_db时，会调用SessionLocal开启一个db连接和事务，然后直到这个请求返回response后才会调用finally后的close。所以如果一个接口内部不光只有db操作，并且在请求最开始调用了get_db开启了db连接，同时后面还有其他一些时间长的操作(比如读文件，请求其他api等)，那么这个db连接就会被一直占用着，直到这个请求结束才会关闭。同时这还是一个db事务，如果在最开始有写操作或带锁读操作，还会有长时间的db锁。&lt;/p&gt;
+&lt;p&gt;我在文档里找到了Depends还有个&lt;a href="https://fastapi.tiangolo.com/tutorial/dependencies/sub-dependencies/#using-the-same-dependency-multiple-times"&gt;use_cache用法&lt;/a&gt;。默认是True，在同一个请求里，如果Depends调用了同一个函数，在第二次调用时会用cache中的值。所以当一个请求里不同的地方调用了get_db，那么会使用同一个session，不会再创建第二个db连接了，就是在同一个连接和同一个事务里。不过如果把use_cache设置为False，那么在不同的地方调用get_db后，会创建新的db连接和事务。但是，当调用get_db后，并不会立刻执行close，仍然是要在整个请求结束后才执行close。&lt;/p&gt;
+&lt;h2&gt;可能会引起的问题的情况&lt;/h2&gt;
+&lt;p&gt;Depends的这个问题或特性，可能会在Depends中有一些独立的db请求后，没有及时释放db连接。所以这些情况下引起问题：
+- 在请求最开始，通过Depends获取了db session，比如用户验证。但之后，在这个接口中有时间长的操作，长时间占用db连接。
+- 在请求最开始，通过Depends获取了db session，比如用户验证，但用户db在一个不同的库，和后面的业务db不在一起。而后面执行的是业务db的操作，导致用户db连接长时间不用，在最后才释放。&lt;/p&gt;
+&lt;h2&gt;如何解决&lt;/h2&gt;
+&lt;p&gt;因为Depends的这个用法，那么为了及时释放db连接，就不用Generator的方法了。比如可以单独写一个方法，在函数内部就关闭db连接。这样Depends调用这个函数后，也不会导致db连接占用的问题。不过如果user库和业务库在同一个db,那么就没有必要这样了，这样会导致同一个请求连接两次db。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_current_active_user_with_single_session&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;token&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Depends&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;reusable_oauth2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;User&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="c1"&gt;# unpackage jwt ...&lt;/span&gt;
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SessionLocal&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;user&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;crud&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;token_data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sub&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;finally&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;close&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;raise&lt;/span&gt; &lt;span class="n"&gt;HTTPException&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;404&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;detail&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;User not found&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;user&lt;/span&gt;
+
+&lt;span class="nd"&gt;@router&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/&lt;/span&gt;&lt;span class="si"&gt;{id}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response_model&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;schemas&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Item&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;read_item&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Session&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Depends&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_db&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;current_user&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;models&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;User&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Depends&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;deps&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_current_active_user_with_single_session&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Any&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="k"&gt;pass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="fastapi"></category><category term="dependency"></category></entry><entry><title>Linux 配置 kinto 快捷键</title><link href="https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html" rel="alternate"></link><published>2021-11-07T00:00:00+08:00</published><updated>2021-11-07T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2021-11-07:/2021/linux-pei-zhi-kinto-kuai-jie-jian.html</id><summary type="html">&lt;p&gt;时隔多年，我又转回使用 linux 作为个人桌面系统了。主要是目前在使用 win10 时，wsl 性能不是很好，本身笔记本配置比较差，是 amd 的 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;时隔多年，我又转回使用 linux 作为个人桌面系统了。主要是目前在使用 win10 时，wsl 性能不是很好，本身笔记本配置比较差，是 amd 的 2500 和 8G 内存，导致在使用 vs coderemote 到 wsl2 开发时，format 都总是卡住。同时又想折腾一下 linux 桌面了（对了，主要是想折腾了），所以我又把 linux 装回来了。在刚买这个笔记本时，其实已经安装过 linux，只不过由于驱动原因，放弃了。我的本是联想 lenovo 720s AMD 版，cpu 是 2500 内存 8G 焊死。在刚买来是安装 linux 一个是网卡驱动需要单独下载驱动包，这个问题还好。另一个问题是总是卡死，只能强行关机重启。可能是哪个地方的驱动不太行。当时试了 ubuntu 和 manjaro，都是一样。&lt;/p&gt;
+&lt;p&gt;这期间我已经换了网卡，因为那个原装 rtl8821ce 本身就不太行，在 windows 下也总是掉线。所以换了个 intel 的网卡。所以这次安装 linux 非常顺利，开箱即用。这次我选了 manjaro kde 版本。&lt;/p&gt;
+&lt;p&gt;其他折腾 linux 桌面也没什么可说的。这里主要记录一些我修改了一点点 kinto.sh 配置。&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://kinto.sh/"&gt;Kinto.sh&lt;/a&gt;是一个修改键盘映射的工具，可以把 windows 和 linux 的键盘布局改成类似 Mac 的键盘布局，同时还真对一些常用软件的快捷键做了特殊的设置。&lt;/p&gt;
+&lt;p&gt;由于工作用的是 Mac，所以快捷键已经比较习惯 mac 的方式。尤其是那个 cmd+cv 系列。回到 win 或 linux 改用 ctrl 会很不习惯。而如果你直接报 ctrl 和 alt 调换的话，又有很多快捷键会变化，比如 alt+tab。所以还是用工具比较方便。&lt;/p&gt;
+&lt;p&gt;Kinto 还可以调整 windows 的快捷键，但是我还没有试过，所以先只说 linux。我这个本的键盘最下面从左到右 4 个键依次是 Ctrl-Fn-Win-Alt。Fn 是不能改的。从 mac 迁移过来的习惯当然是，把 alt 改成 ctrl，这样复制粘贴就是 alt+cv 了。同时想浏览器什么的，就是 alt+w 关闭，+r 刷新什么的。Kinto.sh 中这种方式是叫 windows&amp;amp;apple。会将 alt 变成 ctrl，win 变成 alt，ctrl 变成 win。但是在使用终端软件时，会将 alt 变成 ctrl+shift，win 还是 alt，ctrl 还是 ctrl，这样在终端下的复制粘贴就还是使用 alt+cv。kinto 的配置会用针对各种软件的一些单独配置。&lt;/p&gt;
+&lt;h2&gt;我的一些特殊需求&lt;/h2&gt;
+&lt;p&gt;对于 ctrl 和 alt 的改动，kinto 已经满足了我的需求。不过我还习惯把 capslock 本身功能屏蔽掉，并且让 capslock 按下时，可以使用 hjkl 来当成上下左右键。我查了一下 kinto 依赖的 xkeysnail，应该是并不支持这种设定，因为&lt;a href="https://github.com/mooz/xkeysnail/pull/33"&gt;capslock 不是 modifier&lt;/a&gt;。不过我通过把 capslock 先改成其他键，间接地实现了这种我的需求。&lt;/p&gt;
+&lt;p&gt;kinto.sh 提供了 kinto.py，也就是 kinto config。我可以修改里面的配置来达到自己的目的。
+先修改 define_multipurpose_modmap，把 capslock 换成右 ctrl&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;define_multipurpose_modmap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="n"&gt;Key&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;CAPSLOCK&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Key&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RIGHT_CTRL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Key&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;RIGHT_CTRL&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# custom&lt;/span&gt;
+    &lt;span class="c1"&gt;# {Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL]   # Enter2Cmd&lt;/span&gt;
+    &lt;span class="c1"&gt;# {Key.CAPSLOCK: [Key.ESC, Key.RIGHT_CTRL]  # Caps2Esc&lt;/span&gt;
+    &lt;span class="c1"&gt;# {Key.LEFT_META: [Key.ESC, Key.RIGHT_CTRL] # Caps2Esc - Chromebook&lt;/span&gt;
+    &lt;span class="c1"&gt;# {                                         # Placeholder&lt;/span&gt;
+&lt;span class="p"&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后修改 General GUI 的配置，加上 ctrl+hjkl 的快捷键变成上下左右。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="c1"&gt;# None referenced here originally&lt;/span&gt;
+&lt;span class="c1"&gt;# - but remote clients and VM software ought to be set here&lt;/span&gt;
+&lt;span class="c1"&gt;# These are the typical remaps for ALL GUI based apps&lt;/span&gt;
+&lt;span class="n"&gt;define_keymap&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;wm_class&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;wm_class&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;casefold&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;remotes&lt;/span&gt;&lt;span class="p"&gt;,{&lt;/span&gt;
+    &lt;span class="c1"&gt;# K(&amp;quot;RC-Space&amp;quot;): K(&amp;quot;Alt-F1&amp;quot;),                   # Default SL - Launch&lt;/span&gt;
+    &lt;span class="o"&gt;...&lt;/span&gt;
+    &lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;C-j&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Down&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;C-h&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Left&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;C-k&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Up&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+    &lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;C-l&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="n"&gt;K&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;Right&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="p"&gt;},&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;General GUI&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;General GUI 的第一行配置也可以注释掉。这个应该是会影响到输入法切换。&lt;/p&gt;
+&lt;p&gt;好了。这样就结束了。虽然这样会占用 ctrl+hjkl 的快捷键，可能会一些软件的快捷键，但是，这样已经是我试验过的比较好的解决方案了。因为把 capslock 换成 win 或 alt 都有有其他一些影响。而 kinto 依赖的 xkeysnail 又不支持将 capslock 单独变成 modifier，或是把 capslock 换成多个 modifier 组合。所以只能是换成 ctrl 对整体使用影响较小。同时需要注意的是，由于修改了 define_multipurpose_modmap，所以如果使用 kinto 自带的 tweak 设置，会导致配置文件错误，需要手工修复。所以在配置文件修改好后，就不要动 tweak 了。&lt;/p&gt;</content><category term="Tech"></category><category term="linux"></category><category term="kinto"></category><category term="shortcut"></category><category term="manjaro"></category><category term="xkeysnail"></category></entry><entry><title>MacOS 上 docker desktop 的替代品</title><link href="https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html" rel="alternate"></link><published>2021-10-25T00:00:00+08:00</published><updated>2021-10-25T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2021-10-25:/2021/macos-shang-docker-desktop-de-ti-dai-pin.html</id><summary type="html">&lt;p&gt;最近，也不算太近，docker desktop 宣布要改变授权，对于商业用途且具有一定的规模的话，明年就要开始收费了。很多公司都是使用 mac …&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近，也不算太近，docker desktop 宣布要改变授权，对于商业用途且具有一定的规模的话，明年就要开始收费了。很多公司都是使用 mac 作为开发电脑的，虽然对于大公司的话应该也会管这个 docker 费用的，但是我还是在 mac 上试用了其他的两个替代方案，折腾了一下。&lt;/p&gt;
+&lt;h2&gt;lima&lt;/h2&gt;
+&lt;p&gt;在 docker 要收费的消息出来不久，就有一篇&lt;a href="https://medium.com/nttlabs/containerd-and-lima-39e0b64d2a59"&gt;ntt 写的文章介绍 lima&lt;/a&gt;。另外还有中文的翻译稿。搜索引擎搜索的排名也很高。我也就尝试安装了 lima。安装非常简单，brew 一条命令就安装上了，&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;lima
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;安装好之后要用 lima 创建一个虚拟机，可以先使用 default 配置，命令如下&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;limactl&lt;span class="w"&gt; &lt;/span&gt;start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这个时间会稍微有点长，然后虚拟机就创建好了。然后就可以使用了，基本就是使用 lima nerdctl 来代替 docker，使用 docker 的各种 run，pull，images 什么的，比如&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;lima&lt;span class="w"&gt; &lt;/span&gt;nerdctl&lt;span class="w"&gt; &lt;/span&gt;ps&lt;span class="w"&gt; &lt;/span&gt;--all
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这里 lima 其实是创建了一个 linux 虚拟机，在 Mac 的任务管理器里，能看到一个 qemu 的检查，那个就是虚拟机了。&lt;/p&gt;
+&lt;h3&gt;坑&lt;/h3&gt;
+&lt;p&gt;这里注意一个问题是，那个 ntt 的文章里后面还写了 GUI，rancher desktop。但是实际上，这个 rancher 和 brew 安装的 lima 是分离的，不在一起。在安装和启动 rancher desktop 后，rancher 会在再创建一个虚拟机，给你安装 nerdctl 和 k3s 的环境，实际上 rancher desktop 是用 lima 再建一个虚拟机，并提供另一套 nerdctl 和 k3s 环境。rancher desktop 启动后，在命令行输入的 nerdctl 是 rancher 的 nerdctl，而用 lima nerdctl 是自己安装 lima 的 nerdctl。而且 rancher desktop 提供的功能和 docker desktop 也不太一样。只提供了 k8s 的版本，images，和系统资源占用的配置。docker 里的 container dashboard 是没有的。&lt;/p&gt;
+&lt;h2&gt;podman&lt;/h2&gt;
+&lt;p&gt;lima 的方案相当于是 lima 虚拟机+containerd 的方案。还有另一个方案现在在 Mac 上也可以运行了，那就是 podman。可以参考(podman 的文档进行安装和设置)[https://podman.io/getting-started/installation]。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;brew&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;podman
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;安装好后，用 podman machine 命令创建和启动虚拟机就可以了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;podman&lt;span class="w"&gt; &lt;/span&gt;machine&lt;span class="w"&gt; &lt;/span&gt;init
+podman&lt;span class="w"&gt; &lt;/span&gt;machine&lt;span class="w"&gt; &lt;/span&gt;start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;之后，就是使用 podman 命令代替 docker 了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;podman&lt;span class="w"&gt; &lt;/span&gt;ps&lt;span class="w"&gt; &lt;/span&gt;--all
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;有个(podman 的 GUI 工具)[https://github.com/heyvito/podman-macos]，可以显示当前的 containers，但是我试用了下，会导致 cpu 使用率高，不知道是什么原因。不过之前提到的 portainer 是支持 podman 的，可以用 portainer 来管理 posman。这里注意 docker run 里需要加上 privileged 参数，同时 docker.sock 对应的 volume 也变成了 podman.sock。这样就能用本地的 9000 端口（或者换成自己需要的端口）来管理 docker 了。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;podman&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;-d&lt;span class="w"&gt; &lt;/span&gt;-p&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;9000&lt;/span&gt;:9000&lt;span class="w"&gt; &lt;/span&gt;--privileged&lt;span class="w"&gt; &lt;/span&gt;--name&lt;span class="o"&gt;=&lt;/span&gt;portainer&lt;span class="w"&gt; &lt;/span&gt;--restart&lt;span class="o"&gt;=&lt;/span&gt;always&lt;span class="w"&gt; &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;/run/user/1000/podman/podman.sock:/var/run/docker.sock&lt;span class="w"&gt; &lt;/span&gt;-v&lt;span class="w"&gt; &lt;/span&gt;portainer_data:/data&lt;span class="w"&gt; &lt;/span&gt;portainer/portainer-ce
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;两个工具都是先起一个 linux 虚拟机，lima 是 ubuntu，podman 是 fedora（podman 背后是 redhat 出的）。然后各自在其虚拟机开始 containerd 和 podman 环境来替代 docker。&lt;/p&gt;
+&lt;h2&gt;后续&lt;/h2&gt;
+&lt;p&gt;由于公司的项目中有用到用旧版本来编译 protobuf 文件，所以使用 docker 来创建就版本 protoc 环境就比较方便了，因为还有新项目用新版本 protoc，使用 docker 的不同镜像可以分离不同的环境。这时 podman 这个工具就不行了，因为 podman 在 mac 下还不支持挂载 mac 下的目录，就是说 podman 的容器读取不到 mac 的文件，所以，无法像 docker 一样，用容器的运行环境，读取宿主机的 protobuf 文件，然后生成对应的比如 pb.go 文件到宿主机上。而 lima 是可以的，不过在生成 pb.go 文件到宿主机这一步，需要开启一个写宿主机文件的权限。 ~/.lima/default/lima.yaml 例如如果是默认设置是这个文件，然后修改 mount 下的 write 为 true 就可以了。&lt;/p&gt;</content><category term="Tech"></category><category term="docker"></category><category term="portainer"></category><category term="lima"></category><category term="podman"></category><category term="macos"></category></entry><entry><title>个人服务器自动化部署</title><link href="https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html" rel="alternate"></link><published>2021-10-09T00:00:00+08:00</published><updated>2021-10-09T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2021-10-09:/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html</id><summary type="html">&lt;p&gt;之前自己做了一个小项目，用于记单词。因为目前的背单词app主要还是记拼写，而我比较欠缺的是记读音，很多单词看见认识，但是听到读音 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;之前自己做了一个小项目，用于记单词。因为目前的背单词app主要还是记拼写，而我比较欠缺的是记读音，很多单词看见认识，但是听到读音的不知道是哪个单词。所以想着做个程序来记读音，可以先听读音再选是否记住。&lt;/p&gt;
+&lt;p&gt;大概背景就是这样。做这个主要也是为了体验一下完整前端后端开发，以及部署的整个流程。毕竟工作中主要是后端，而且其实只做后端的一部分。做个小项目可以体验一下全流程。这次我用了fastapi作为后端，了解一下这个很火的新框架，前端暂时是vue，不过前端部分不会的太多，目标先是能用。&lt;/p&gt;
+&lt;p&gt;开发的事暂时按下不表，先来说说是如何部署的。在以前我玩wordpress时，还都是用个lnmp的脚本，然后把php程序上传到服务器，然后启动。之后在人人车，也是差不多，用git拉下来更新，重启服务，用supervisor自动重启挂掉的服务。而到了头条，一下子就先进了，有TCE系统，点一下就发布新镜像部署了。现在shopee的话，介于两者之间，也算是有自动化的部署流程，只不过系统还没整合到一起。对我自己来说，还真没有实践过容器部署和运维，所以也借这个项目实践一下。&lt;/p&gt;
+&lt;p&gt;我只买了一台丐中丐级别的vps，buyvm的512mb。一年只要20刀。不过没有新加坡节点，延时大一些。k8s/k3s暂时先不体验了，不想一步迈的太大，配置也不够，咋看起来复杂度也很高。&lt;/p&gt;
+&lt;p&gt;我主要参考的是&lt;a href="https://www.kilerd.me/personal-docker-cluster-and-ci-package-pipeline/"&gt;这个文章&lt;/a&gt;，用的docker swarm加上portainer作为ui来管理，只不过我用了图形化nginx管理工具。这个项目比较简单，数据库用的postgresql(也是我不熟悉的，pgadmin不好用啊🤣），会有一个contianer，然后python后端起一个容器。前端是一个nginx的容器。我用到了&lt;a href="https://nginxproxymanager.com/"&gt;nginx proxy manager&lt;/a&gt;来管理http/s，这个工具可以设置自动更新ssl证书，另外有ui界面，将subdomain分给portainer，前端，后端。这部分可以用traefik做，不过我还没有研究怎么写配置。&lt;/p&gt;
+&lt;p&gt;NPM配置&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;version:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;3&amp;quot;&lt;/span&gt;
+
+networks:
+&lt;span class="w"&gt;  &lt;/span&gt;nginx-net:
+&lt;span class="w"&gt;    &lt;/span&gt;external:&lt;span class="w"&gt; &lt;/span&gt;true
+
+volumes:
+&lt;span class="w"&gt;  &lt;/span&gt;nginx-data:
+&lt;span class="w"&gt;    &lt;/span&gt;external:
+&lt;span class="w"&gt;      &lt;/span&gt;name:&lt;span class="w"&gt; &lt;/span&gt;nginx-data
+&lt;span class="w"&gt;  &lt;/span&gt;letsencrypt:
+&lt;span class="w"&gt;    &lt;/span&gt;external:
+&lt;span class="w"&gt;      &lt;/span&gt;name:&lt;span class="w"&gt; &lt;/span&gt;letsencrypt
+
+services:
+&lt;span class="w"&gt;  &lt;/span&gt;app:
+&lt;span class="w"&gt;    &lt;/span&gt;image:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;jc21/nginx-proxy-manager:latest&amp;#39;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;ports:
+&lt;span class="w"&gt;      &lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;HTTP&lt;span class="w"&gt; &lt;/span&gt;port
+&lt;span class="w"&gt;      &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;80:80&amp;#39;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;HTTPS&lt;span class="w"&gt; &lt;/span&gt;Port:
+&lt;span class="w"&gt;      &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;443:443&amp;#39;&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;Admin&lt;span class="w"&gt; &lt;/span&gt;UI
+&lt;span class="w"&gt;      &lt;/span&gt;#&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;81:81&amp;#39;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;environment:
+&lt;span class="w"&gt;      &lt;/span&gt;DB_SQLITE_FILE:&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;/data/npm.sqlite&amp;quot;&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;volumes:
+&lt;span class="w"&gt;      &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;nginx-data:/data
+&lt;span class="w"&gt;      &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;letsencrypt:/etc/letsencrypt
+&lt;span class="w"&gt;    &lt;/span&gt;networks:
+&lt;span class="w"&gt;      &lt;/span&gt;-&lt;span class="w"&gt; &lt;/span&gt;nginx-net
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;npm没有使用官方的mysql配置，用了sqlite数据库，另外设置了两个volumes，用于存配置和证书。在https转发没配置好之前，81端口是对外开发的，在配置好后，注释掉，只保留80和443&lt;/p&gt;
+&lt;p&gt;有了这些，只是能让服务跑起来，还没有达到学习目的。为了自动化部署，还有些额外的工作。首先是镜像仓库，鉴于docker/github的私有镜像库免费额度不太够，所以我和那个教程介绍的一样，部署了自己的registry。和教程不一样的，我用了github action，用github action来触发工作流，当在github里发布之后，会触发工作流打包镜像，然后推到自己的registry，然后触发portainer的webhook，更新docker service。这里注意我在生成registry的密码时，用的参考文章的命令有问题，又查了下&lt;a href="https://docs.docker.com/registry/deploying/#native-basic-auth"&gt;docker的文档&lt;/a&gt;。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;docker&lt;span class="w"&gt; &lt;/span&gt;run&lt;span class="w"&gt; &lt;/span&gt;--entrypoint&lt;span class="w"&gt; &lt;/span&gt;htpasswd&lt;span class="w"&gt; &lt;/span&gt;httpd:2&lt;span class="w"&gt; &lt;/span&gt;-Bbn&lt;span class="w"&gt; &lt;/span&gt;testuser&lt;span class="w"&gt; &lt;/span&gt;testpassword&lt;span class="w"&gt; &lt;/span&gt;&amp;gt;&lt;span class="w"&gt; &lt;/span&gt;auth/htpasswd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;github actions&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Build and Publish Docker image&lt;/span&gt;
+&lt;span class="nt"&gt;on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;release&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;types&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;published&lt;/span&gt;&lt;span class="p p-Indicator"&gt;]&lt;/span&gt;
+&lt;span class="nt"&gt;jobs&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;  &lt;/span&gt;&lt;span class="nt"&gt;push_to_registries&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Build and Push Docker image to multiple registries&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;runs-on&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;ubuntu-latest&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;permissions&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;packages&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;write&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="nt"&gt;contents&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;read&lt;/span&gt;
+&lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="nt"&gt;steps&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;get_version&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;battila7/get-version-action@v2&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Check out the repo&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;actions/checkout@v2&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Log in to Docker Hub&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;docker/login-action@v1&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;registry&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ secrets.DOCKER_REGISTRY }}&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;username&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ secrets.DOCKER_USERNAME }}&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;password&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ secrets.DOCKER_PASSWORD }}&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Build BE image&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;docker/build-push-action@v2&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;push&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;context&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;server&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;tags&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;|&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="no"&gt;${{ secrets.DOCKER_REGISTRY }}/xxx-be:latest&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="no"&gt;${{ secrets.DOCKER_REGISTRY }}/xxx-be:${{ steps.get_version.outputs.version-without-v }}&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Invoke BE deploy webhook&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;joelwmale/webhook-action@master&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ secrets.BE_WEBHOOK_URL }}&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Build FE image&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;docker/build-push-action@v2&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;push&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;true&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;context&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;web_fe&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;build-args&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;VUE_APP_BASE_URL=${{ secrets.VUE_APP_BASE_URL }}&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;tags&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p p-Indicator"&gt;|&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="no"&gt;${{ secrets.DOCKER_REGISTRY }}/xxx-fe:latest&lt;/span&gt;
+&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="no"&gt;${{ secrets.DOCKER_REGISTRY }}/xxx-fe:${{ steps.get_version.outputs.version-without-v }}&lt;/span&gt;
+&lt;span class="w"&gt;      &lt;/span&gt;&lt;span class="p p-Indicator"&gt;-&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;Invoke FE deploy webhook&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;uses&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;joelwmale/webhook-action@master&lt;/span&gt;
+&lt;span class="w"&gt;        &lt;/span&gt;&lt;span class="nt"&gt;with&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="w"&gt;          &lt;/span&gt;&lt;span class="nt"&gt;url&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l l-Scalar l-Scalar-Plain"&gt;${{ secrets.FE_WEBHOOK_URL }}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;github actions这里是前端后端同时部署，可以分开两个action。我用到了取release version的，这样在push到registry时可以附带上version，我们就可以回滚服务了。我这里触发条件是release，所以在merge到main(是的，现在默认变成main分支了)时并不触发部署，只有在release页面打tag后才会。&lt;/p&gt;
+&lt;p&gt;有几个坑
+- 为了安全，会把portainer的web端口不暴露在外，由nginx转发，所以在调整nginx容器时一旦挂了，portainer ui也会挂掉。所以一般可以先把9001 ui端口对外打开，设置好nginx之后，再更新portainer的设置。
+- 同理，nginx proxy manager 也有个81端口，在配置好https转发之后，应该更新docker配置，不要让81端口对外。
+- 如果有多台机器组网，对于portainer和db，应该使用配置固定到一台实体机上&lt;a href="https://docs.docker.com/engine/swarm/services/#control-service-placement"&gt;docker-swarm deploy placement constraints&lt;/a&gt;，因为volume只在一台上，实际上有容器部署db也不算是好的实践啦。
+- 镜像如果有版本tag，registry会越来越多，如果空间小的话，要注意清理，前端的镜像应该比较小，我的python的镜像好像是150多mb。对于总共10g的vps来说，还挺占地方的。
+- 在portainer新建network时，主要加上attachable，不然其他容器后期无法加入网络。&lt;/p&gt;</content><category term="Tech"></category><category term="docker"></category><category term="portainer"></category><category term="github actions"></category></entry><entry><title>Pelican集成disqus</title><link href="https://bobobo80.com/2021/pelicanji-cheng-disqus.html" rel="alternate"></link><published>2021-09-18T00:00:00+08:00</published><updated>2021-09-18T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2021-09-18:/2021/pelicanji-cheng-disqus.html</id><summary type="html">&lt;p&gt;虽然博客应该也不会有人留言，但是还是集成了一下disqus。这其中还挺坑的，一个找了很久。先说结论，应该是由于用了github actions自动发布，那 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;虽然博客应该也不会有人留言，但是还是集成了一下disqus。这其中还挺坑的，一个找了很久。先说结论，应该是由于用了github actions自动发布，那个插件没有读取publishconf里的配置，导致siteurl是空，所以导致disqus的那个div没有显示。所以需要配置发布使用publishconf文件。&lt;/p&gt;
+&lt;p&gt;对于使用github actions自动push gh-pages分支，用到了这个nelsonjchen/gh-pages-pelican-action，这里面需要注意配置GITHUB_TOKEN，如果有自己域名，还要配置CNAME。&lt;/p&gt;
+&lt;p&gt;对于主题和插件，因为用到了git submodules，所以在github里也需要运行，通过git把依赖下下来，然后生成html&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;git&lt;span class="w"&gt; &lt;/span&gt;submodule&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;--init&lt;span class="w"&gt; &lt;/span&gt;--recursive
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;具体github actions文件可以参考&lt;a href="https://github.com/bobobo80/bobobo80-blog/blob/master/.github/workflows/main.yml"&gt;pelican github action&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;续：又一个坑，从原始的attila主题repos clone下来会有"hljs" is not defined jquery的问题，看起来是页面没有加载highlight.js，使用&lt;a href="https://github.com/coldnight/attila"&gt;其他大神的fork&lt;/a&gt;解决了&lt;/p&gt;</content><category term="Tech"></category><category term="pelican"></category><category term="disqus"></category><category term="github actions"></category></entry><entry><title>又回来了</title><link href="https://bobobo80.com/2021/you-hui-lai-liao.html" rel="alternate"></link><published>2021-09-13T00:00:00+08:00</published><updated>2021-09-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2021-09-13:/2021/you-hui-lai-liao.html</id><summary type="html">&lt;p&gt;Hi，我又回来了。距离上一次日志已经有3年了。这3年还是发生了很多事情的，可能从3年前进入头条，就注定没有时间写博客了。不过来了shopee后，也并没有恢复，也许博客这 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hi，我又回来了。距离上一次日志已经有3年了。这3年还是发生了很多事情的，可能从3年前进入头条，就注定没有时间写博客了。不过来了shopee后，也并没有恢复，也许博客这种形式已经淡出主流了，现在坚持下去的人也大多是技术记录形式为主。从使用pelican以来，见证了我转行互联网的开始。17年4月开始自学，到8月进入人人车工作，然后1年后转到头条搬砖，再1年后远赴新加坡到shopee打工，每一步都挺梦幻的，也挺庆幸自己的运气。希望这次能在这里持续的记录下去。&lt;/p&gt;
+&lt;p&gt;为什么又想起写博客了？最近因为想到一个小项目想自己实现以下，又把github翻出来了，于是想到了还有这么个博客，所以决定再把博客捡起来。看看自己能不能把写作恢复起来。在整理资料时发现之前的wordpress导出的备份找不到了，挺失落的，那里有从百度博客就开始的记录。真的是挺久的，而且自己之前其他挺能写的，印象中还是有挺多有趣的内容，可惜就这么没了。&lt;/p&gt;
+&lt;p&gt;后面计划一方面还是记录一些，工作中或学习中遇到的问题及解决的方法。另一方面也想随意的记录一些什么，生活想法？希望能够坚持吧。&lt;/p&gt;</content><category term="Living"></category><category term="random"></category></entry><entry><title>Scrapy和pyspider框架浅谈</title><link href="https://bobobo80.com/2018/scrapyhe-pyspiderkuang-jia-qian-tan.html" rel="alternate"></link><published>2018-09-01T00:00:00+08:00</published><updated>2018-09-01T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2018-09-01:/2018/scrapyhe-pyspiderkuang-jia-qian-tan.html</id><summary type="html">&lt;p&gt;自己现在也算是小小抓取工程师了，在公司也在撸自己的框架，在这之前也有使用和了解过python语言实现的最著名的两个框架，先来简单说一说。&lt;/p&gt;
+&lt;h3&gt;scrapy&lt;/h3&gt;
+&lt;p&gt;scrapy框架应该算是最著名的框架了，不用 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;自己现在也算是小小抓取工程师了，在公司也在撸自己的框架，在这之前也有使用和了解过python语言实现的最著名的两个框架，先来简单说一说。&lt;/p&gt;
+&lt;h3&gt;scrapy&lt;/h3&gt;
+&lt;p&gt;scrapy框架应该算是最著名的框架了，不用它也应该对其有所了解吧。scrapy基于twisted异步框架编写，理论上爬取的过程中都是在同一个线程中的，利用异步的机制实现下载和后处理不堵塞，所以在解析和存储过程中，如果数据库操作时间长，需要使用twisted的数据库连接进行操作。在中间件等中使用time.sleep这种操作肯定也是会堵塞所有的操作的。&lt;/p&gt;
+&lt;p&gt;在我看来scrapy最好的设计是中间件设计（&lt;a href="https://docs.scrapy.org/en/latest/faq.html#did-scrapy-steal-x-from-django"&gt;和django插件思路很像&lt;/a&gt;），在下载、解析、存储中提供了可组合的模块化配置，为各种复用提供了帮助。&lt;/p&gt;
+&lt;p&gt;scrapy的结构组成非常的经典了，分成引擎，调度器，下载器，解析器spider，item pipeline结果处理几个部分，虽然基本所有框架都是这么划分的，但是和pyspider比还是有所不同的。scrapy是一个进程集成所有内容，如果是需要分布式，依靠调度器的队列来分布式处理。这种情况就是分布式的每个节点上都包含引擎，下载，解析等。当然可以使用另外的策略，让scrapy只下载，通过其他方式来处理其他的部分。&lt;/p&gt;
+&lt;h3&gt;pyspider&lt;/h3&gt;
+&lt;p&gt;那么其实从结构上来说，pyspider从这个层面和scrapy是完全的不同的。pyspider将调度，下载，解析按进程分开，使用消息队列进行连接，所以说pyspider的各个功能是相对独立的，分布式情况下，各个功能进程可以拆分开部署等，所以结构上分开的。&lt;/p&gt;
+&lt;p&gt;另一个明显的区别是pyspider对不同任务的管理，相对于scrapy能够在更高一个层级的进行管理，pyspider中的webui管理相当于对多个项目进行管理，这一点在scrapy是没有这个层级的东西的，scrapyd配合相关的webui管理项目（比如gerapy）才是这个层级的一个实现。&lt;/p&gt;
+&lt;p&gt;在项目开发上，pyspider一般是单文件上进行开发，还没有原生中间件机制，如果需要利用模块化的方式重用一些功能，好像无法完全通过webui的那个管理系统实现，需要在终端部署依赖的各种重用功能的文件。所以其实比较偏向于大量简单爬虫项目的集中管理。而scrapy本身可以更方便的扩展，更容易完成复杂的需求。&lt;/p&gt;
+&lt;p&gt;源码上来说，pyspider还很单薄，不过好处是也比较容易读，而scrapy再配合上其依赖的twisted，嗯，够喝一壶的了。&lt;/p&gt;
+&lt;h3&gt;小结&lt;/h3&gt;
+&lt;p&gt;所以两个框架还是有很大不同的，从结构上说我更倾向于pyspider，因为各个爬虫的核心功能能够更大的解耦。不过仅就pyspider，可能还是相对偏向简单任务，对于功能的复用等方面，还比较好的支持。&lt;/p&gt;</content><category term="Tech"></category><category term="python"></category></entry><entry><title>pyenv的使用</title><link href="https://bobobo80.com/2018/pyenvde-shi-yong.html" rel="alternate"></link><published>2018-08-18T00:00:00+08:00</published><updated>2018-08-18T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2018-08-18:/2018/pyenvde-shi-yong.html</id><summary type="html">&lt;p&gt;pyenv是一个python的版本管理器，同时还具有虚拟环境管理的功能，对于需要安装或部署不同版本在一台机器的情况下，pyenv非常合适。对于常用的centos6.5来说默认是python2.6环境，yum什么的还依赖2.6版本，所以 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;pyenv是一个python的版本管理器，同时还具有虚拟环境管理的功能，对于需要安装或部署不同版本在一台机器的情况下，pyenv非常合适。对于常用的centos6.5来说默认是python2.6环境，yum什么的还依赖2.6版本，所以使用pyenv非常合适。自己的开发机也可以安装各种版本的python。&lt;/p&gt;
+&lt;h2&gt;安装&lt;/h2&gt;
+&lt;p&gt;注意提前需要装一些编译python需要的&lt;/p&gt;
+&lt;p&gt;rpm系&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yum&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;zlib-devel&lt;span class="w"&gt; &lt;/span&gt;bzip2&lt;span class="w"&gt; &lt;/span&gt;bzip2-devel&lt;span class="w"&gt; &lt;/span&gt;readline-devel&lt;span class="w"&gt; &lt;/span&gt;sqlite&lt;span class="w"&gt; &lt;/span&gt;sqlite-devel&lt;span class="w"&gt; &lt;/span&gt;openssl-devel&lt;span class="w"&gt; &lt;/span&gt;xz&lt;span class="w"&gt; &lt;/span&gt;xz-devel&lt;span class="w"&gt; &lt;/span&gt;gcc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;deb系&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;-y&lt;span class="w"&gt; &lt;/span&gt;make&lt;span class="w"&gt; &lt;/span&gt;build-essential&lt;span class="w"&gt; &lt;/span&gt;libssl-dev&lt;span class="w"&gt; &lt;/span&gt;zlib1g-dev&lt;span class="w"&gt; &lt;/span&gt;libbz2-dev&lt;span class="w"&gt; &lt;/span&gt;libreadline-dev&lt;span class="w"&gt; &lt;/span&gt;libsqlite3-dev&lt;span class="w"&gt; &lt;/span&gt;wget&lt;span class="w"&gt; &lt;/span&gt;curl&lt;span class="w"&gt; &lt;/span&gt;llvm&lt;span class="w"&gt; &lt;/span&gt;libncurses5-dev&lt;span class="w"&gt; &lt;/span&gt;xz-utils&lt;span class="w"&gt; &lt;/span&gt;tk-dev&lt;span class="w"&gt; &lt;/span&gt;libxml2-dev&lt;span class="w"&gt; &lt;/span&gt;libxmlsec1-dev&lt;span class="w"&gt; &lt;/span&gt;libffi-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;安装非常简单，一条语句搞定&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;curl&lt;span class="w"&gt; &lt;/span&gt;-L&lt;span class="w"&gt; &lt;/span&gt;https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;bash
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;*一些老版本的机器可能会出现git clone错误，需要更新nss，&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;yum&lt;span class="w"&gt; &lt;/span&gt;update&lt;span class="w"&gt; &lt;/span&gt;nss
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;脚本完成后在~/.bashrc_profile中添加，这样重启bash，就可以使用pyenv命令了&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;export&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;~/.pyenv/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;eval&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;init&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;eval&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;virtualenv-init&lt;span class="w"&gt; &lt;/span&gt;-&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;使用&lt;/h2&gt;
+&lt;p&gt;查看可以安装哪些版本的python&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;--list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;查看当前已安装的版本&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;versions
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;安装指定版本&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;install&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.6.4
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;切换到指定版本&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;global&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.7.14
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;使用某个指定版本创建虚拟环境&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;virtualenv&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.7.14&lt;span class="w"&gt; &lt;/span&gt;virtualenv_name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;激活创建的虚拟环境&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;activate&lt;span class="w"&gt; &lt;/span&gt;virtualenv_name
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;取消激活虚拟环境&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pyenv&lt;span class="w"&gt; &lt;/span&gt;deactivate
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;在脚本中使用时，虚拟环境的路径是&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;~/.pyenv/versions/2.7.14/envs/virtualenv_name/bin/python
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;安装时，从python.org下载的速度比较慢，可以使用国内源进行下载后，放到~/.pyenv/cache/文件夹下，再进行本地安装。原来可以使用搜狐的镜像网站，不过貌似现在搜狐镜像关闭了，所以好像现在还真没有哪个镜像站提供python的安装包镜像了，所以一般是翻墙后下载，然后cp到cache目录下。&lt;/p&gt;
+&lt;h2&gt;参考&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/pyenv/pyenv"&gt;pyenv-github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/pyenv/pyenv-installer"&gt;pyenv-installer-github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.cnblogs.com/npumenglei/p/3719412.html"&gt;http://www.cnblogs.com/npumenglei/p/3719412.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/pyenv/pyenv/wiki/Common-build-problems"&gt;https://github.com/pyenv/pyenv/wiki/Common-build-problems&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.uedbox.com/pyenv-speed/"&gt;https://www.uedbox.com/pyenv-speed/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Tech"></category><category term="python"></category></entry><entry><title>python3中filter返回值的判断问题</title><link href="https://bobobo80.com/2017/python3zhong-filterfan-hui-zhi-de-pan-duan-wen-ti.html" rel="alternate"></link><published>2017-09-10T00:00:00+08:00</published><updated>2017-09-10T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2017-09-10:/2017/python3zhong-filterfan-hui-zhi-de-pan-duan-wen-ti.html</id><summary type="html">&lt;p&gt;最早接触python3来说，最明显的变化就是print方法了，另一个非常大的变化
+是返回值生成器类型的使用。&lt;/p&gt;
+&lt;p&gt;在python2中，很多返回list类型的方法，在python3中都返回生成器对象，
+比如最著名的 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;最早接触python3来说，最明显的变化就是print方法了，另一个非常大的变化
+是返回值生成器类型的使用。&lt;/p&gt;
+&lt;p&gt;在python2中，很多返回list类型的方法，在python3中都返回生成器对象，
+比如最著名的range()，在python3中返回生成器，即python2中的xrange()。
+而很多其他方法也是如此，比如list相关的map,reduce,filter方法，
+还有dict操作的keys(),items()等，都是由原来的返回list类型，
+转而返回生成器类型。&lt;/p&gt;
+&lt;p&gt;这就需要在使用if判断时注意了，比如filter方法，如果使用if判断，
+就需要注意了，比如下面的情况&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="k"&gt;lambda&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;]):&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;if True&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;在python2中，因为filter返回的是一个空数组[]，if判断将是False。&lt;/p&gt;
+&lt;p&gt;而在python3中，filter返回为filter对象，if判断将是True，
+将执行if中的语句。&lt;/p&gt;
+&lt;p&gt;不过对于dict的keys等方法，则不是这样，当dict为{}空字典时，
+dict.keys()返回的dict_keys对象会根据里面是否有内容而进行对应的判断。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;adict&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;dict a is not empty.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="Tech"></category><category term="python"></category></entry><entry><title>使用Django+Vue组合开发Restful风格的家用收纳系统</title><link href="https://bobobo80.com/2017/shi-yong-djangovuezu-he-kai-fa-restfulfeng-ge-de-jia-yong-shou-na-xi-tong.html" rel="alternate"></link><published>2017-06-26T00:00:00+08:00</published><updated>2017-06-26T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2017-06-26:/2017/shi-yong-djangovuezu-he-kai-fa-restfulfeng-ge-de-jia-yong-shou-na-xi-tong.html</id><summary type="html">&lt;p&gt;为了进一步学习web开发相关内容，自己想了个需求，就开始干了。
+&lt;a href="https://github.com/bobobo80/RightThingsInRightPlaces"&gt;github项目链接&lt;/a&gt;
+构架采用流行的RESTful api风格后端加响应式前端组合，虽然都还不熟悉，但是硬着头皮开始。
+经过一番调 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;为了进一步学习web开发相关内容，自己想了个需求，就开始干了。
+&lt;a href="https://github.com/bobobo80/RightThingsInRightPlaces"&gt;github项目链接&lt;/a&gt;
+构架采用流行的RESTful api风格后端加响应式前端组合，虽然都还不熟悉，但是硬着头皮开始。
+经过一番调研，Django Rest framework（drf）算是比较广泛的restful库了，看了看文档，比较清晰，在序列化方面有一些便捷的方法。
+后端验证方面，使用了drf文档里推荐的oauth toolkit库来组合。
+前端方面，许久之前只是了解一些基本的前端东西，html/css/js不是很熟，但有基本概念。
+既然要搞高端的响应式，那么对比一下流行的react/vue/augular发现前端一套套框架啊工具啊又是很深的坑，选了看起来可以用最简单方式的单vue的方式来开发。
+对于初学者，感觉还是不要在基础薄弱的情况下就直接开始，文档中很多东西都不知道。&lt;/p&gt;
+&lt;p&gt;目前算是完成了第一个阶段，基础的文件夹和物品结构和查增改删，tag标签设置，用户登录等，
+后面还有搜索功能需要探索一下。然后在全面学习一下前端之后，再来完善一轮前端后端。&lt;/p&gt;
+&lt;p&gt;我把现在的版本部署到了&lt;a href="http://bobobo80.pythonanywhere.com"&gt;pythonanywhere&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="django"></category><category term="python"></category></entry><entry><title>flask一次客户端请求的过程</title><link href="https://bobobo80.com/2017/flaskyi-ci-ke-hu-duan-qing-qiu-de-guo-cheng.html" rel="alternate"></link><published>2017-05-14T00:00:00+08:00</published><updated>2017-05-14T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2017-05-14:/2017/flaskyi-ci-ke-hu-duan-qing-qiu-de-guo-cheng.html</id><summary type="html">&lt;p&gt;按照Werkzeug的示例，继承封装了标准库http中的HTTPServer和BaseHTTPRequestHandler。在客户端发出请求后，会触发到Handler类中的handle()方法，然后是一连串的handle_one_request()--&amp;gt;run_wsgi()方法，run_wsgi在werkzeug中重写了会收集环境信息environ，并定义了write，start_response，execute内置方法，然后会 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;按照Werkzeug的示例，继承封装了标准库http中的HTTPServer和BaseHTTPRequestHandler。在客户端发出请求后，会触发到Handler类中的handle()方法，然后是一连串的handle_one_request()--&amp;gt;run_wsgi()方法，run_wsgi在werkzeug中重写了会收集环境信息environ，并定义了write，start_response，execute内置方法，然后会执行execute方法，这里app(environ, start_response)，app即flask的app实例，会先触发中间件的__call__()方法，然后调用flask的__call__()，call方法中默认是直接调用wsgi_app(environ, start_response)。所以flask中即在wsgi_app(environ, start_response)中完成WSGI的标准接口的应用实现。
+wsgi_app中每一行都是对响应处理的一步步创建和加工。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request_context&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;rv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;preprocess_request&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;rv&lt;/span&gt; &lt;span class="ow"&gt;is&lt;/span&gt; &lt;span class="kc"&gt;None&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;rv&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dispatch_request&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;make_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rv&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;response&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;process_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;environ&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;start_response&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;with self.request_context(environ): 通过创建_RequestContext的实例，并在__enter__中将这个实例压入_request_ctx_stack全局栈。
+preprocess_request算是前处理过程，通过@before_request修饰的方法在此进行处理
+dispatch_request是处理请求的正式方法，根据初始化时处理的路由MAP，根据请求的URL找到对应的view中定义的对应的响应方法对请求进行处理view_functions&lt;a href="**values"&gt;endpoint&lt;/a&gt;，view_function[endpoint]就是那个对应的view中的方法。
+make_response对view中方法的返回值进行处理，讲返回结果转换为response对象response_class类型的实例
+process_response是和preprocess_request对应的后处理方法，默认提供了session的处理，之后是通过@after_request修饰的方法在这里执行
+最后返回response
+flask的处理结束，然后又回到了werkzeug中，返回内容通过wfile.write()，发送回给客户端。&lt;/p&gt;</content><category term="Tech"></category><category term="python"></category><category term="flask"></category></entry><entry><title>正则表达式环视的理解</title><link href="https://bobobo80.com/2017/zheng-ze-biao-da-shi-huan-shi-de-li-jie.html" rel="alternate"></link><published>2017-05-08T00:00:00+08:00</published><updated>2017-05-08T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2017-05-08:/2017/zheng-ze-biao-da-shi-huan-shi-de-li-jie.html</id><summary type="html">&lt;p&gt;最近看完了《精通正则表达式》的前面和语言无关的几章，也正好碰到了一个知乎问题，所以就强行答了一下。&lt;a href="https://www.zhihu.com/question/59126490/answer/165253638"&gt;如何理解先行 …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近看完了《精通正则表达式》的前面和语言无关的几章，也正好碰到了一个知乎问题，所以就强行答了一下。&lt;a href="https://www.zhihu.com/question/59126490/answer/165253638"&gt;如何理解先行断言&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;把我的回答再总结一下。
+(?=)在《精通正则表达式》书上叫“环视”，具体上说叫“顺序肯定环视”。环视不占有字符，只作为判断的条件进行匹配。&lt;/p&gt;
+&lt;p&gt;1，具体如下这个例子&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;^&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;?&lt;span class="o"&gt;=.*&lt;/span&gt;\&lt;span class="nv"&gt;d&lt;/span&gt;&lt;span class="p"&gt;)(&lt;/span&gt;?&lt;span class="o"&gt;=.*&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;A&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;Z&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;\&lt;span class="nv"&gt;w&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;}$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;先来刨去两个(?=)环视条件&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;^&lt;/span&gt;\&lt;span class="nv"&gt;w&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;15&lt;/span&gt;&lt;span class="p"&gt;}$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这个很好理解，即^匹配初试位置锚点，\w匹配各种文字字符（我理解就是字母数字文字等），{8，15}前面字符\w的数量8-15个，最后$是末位置锚点。整体上就是匹配一个从初始到结束为8-15位全文字字符的字符串。&lt;/p&gt;
+&lt;p&gt;现在加上(?=)&lt;/p&gt;
+&lt;p&gt;第一个(?=.&lt;em&gt;\d)，括号位置在^之后，表示从初始锚点这个位置开始匹配，.&lt;/em&gt;匹配各种字符直到末位，后跟\d表示匹配数字，这时需要回溯寻找为数字的位置，如果回溯到有数字的位置，那么匹配成功。所以这个环视表达式的意思是，如果从锚点的位置后面有含数字的字符则匹配成功，满足条件，否则不满足。&lt;/p&gt;
+&lt;p&gt;那么第二个也是同样道理，(?=.*[A-Z])，表示如果从初始锚点位置后面存在大写字母字符，则匹配成功，满足条件。这里注意一下，环视不占有字符，所以，即使这个环视表达式在后面，也同样是在其位置^之后开始匹配检查。&lt;/p&gt;
+&lt;p&gt;最后把两个环视条件都加上，整个表达式的意思就是一个从初始到结束为8-15位的全文字字符且必须含有至少一个数字字符和至少一个大写字母字符的字符串。&lt;/p&gt;
+&lt;p&gt;2，(?=...)环视表达式如何理解&lt;/p&gt;
+&lt;p&gt;我个人理解就是把这个看成一个条件表达式，是整体匹配成功的必须要满足的条件。&lt;/p&gt;
+&lt;p&gt;(?=...)为顺序肯定环视，其他三个环视意思类似。这个表达式从括号的所在的匹配位置开始进行匹配判断，并且不占用匹配字符，即，括号后面的匹配位置不变。&lt;/p&gt;
+&lt;p&gt;看完这本正则书后，虽然很多特定的匹配符号和字符没有完全能够记住，但是从比较深层次的角度来理解正则表达式的匹配过程，了解正则逐字符的匹配过程，回溯等过程。感觉这样对于思考和分析整个正则表达式的细节非常有帮助。&lt;/p&gt;</content><category term="Tech"></category><category term="正则"></category></entry><entry><title>修饰器及flask的route修饰器</title><link href="https://bobobo80.com/2017/xiu-shi-qi-ji-flaskde-routexiu-shi-qi.html" rel="alternate"></link><published>2017-04-30T00:00:00+08:00</published><updated>2017-04-30T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2017-04-30:/2017/xiu-shi-qi-ji-flaskde-routexiu-shi-qi.html</id><summary type="html">&lt;p&gt;python的修饰器是python的一个特色，也是比较难理解的地方，不过运用得当的话会非常优雅和简洁。
+通常的两种修饰器形式是无参数的双层结构，即&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;python的修饰器是python的一个特色，也是比较难理解的地方，不过运用得当的话会非常优雅和简洁。
+通常的两种修饰器形式是无参数的双层结构，即&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;wrapper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="c1"&gt;# do some thing before f&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;wrapper&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样，即定义了一个无参的修饰器，使用时在对应函数的前面加上@decorator即可。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@decorator&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="c1"&gt;# do some thing&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;相当于&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;相当于&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;wrapper&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样，当调用foo时，会先运行wrapper中的代码，在进入foo的执行代码。
+因为decorator返回的是wrapper函数引用，所以只在foo被调用时，wrapper中的代码采用运行。&lt;/p&gt;
+&lt;p&gt;而对于需要带额外参数的修饰器，一般是采用三层结构。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="c1"&gt;# do some thing &lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decorator_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;wrapper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="c1"&gt;# do some thin before f&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwargs&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;wrapper&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;decorator_func&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;在以函数为参数的外层，再加了一层带其他参数的函数定义。
+使用时在对应的函数定义前&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="c1"&gt;# do some thing&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样相当于&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;arg&lt;/span&gt;&lt;span class="p"&gt;)(&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;相当于&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;decorator_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;相当于&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;foo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;wrapper&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;其中decorator的参数可以用于内嵌的deocrator_func和wrapper中
+这里需要注意一下各个区间段的运行时间，里层的wrapper中的代码在foo在程序运行时被调用时的之前被运行。而decorator中如果有加入逻辑代码的话，那么将在python解释器读取到函数定义时就被运行。
+而flask中的route修饰器就采用了这个用法。
+来看一下route的定义，去掉注释。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;endpoint&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_url_rule&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;endpoint&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;decorator&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;route是带参修饰器，应该是三层结构，不过由于无需wrapper中进行相关操作，所以可以这么定义，相当于wrapper什么也没有。
+也就是相当于&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;decorator&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;endpoint&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;option&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;endpoint&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;add_url_rule&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;rule&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;endpoint&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;wrapper&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;options&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;wrapper&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;decorator&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;来看看route的使用&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nd"&gt;@route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;/&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;index&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="c1"&gt;# do some thing&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;render_template&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;index.html&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样在解释器初始运行时，读到index和route修饰器时，会运行对应decorator中的代码，即运行add_url_rule()方法，即把路由规则加入到app的map中。而index只会在客户端请求后，路由被匹配后被调用。
+所以flask就这样优雅的实现了地址路由的设置。
+route修饰器的主要目的是为在在初始运行时就运行相应的add_url_rule()等内容，所以，如果当使用多个文件来设置flask应用时，需要注意包含route的view部分py文件，处于在刚开始被引用或导入，这样才能被解释器运行。以狗书的blueprint结构为例，在app所在包的__init__.py中,定义create_app()方法，其中注册每个blueprint模块，这里会导入各个模块包，所以在每个模块包的__init__.py中，需要引用该模块的view&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;.&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;views&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这样，就能在create_app()的导入包时，初始化路由设定了。&lt;/p&gt;
+&lt;p&gt;参考资料
+&lt;a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014318435599930270c0381a3b44db991cd6d858064ac0000"&gt;廖雪峰python教程-修饰器&lt;/a&gt;&lt;/p&gt;</content><category term="Tech"></category><category term="flask"></category></entry><entry><title>Hello World</title><link href="https://bobobo80.com/2017/hello-world.html" rel="alternate"></link><published>2017-04-25T00:00:00+08:00</published><updated>2017-04-25T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2017-04-25:/2017/hello-world.html</id><content type="html">&lt;p&gt;第一篇测试。转为使用pelican写博客。&lt;/p&gt;</content><category term="Tech"></category><category term="test"></category></entry></feed>

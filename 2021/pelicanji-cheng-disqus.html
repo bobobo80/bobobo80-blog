@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Pelican集成disqus</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<link href="https://bobobo80.com/2021/pelicanji-cheng-disqus.html" rel="canonical" />
+  <!-- Feed -->
+        <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="On the wing 展翼 Full Atom Feed" />
+          <link href="https://bobobo80.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://bobobo80.com/theme/css/code_blocks/tomorrow.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.cnpmjs.org/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.cnpmjs.org/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="虽然博客应该也不会有人留言，但是还是集成了一下disqus。这其中还挺坑的，一个找了很久。先说结论，应该是由于用了github actions自动发布，那 …">
+
+    <meta name="author" content="bobobo80">
+
+    <meta name="tags" content="pelican">
+    <meta name="tags" content="disqus">
+    <meta name="tags" content="github actions">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="On the wing 展翼"/>
+<meta property="og:title" content="Pelican集成disqus"/>
+<meta property="og:description" content="虽然博客应该也不会有人留言，但是还是集成了一下disqus。这其中还挺坑的，一个找了很久。先说结论，应该是由于用了github actions自动发布，那 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://bobobo80.com/2021/pelicanji-cheng-disqus.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-09-18 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta property="article:section" content="Tech"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="article:tag" content="disqus"/>
+<meta property="article:tag" content="github actions"/>
+<meta property="og:image" content="https://bobobo80.com/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Pelican集成disqus",
+  "headline": "Pelican集成disqus",
+  "datePublished": "2021-09-18 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2021/pelicanji-cheng-disqus.html",
+  "description": "虽然博客应该也不会有人留言，但是还是集成了一下disqus。这其中还挺坑的，一个找了很久。先说结论，应该是由于用了github actions自动发布，那 …"
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://bobobo80.com/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Pelican集成disqus</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://bobobo80.com/author/bobobo80.html">bobobo80</a>
+            | <time datetime="Sat 18 September 2021">Sat 18 September 2021</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>虽然博客应该也不会有人留言，但是还是集成了一下disqus。这其中还挺坑的，一个找了很久。先说结论，应该是由于用了github actions自动发布，那个插件没有读取publishconf里的配置，导致siteurl是空，所以导致disqus的那个div没有显示。所以需要配置发布使用publishconf文件。</p>
+<p>对于使用github actions自动push gh-pages分支，用到了这个nelsonjchen/gh-pages-pelican-action，这里面需要注意配置GITHUB_TOKEN，如果有自己域名，还要配置CNAME。</p>
+<p>对于主题和插件，因为用到了git submodules，所以在github里也需要运行，通过git把依赖下下来，然后生成html</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>submodule<span class="w"> </span>update<span class="w"> </span>--init<span class="w"> </span>--recursive
+</code></pre></div>
+
+<p>具体github actions文件可以参考<a href="https://github.com/bobobo80/bobobo80-blog/blob/master/.github/workflows/main.yml">pelican github action</a></p>
+<p>续：又一个坑，从原始的attila主题repos clone下来会有"hljs" is not defined jquery的问题，看起来是页面没有加载highlight.js，使用<a href="https://github.com/coldnight/attila">其他大神的fork</a>解决了</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Pelican集成disqus&amp;url=https://bobobo80.com/2021/pelicanji-cheng-disqus.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2021/pelicanji-cheng-disqus.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://bobobo80.com/2021/pelicanji-cheng-disqus.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://bobobo80.com/tag/pelican.html">pelican</a><a href="https://bobobo80.com/tag/disqus.html">disqus</a><a href="https://bobobo80.com/tag/github-actions.html">github actions</a>                </aside>
+
+                <div class="clear"></div>
+
+                <aside class="post-author">
+
+
+                        <figure class="post-author-avatar">
+                            <img src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+                        </figure>
+                    <div class="post-author-bio">
+                        <h4 class="post-author-name"><a href="https://bobobo80.com/author/bobobo80.html">bobobo80</a></h4>
+                            <span class="post-author-location"><i class="ic ic-location"></i> Singapore</span>
+                            <span class="post-author-website"><a href="https://about.me/bobobo80"><i class="ic ic-link"></i> Website</a></span>
+                        <!-- Social linkes in alphabet order. -->
+                            <span class="post-author-github"><a target="_blank" href="https://github.com/bobobo80"><i class="ic ic-link"></i> GitHub</a></span>
+                    </div>
+                    <div class="clear"></div>
+                </aside>
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'bobobo80';
+                    var disqus_shortname = 'bobobo80';
+                    var disqus_identifier = '/2021/pelicanji-cheng-disqus.html';
+                    var disqus_url = 'https://bobobo80.com/2021/pelicanji-cheng-disqus.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/2021/pelicanji-cheng-disqus.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.cnpmjs.org/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'bobobo80';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Backend as a service(BAAS)的几个项目</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<link href="https://bobobo80.com/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html" rel="canonical" />
+  <!-- Feed -->
+        <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="On the wing 展翼 Full Atom Feed" />
+          <link href="https://bobobo80.com/feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://bobobo80.com/theme/css/code_blocks/tomorrow.css" rel="stylesheet">
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.cnpmjs.org/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.cnpmjs.org/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+    <meta name="description" content="又停更了一段时间，主要是沉迷 switch 游戏，有一段时间没有写点什么了。最近看了看可以快速搭建 rest 接口到 db 访问的几种不 …">
+
+    <meta name="author" content="bobobo80">
+
+    <meta name="tags" content="baas">
+    <meta name="tags" content="nocode">
+    <meta name="tags" content="lowcode">
+    <meta name="tags" content="directus">
+    <meta name="tags" content="supabase">
+    <meta name="tags" content="postgrest">
+    <meta name="tags" content="prest">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="On the wing 展翼"/>
+<meta property="og:title" content="Backend as a service(BAAS)的几个项目"/>
+<meta property="og:description" content="又停更了一段时间，主要是沉迷 switch 游戏，有一段时间没有写点什么了。最近看了看可以快速搭建 rest 接口到 db 访问的几种不 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://bobobo80.com/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2022-03-28 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta property="article:section" content="Tech"/>
+<meta property="article:tag" content="baas"/>
+<meta property="article:tag" content="nocode"/>
+<meta property="article:tag" content="lowcode"/>
+<meta property="article:tag" content="directus"/>
+<meta property="article:tag" content="supabase"/>
+<meta property="article:tag" content="postgrest"/>
+<meta property="article:tag" content="prest"/>
+<meta property="og:image" content="https://bobobo80.com/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Backend as a service(BAAS)的几个项目",
+  "headline": "Backend as a service(BAAS)的几个项目",
+  "datePublished": "2022-03-28 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html",
+  "description": "又停更了一段时间，主要是沉迷 switch 游戏，有一段时间没有写点什么了。最近看了看可以快速搭建 rest 接口到 db 访问的几种不 …"
+}
+</script>
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" >
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://bobobo80.com/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">Backend as a service(BAAS)的几个项目</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://bobobo80.com/author/bobobo80.html">bobobo80</a>
+            | <time datetime="Mon 28 March 2022">Mon 28 March 2022</time>
+        </span>
+        <!-- TODO : Modified check -->
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>又停更了一段时间，主要是沉迷 switch 游戏，有一段时间没有写点什么了。最近看了看可以快速搭建 rest 接口到 db 访问的几种不同的开源工具，这个有点算是 lowcode 或者 BAAS（backend as a service）的领域，据说在最近也很火啊？起因是我发现在做记单词的程序中，我还是很希望能够有一个快速搭建出基于 db 表的增删改查的接口平台，同时类似 data admin 的后台，可以方便的通过界面来查看和直接修改 db 数据。其实 django 已经能很接近地提供类似的功能，django admin 只需要通过设定一些配置，就可以自动在后台增加数据表的 UI,而通过 DRF（django rest framework）也可以快速地创建 rest 接口。不过我还是看了看其他几个项目。</p>
+<h2>directus</h2>
+<p>同类型的更出名的项目应该是 strapi，他们叫 headless cms。<a href="https://github.com/directus/directus">directus</a> 代码更简单一些，所以我试用了一下并简单地看了下 directus 的代码结构。如果实际使用的话，需要注意，strapi 的免费部署有 role 个数限制，而 directus 没有。不过要二次开发的话，注意 strapi 是 MIT 协议，而 directus 是 GPL 协议。
+这类 headless cms 特点是 web UI 比较好看，对数据表的字段编辑非常的图形化，并且更偏向外观显示，比如是可视化编辑文本，还是简单的 text，还可以设置图表等。而不是直接设置 varchar(64)这种。所以这类产品应该是更倾向于面向非程序员群体来操作和编辑后台的。这样业务需求方可以直接创建和修改所需要的表结构，然后框架就是自动具备这些表的 rest api。或者可以通过 admin 的角色分类，提供一个可供非程序员的 admin 后台，来让这些人来查看和编辑数据。
+directus 是一个单体代码仓库。express+vue 组成。原理应该是通过 knex 来生成 sql，实现自定义数据表的 rest api。同时在创建和修改自定义表的字段时，也会生成对应的 sql DDL 语句来创建或修改数据表。同时还有自带的用户和权限管理，可以对接口进行鉴权。还有静态文件管理。相当于 directus 是一个在图形界面上定义数据 model,然后自动生成 rest api 和 admin 管理页面，还附带用户和文件管理的加强版 django admin。对于博客，内容管理平台类型的系统开发应该是非常适用，只需要开发对应的前端即可，还附带了后台系统。</p>
+<h2>supabase</h2>
+<p><a href="https://github.com/supabase/supabase">supabase</a> 是对标 firebase 。但是在我看来，和 headless cms 还是有一些相似的。不过对于 supabase,我觉得更偏向于有程序背景的人适用。适用的人群确实是和 firebase 的 cloud storge/realtime/auth 部分近似。
+不过从技术上看，supabase 和 firebase 应该还是有很大不同的。supabase 是基于 postgresql 来做的扩展，其中应该有不少特性是基于 postgresql 的，所以只能适用 postgresql。
+supabase 不是单体应用，而且各个模块好像来不同的项目组成，他们的整合能力还挺厉害。而且使用的语言都不一样。lua/go/haskell/Elixir/TS。不知道是不是有意为之。
+设计理念上，他们是强依赖 postgresql 的。比如数据的验证是在 sql 里定义的，并且也是依赖 db 来校验的。如果要是想要复杂的 db 操作，可以创建存储过程。他们的 graphql 模块，也是要准备借助 PLpgSQL 来实现。
+从它提供 js/ts/flutter 等等客户端 lib 来看，supabase 是面向程序开发者使用的。他们的 admin 也是更偏向开发来使用，数据查看更像是在使用类似 mysql workbench。</p>
+<h2>总结</h2>
+<p>如果想快速地搭建一个增删改查的接口，专注于前端的工作，那么这两种工具都是可以的。如果有需求给使用方开发后台，那么 directus/strapi 更合适。如果是需要类似 realtime,或是相对复杂的 sql 查询，或是对 db 有更底层的控制，那么 supabase 应该更合适。
+一点感想，这些项目和在一个大型公司，在一个接口里要塞大量逻辑的行为很不相同。在互联网程序开发盛行的今天，其实还有大量的领域可以有非常不同的设计和开发思路。比如，外键，这两个项目应该说是比较依赖外键来构建数据表之间的联系的。比如，supabase 中，竟然把大量的逻辑放到 db 中，比如数据字段验证，我之前甚至不知道 sql 还有 check 语句；比如存储过程，这个应该是很复古的一种方式了；比如用户验证，要用到 db 的 row level security；他们还要在 postgresql 里设置自定义的 function 来实现自定义功能。我想这和我们大部分人接触的‘原则’是截然相反的吧，为了数据库性能，我们会拦截无效的请求，缓存请求，就是为了尽量减少 db 的消耗。而其实，当 db 不是瓶颈的时候，大可以将一些工作交给 db，来减少自己服务的开发成本。就像数据库反范式设计一样，这也是一种‘反原则’实现。</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=Backend as a service(BAAS)的几个项目&amp;url=https://bobobo80.com/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://bobobo80.com/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://bobobo80.com/tag/baas.html">baas</a><a href="https://bobobo80.com/tag/nocode.html">nocode</a><a href="https://bobobo80.com/tag/lowcode.html">lowcode</a><a href="https://bobobo80.com/tag/directus.html">directus</a><a href="https://bobobo80.com/tag/supabase.html">supabase</a><a href="https://bobobo80.com/tag/postgrest.html">postgrest</a><a href="https://bobobo80.com/tag/prest.html">prest</a>                </aside>
+
+                <div class="clear"></div>
+
+                <aside class="post-author">
+
+
+                        <figure class="post-author-avatar">
+                            <img src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+                        </figure>
+                    <div class="post-author-bio">
+                        <h4 class="post-author-name"><a href="https://bobobo80.com/author/bobobo80.html">bobobo80</a></h4>
+                            <span class="post-author-location"><i class="ic ic-location"></i> Singapore</span>
+                            <span class="post-author-website"><a href="https://about.me/bobobo80"><i class="ic ic-link"></i> Website</a></span>
+                        <!-- Social linkes in alphabet order. -->
+                            <span class="post-author-github"><a target="_blank" href="https://github.com/bobobo80"><i class="ic ic-link"></i> GitHub</a></span>
+                    </div>
+                    <div class="clear"></div>
+                </aside>
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'bobobo80';
+                    var disqus_shortname = 'bobobo80';
+                    var disqus_identifier = '/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html';
+                    var disqus_url = 'https://bobobo80.com/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/2022/backend-as-a-servicebaasde-ji-ge-xiang-mu.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+
+  <script src="https://ajax.googleapis.cnpmjs.org/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'bobobo80';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
