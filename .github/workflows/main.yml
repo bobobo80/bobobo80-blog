@@ -9,17 +9,14 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Checkout submodules
-      uses: srt32/git-actions@v0.0.3
-      with:
-        args: git submodule update --init --recursive
-    - uses: nelsonjchen/gh-pages-pelican-action@0.1.10
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        PELICAN_CONFIG_FILE: publishconf.py
-        GH_PAGES_CNAME: bobobo80.com
+      - uses: actions/checkout@v2
+        with:
+          submodules: "true"
+      - uses: bobobo80/pelican-to-github-pages@v1.1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          PELICAN_CONFIG_FILE: publishconf.py
+          GH_PAGES_CNAME: bobobo80.com
