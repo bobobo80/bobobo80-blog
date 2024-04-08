@@ -56,7 +56,7 @@ LINKS = ()
 SOCIAL = (('github', 'https://github.com/bobobo80'),
           )
 
-AUTHORS_BIO = {
+AUTHOR_META = {
     "bobobo80": {
         "name": "bobobo80",
         "image": "images/avatar.png",
