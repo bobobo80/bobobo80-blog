@@ -24,4 +24,7 @@ DELETE_OUTPUT_DIRECTORY = True
 GOOGLE_ANALYTICS = 'G-NVEBH5JMJB'
 
 # Disqus
-DISQUS_SITENAME = 'bobobo80'
+# DISQUS_SITENAME = 'bobobo80'
+
+# SSSC
+SSSC_HOST = 'comment.bobobo80.com'
