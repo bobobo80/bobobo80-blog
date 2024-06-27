@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>ubuntu使用小技巧汇总</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="https://bobobo80.com/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html" rel="canonical" />
+  <!-- Feed -->
+  <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="On the wing 展翼 Full Atom Feed" />
+  <link href="https://bobobo80.com/feeds/2009.atom.xml" type="application/atom+xml"
+    rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = 'https://bobobo80.com';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="单独从ubuntu 8.04配置指南提炼出来，便于日后维护。 首先来几个链接，很重要，很有帮助。 ubuntu论坛：http://forum.ubuntu.org.cn/...">
+
+    <meta name="author" content="bobobo80">
+
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="On the wing 展翼"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="ubuntu使用小技巧汇总"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="单独从ubuntu 8.04配置指南提炼出来，便于日后维护。 首先来几个链接，很重要，很有帮助。 ubuntu论坛：http://forum.ubuntu.org.cn/..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://bobobo80.com/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2009-01-26 00:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="2009"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://bobobo80.com/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "ubuntu使用小技巧汇总",
+  "headline": "ubuntu使用小技巧汇总",
+  "datePublished": "2009-01-26 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html",
+  "description": "单独从ubuntu 8.04配置指南提炼出来，便于日后维护。 首先来几个链接，很重要，很有帮助。 ubuntu论坛：http://forum.ubuntu.org.cn/..."
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+    <li class="nav-github"><a aria-label="Github" href="https://github.com/bobobo80" target="_blank"><i class="icon icon-github" aria-hidden="true"></i>
+    <span>github</span>
+    </a></li>
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">2009</span>
+        </span>
+        <h1 class="post-title">ubuntu使用小技巧汇总</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="https://bobobo80.com/author/bobobo80.html">
+                <img class="author-profile-image" src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            bobobo80
+          </h4>
+          <time datetime="Mon 26 January 2009">Mon 26 January 2009</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p>单独从<a href="http://hi.baidu.com/bobobo80/blog/item/f094710920744aca3bc7639d.html">ubuntu 8.04配置指南</a>提炼出来，便于日后维护。<br>
+首先来几个链接，很重要，很有帮助。  </p>
+<p>ubuntu论坛：<a href="http://forum.ubuntu.org.cn/">http://forum.ubuntu.org.cn/</a>  </p>
+<p>wiki：<a href="http://wiki.ubuntu.org.cn/index.php?title=%E9%A6%96%E9%A1%B5&amp;variant=zh-cn">http://wiki.ubuntu.org.cn/index.php?title=%E9%A6%96%E9%A1%B5&amp;variant=zh-cn</a>  </p>
+<p><a href="http://wiki.ubuntu.org.cn/index.php?title=UbuntuSkills&amp;variant=zh-cn">wikiubuntu使用技巧</a>  </p>
+<p>一些小问题的解决。四处摘抄，有的没有写出处，请作者谅解。  </p>
+<p>1，永中office在特效下正常</p>
+<p>显示的方法</p>
+<p>/usr/bin/eio<br>
+第一行下面加这么一行:<br>
+export AWT_TOOLKIT=MToolkit  </p>
+<p>2，pidgin使用飞信<br>
+http://www.linuxsir.org/bbs/thread320802.html  </p>
+<p>现在有了libfetion。google搜一下即可，我的博客也有链接。  </p>
+<p>3，防火墙。<br>
+推荐一款防火墙:firestarter<br>
+这防火墙可以从 apt 获得,如果在安装后出现启动问题,如显示你的 eth0 设备无法启动,<br>
+请按以下方法配置:<br>
+sudo gedit /etc/firestarter/firestarter.sh<br>
+把以下内容:<br>
+IP=`/sbin/ifconfig $IF | grep inet | cut -d : -f 2 | cut -d -f 1`<br>
+MASK=`/sbin/ifconfig $IF | grep Mas | cut -d : -f 4`<br>
+BCAST=`/sbin/ifconfig $IF |grep Bcast: | cut -d : -f 3 | cut -d -f 1`<br>
+改为:<br>
+IP=`/sbin/ifconfig $IF | grep inet | cut -d : -f 2 | cut -d -f 1`<br>
+MASK=`/sbin/ifconfig $IF | grep 掩码: | cut -d : -f 4`<br>
+BCAST=`/sbin/ifconfig $IF |grep 广播: | cut -d : -f 3 | cut -d -f 1`<br>
+保存文件后:<br>
+sudo firestarter 就能顺利启动防火墙<br>
+最后把系统-系统管理里面的防火墙图标落到菜单栏上,就可以随时方便的启动防火墙了<br>
+http://wiki.ubuntu.org.cn/AQuickTutorialForFirestarter  </p>
+<p>4，rar解压<br>
+sudo apt-get install rar unrar  </p>
+<p>5．迅雷<br>
+下载国际版迅雷，wine直接安装即可。<br>
+http://www.gigaget.com/download.htm  </p>
+<p>6，sopcast<br>
+sopcast有gtk版的，网上可以找到deb包，双击安装即可。频道改成http://channel.sopcast.com/gchlxml<br>
+player设置：mplayer -ontop -geometry 100%:100%  </p>
+<p>7，飞鸽传书<br>
+原帖http://forum.ubuntu.org.cn/viewtopic.php?t=94821  </p>
+<p>java版飞鸽，需要就java环境。<br>
+终端运行javaws http://www.crimsonlogictj.com/webstart/messager.jnlp<br>
+等待下载使用，以后可以离线使用。javaws -offline http://www.crimsonlogictj.com/webstart/messager.jnlp<br>
+创建一个启动器就可以了。windows下同样适用。  </p>
+<p>另有qt写的飞鸽，功能齐全。<a href="http://code.google.com/p/qipmsg/downloads/list">http://code.google.com/p/qipmsg/downloads/list</a>  </p>
+<p>8，fitx输入法，基于scim－python，相当好用。<br>
+<a href="http://code.google.com/p/fitx/downloads/list">http://code.google.com/p/fitx/downloads/list</a>  </p>
+<p>9，为qq for linux创建快捷方式<br>
+我用的tg的包，所以没有快捷方式。自己做个脚本就可以了。  </p>
+<h1>! /bin/bash</h1>
+<p>cd ./program/qq（这要看qq文件夹的具体位置）<br>
+./QQ &amp;<br>
+之后改一下权限，sudo chmod +x qq  </p>
+<p>10,简单好用的编程环境geany<br>
+sudo apt-get install geany  </p>
+<p>11,安装ie for linux<br>
+http://www.tatanka.com.br/  </p>
+<p>12,adsl拨号<br>
+请看<a href="../../bobobo80/blog/item/1e25b6ec30b30c3b2697919e.html">ubuntu如何拨号上网</a>http://hi.baidu.com/bobobo80/blog/item/1e25b6ec30b30c3b2697919e.html  </p>
+<p>13，校内通在pidgin上的使用<br>
+1，帐户－－管理－－添加，选择xmpp。<br>
+2、打开校内网的个人主页，把浏览器地址栏里显示的<a href="http://xiaonei.com/getuser.do?id=XXXXXXXXX" title="http://xiaonei.com/getuser.do?id=XXXXXXXXX">http://xiaonei.com/getuser.do?id=XXXXXXXXX</a> 中最后的那堆很像QQ号的数字填入“屏幕名称“(新版pidgin已经改名为用户名了）<br>
+3、填写域：www.xiaonei.com<br>
+4、填写密码（校内网的密码）（推荐勾上“记住密码”）<br>
+5、本地别名任选一个<br>
+6、“高级”选项卡中“连接服务器”填写：talk.xiaonei.com<br>
+7、其他的保持不动。<br>
+8、工具－－首选项－－状态，去掉发獃时更改状态选项前面的对勾，防止pidgin修改校内状态。  </p>
+<p>14.重装xp后如果恢复ubuntu，安装grub。<br>
+进入live cd<br>
+打开终端。<br>
+输入<br>
+      sudo grub<br>
+      find /boot/grub/stage1<br>
+      root (hda,b)               (a,b是上一步find的返回值）<br>
+      setup (hda)<br>
+      quit<br>
+ok.这就安上了grub，可以都个系统启动了。  </p>
+<p>15amule与firefox关联<br>
+在firefox地址栏中输入about:config ，<br>
+新建一个（布尔）Boolean,名字为 network.protocol-handler.external.ed2k，值为true<br>
+新建一个（字符串）String，名字为 network.protocol-handler.app.ed2k，值为/usr/bin/ed2k<br>
+重启firefox，要开着amule，点一个链接，自己再新编/usr/bin/ed2k链，amule就在自己下了，还没有乱码。  </p>
+<p>16 flash乱码  </p>
+<p>在终端里输入sudo gedit /etc/fonts/conf.d/49-sansserif.conf然后回车</p>
+<p>将倒数第四行 <string>sans-serif</string> 改为 <string>文泉驿正黑</string></p>
+<p>保存即可，重启firefox，flash乱码解决了。</p>
+<p>17网络电台</p>
+<p><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=74&amp;t=179488">http://forum.ubuntu.org.cn/viewtopic.php?f=74&amp;t=179488</a></p>
+<p>感谢提供的播放列表。</p>
+<p>18 qcad的汉化</p>
+<p><a href="http://forum.ubuntu.org.cn/viewtopic.php?f=35&amp;t=12193">http://forum.ubuntu.org.cn/viewtopic.php?f=35&amp;t=12193</a></p>
+<p>感谢这位的汉化</p>
+<p>19 mp3标签乱码问题</p>
+<p>请看wiki <a href="http://wiki.ubuntu.org.cn/index.php?title=%E8%A7%A3%E5%86%B3%E6%96%87%E4%BB%B6%E5%90%8Dmp3%E6%A0%87%E7%AD%BE%E5%92%8C%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E7%9A%84%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98&amp;variant=zh-cn">http://wiki.ubuntu.org.cn/index.php?title=%E8%A7%A3%E5%86%B3%E6%96%87%E4%BB%B6%E5%90%8Dmp3%E6%A0%87%E7%AD%BE%E5%92%8C%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E7%9A%84%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98&amp;variant=zh-cn</a></p>
+<p>（那个小k下不了，谁能解决一下？）</p>
+<p>20 amarok歌词插件</p>
+<p>感谢三翻领的贡献 <a href="http://www.kde-apps.org/content/show.php/lrcShow-II?content=71983&amp;PHPSESSID=64d307b18de7bc4a387b8828bbf5fe29">http://www.kde-apps.org/content/show.php/lrcShow-II?content=71983&amp;PHPSESSID=64d307b18de7bc4a387b8828bbf5fe29</a></p>
+<p><a href="http://www.sanfanling.cn/read.php?206">http://www.sanfanling.cn/read.php?206</a></p>
+<p>21 vista下恢复wubi安装的ubuntu终于成功了！wubildr,wubildr.mb</p>
+<p>1.下载grub4dos，解压后将grldr和grldr.mbr复制到C盘根目录下。也可用wubildr,wubildr.mbr</p>
+<p>2.用bcdedit添加新项目（以管理员身份运行）</p>
+<p>bcdedit /create /d "GRUB" /application bootsector</p>
+<p>此时生成一个{id}</p>
+<p>bcdedit /set {id} device partition=C:</p>
+<p>bcdedit /set {id} path grldr.mbr 或 bcdedit /set {id} path wubildr.mbr</p>
+<p>bcdedit /displayorder {id} /addlast</p>
+<p>3.从wubi安装Ubuntu的分区中(比如D:),则将D:ubuntuwinbootmenu.lst这个文件复制到C盘根目录 下。（无意中发现了这个文件）</p>
+<p>4.重启系统，进入GRUB，OK了！</p>
+          </section>
+
+
+          <section class="post-footer" >
+            <div class="post-share">
+              <span class="post-info-label">Share</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=ubuntu使用小技巧汇总&amp;url=https://bobobo80.com/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://bobobo80.com/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html&amp;title=ubuntu使用小技巧汇总" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=ubuntu使用小技巧汇总&amp;body=https://bobobo80.com/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <div id="sssc-iframe-container"
+            data-host="https://comment.bobobo80.com"
+            data-slug="/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html"
+            data-url="https://bobobo80.com/2009/ubuntushi-yong-xiao-ji-qiao-hui-zong.html"
+            data-title="ubuntu使用小技巧汇总">
+          </div>
+          <script async src="https://comment.bobobo80.com/dist/js/sssc.js"></script>
+
+          <aside class="post-nav">
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">On the wing 展翼 &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>

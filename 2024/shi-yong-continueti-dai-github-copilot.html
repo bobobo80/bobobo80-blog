@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>使用continue替代github copilot</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="https://bobobo80.com/2024/shi-yong-continueti-dai-github-copilot.html" rel="canonical" />
+  <!-- Feed -->
+  <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="On the wing 展翼 Full Atom Feed" />
+  <link href="https://bobobo80.com/feeds/tech.atom.xml" type="application/atom+xml"
+    rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = 'https://bobobo80.com';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="来了，又要发新一篇博客了。这次来讲一下最近使用continue.dev替代github copilot的使用感受。 背景 本来我是订阅的github copilot，每月10刀。虽然我的 …">
+
+    <meta name="author" content="bobobo80">
+
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="On the wing 展翼"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="使用continue替代github copilot"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="来了，又要发新一篇博客了。这次来讲一下最近使用continue.dev替代github copilot的使用感受。 背景 本来我是订阅的github copilot，每月10刀。虽然我的 …"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://bobobo80.com/2024/shi-yong-continueti-dai-github-copilot.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2024-06-07 00:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="Tech"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://bobobo80.com/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "使用continue替代github copilot",
+  "headline": "使用continue替代github copilot",
+  "datePublished": "2024-06-07 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2024/shi-yong-continueti-dai-github-copilot.html",
+  "description": "来了，又要发新一篇博客了。这次来讲一下最近使用continue.dev替代github copilot的使用感受。 背景 本来我是订阅的github copilot，每月10刀。虽然我的 …"
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+    <li class="nav-github"><a aria-label="Github" href="https://github.com/bobobo80" target="_blank"><i class="icon icon-github" aria-hidden="true"></i>
+    <span>github</span>
+    </a></li>
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">Tech</span>
+        </span>
+        <h1 class="post-title">使用continue替代github copilot</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="https://bobobo80.com/author/bobobo80.html">
+                <img class="author-profile-image" src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            bobobo80
+          </h4>
+          <time datetime="Fri 07 June 2024">Fri 07 June 2024</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p>来了，又要发新一篇博客了。这次来讲一下最近使用<a href="https://www.continue.dev">continue.dev</a>替代<a href="https://github.com/features/copilot">github copilot</a>的使用感受。</p>
+<h1>背景</h1>
+<p>本来我是订阅的github copilot，每月10刀。虽然我的使用频率很低，不过我觉得还物有所值。不过因为其他一些原因，我还要使用另一个github账号，所以就导致另一个账号无法使用copilot，再买一份就有点贵了。于是我看了一下使用其他插件是不是也能达到相同的效果。</p>
+<h1>试用</h1>
+<p>我试了这么几款vs code插件和使用ai llm来进行代码补全和问答的插件。
+- <a href="https://www.continue.dev">continue.dev</a>
+- <a href="https://tabby.tabbyml.com">TabbyML</a>
+- <a href="https://github.com/rjmacarthy/twinny">twinny</a>
+- <a href="https://github.com/srikanth235/privy">privy</a></p>
+<p>这几个应该是开源的支持自定义api的代码补全和问答的插件。这里面privy是主打本地模型，不联网。而Tabby是团队自部署模型服务，还带一个后台管理系统。twinny看文档，其目的也是主要用于连接自建ollama模型，provider里都没有openai，不过支持litellm，可以间接转发。</p>
+<p>所以基本只剩下一家continue了。continue可以说是一个高度自定义的插件了，即可接入外部云服务的ai接口，也支持ollama或类似本地或内部网络的llm api。不过目前代码补全部分还是beta阶段。</p>
+<p>另外还有一些插件，比如b站上说的比较多的codegpt，也是支持本地和线上服务。但是是闭源的，就没有试用。</p>
+<h1>本地ollama</h1>
+<p>因为我的电脑配置很差，所以我使用公司的电脑也测试了一下本地<a href="https://ollama.com">ollama</a>的效果，但是公司的MBP2019配置也好不到哪去，所以效果也不是很好。使用6.7b的<a href="https://ollama.com/library/deepseek-coder:6.7b">deepseek coder instruct</a>回答代码问题，要4-5分钟。更崩溃的是使用1b的<a href="https://ollama.com/library/starcoder">starcoder</a>做代码补全，初始速度是10-20s。然后代码敲起来之后多并发会慢到4，5分钟才出结果，根本无法使用。</p>
+<h1>continue使用情况</h1>
+<p>基本上所有插件都是分两个接口，一个是问答的，一个补全代码的，continue也一样。这是因为<a href="https://docs.continue.dev/walkthroughs/tab-autocomplete#i-want-better-completions-should-i-use-gpt-4">常规的llm没有对代码补全这种形式做微调，可能效果并不好</a>，所以会单独设置一个给代码补全的专门的模型。
+问答型可以有多种模式，比如chatgpt式的问，或者嵌套一个模版，来重构代码，写测试，修改等。而代码补全就和最早的copilot一样，在敲代码停顿时会显示灰色的ai生成代码，如果确认接受这些自动补全，那么按tab填写了这些代码了。目前continue还是偏重问答式，如果是类似cursor那种框选然后让ai不断生成修改的方式编程的话，continue支持的不错，比如选中你需要修改的那一段代码，然后出发edit问答，向ai说出你的要求，在收到ai的回答后，continue会diff显示ai结果和当前的区别，像处理merge conflicts一样，你可以一段一段的选择accept current还是incoming。极端的情况就是你可以不断地问和下指令，不断修改和填充，就像人写代码一样，只不过换成了ai。另外，continue也支持提供一些上下文来作为问答的上下文（有点绕），比如提供某个代码文件，整个工程（在copilot里是workspace），文档等，这样不光你的问题是prompt，插件也会讲与问题相关的代码，文档一起提供给模型参考。这里面为了提供更贴切的上下文，continue会对项目代码做索引，就是先embedding本地代码，然后提交时，会搜索相关度高的部分作为上下文。所以这里会有后台任务一直在索引代码变更，我在公司电脑试用时发现会导致卡顿，可能是公司项目太大了，同时总是切换分支（切换分支会导致开新的索引），配置差应该也是一个原因。个人的小项目没有感觉到卡顿。
+代码补全我觉得一方面和copilot差不多，都是在使用第三方库时，补全的内容可能离预期差很多，感觉上下文的处理不是很好。另外请求量挺大的，不是很清楚触发机制。按插件的统计，token的使用，自动补全占大头。</p>
+<h1>模型</h1>
+<p>模型也是分成问答和代码补全两部分。</p>
+<h2>代码补全模型</h2>
+<p>代码补全相对特殊，常规模型可能没有良好的适配训练，工作的并不是很好。大家比较常用的是<a href="https://ollama.com/library/starcoder2">starcoder</a>，<a href="https://ollama.com/library/deepseek-coder">deepseek-coder-base</a>，<a href="https://ollama.com/library/codellama">codellama</a>，以及新发布的<a href="https://mistral.ai/news/codestral/">codestral</a>，另外好像<a href="https://ollama.com/library/codeqwen">codeqwen-base</a>也是适用的。这些应该都是开源模型，可以本地运行，也可以使用在线服务商的，不过很多服务商是没有这些模型的serverless服务的，得找找，自己部署就不合算了。根据continue的推荐，我用过<a href="https://fireworks.ai">fireworks.ai</a>的starcoder 7b，速度很快，很流畅，价格是0.2刀输入输出每百万token，是很便宜了，即使补全消耗的比较大，消耗的也是比较慢的。deepseek官方注册给的credit太少，只试了两句问答就没了，另外官方只有chat和coder两种模型，你也不知道他是base模型还是instruct模型。然后还有赛博菩萨<a href="https://developers.cloudflare.com/workers-ai/models/deepseek-coder-6.7b-base-awq/">cloudflare worker ai的deepseek-coder-base 6.7b</a>，因为有每日免费额度，当前这个模型还在beta，免费！不过我在使用中会总出现多返回了<end of sentence>还没有查是什么原因。另外还有，codestral是mistral新出的特别给代码微调的模型大小是22b，我没有注册mistral，还没有试用，价格是1刀输入3刀输出每百万token，是fireworks starcoder的5倍多了。我没有配置高的电脑，从其他人的反馈看，本地运行小尺寸的模型应该问题也不大，本地运行3b或1b的starcoder或deepseek应该都不错。后面随着npu推广，本地运行这些小模型都会非常流畅了。</p>
+<h2>问答模型</h2>
+<p>问答模型就可以使用各种常规模型了，选择非常多。比如御三家openai或gemini，或claud的模型，从评测上看gpt-4依然是最好的？不过好像对于复杂问题，claud opus的风评最好。低价的选择有<a href="https://www.together.ai">together.ai</a>的deepseek-coder-33b和phind-34b，之前的codestral也可以。免费的选择有<a href="https://groq.com">groq</a>，有限量的llama3-70b，是比较适合代码问答的，而且巨快。然后cloudflare只有<a href="https://developers.cloudflare.com/workers-ai/models/deepseek-coder-6.7b-instruct-awq/">6.7b的deepseek-coder-instruct</a>，模型大小小了点，准确性差一点。</p>
+<h2>embeddings模型</h2>
+<p>其实还有第三种模型（貌似现在有第四种rerank）embeddings模型。就是使用什么模型来计算代码的向量，这决定了是否能够提供更相似的上下文给问答或补全模型。现在continue有三种选项，transformers.js是本地计算；nomic-embed-text是通过ollama；voyage-code-2是云端付费商业模型。我只使用了本地transformers模型，就先不做评价了。</p>
+<h1>未来</h1>
+<p>这两天高通，amd，intel都上市或发布了高TOPS npu的cpu产品，未来本地算力会越来越高。像代码补全和embeddings这类模型本地运行应该会非常普遍了。我也该考虑更新一下我的电脑了。</p>
+          </section>
+
+
+          <section class="post-footer" >
+            <div class="post-share">
+              <span class="post-info-label">Share</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=使用continue替代github copilot&amp;url=https://bobobo80.com/2024/shi-yong-continueti-dai-github-copilot.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2024/shi-yong-continueti-dai-github-copilot.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://bobobo80.com/2024/shi-yong-continueti-dai-github-copilot.html&amp;title=使用continue替代github copilot" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=使用continue替代github copilot&amp;body=https://bobobo80.com/2024/shi-yong-continueti-dai-github-copilot.html">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <div id="sssc-iframe-container"
+            data-host="https://comment.bobobo80.com"
+            data-slug="/2024/shi-yong-continueti-dai-github-copilot.html"
+            data-url="https://bobobo80.com/2024/shi-yong-continueti-dai-github-copilot.html"
+            data-title="使用continue替代github copilot">
+          </div>
+          <script async src="https://comment.bobobo80.com/dist/js/sssc.js"></script>
+
+          <aside class="post-nav">
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">On the wing 展翼 &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>

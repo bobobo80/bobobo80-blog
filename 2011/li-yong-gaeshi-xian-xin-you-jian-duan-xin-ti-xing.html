@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>利用GAE实现新邮件短信提醒</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="https://bobobo80.com/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html" rel="canonical" />
+  <!-- Feed -->
+  <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="On the wing 展翼 Full Atom Feed" />
+  <link href="https://bobobo80.com/feeds/2011.atom.xml" type="application/atom+xml"
+    rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = 'https://bobobo80.com';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="由于gmail好像没有短信提醒功能，而139，qq，163什么的邮箱就有这个功能。所以可以用邮件自动转发实现短信提醒。 但是，由于众所周知的原因，我们往往不想将我们的邮件转给疼 …">
+
+    <meta name="author" content="bobobo80">
+
+    <meta name="tags" content="gae">
+    <meta name="tags" content="mail">
+    <meta name="tags" content="python">
+    <meta name="tags" content="短信提醒">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="On the wing 展翼"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="利用GAE实现新邮件短信提醒"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="由于gmail好像没有短信提醒功能，而139，qq，163什么的邮箱就有这个功能。所以可以用邮件自动转发实现短信提醒。 但是，由于众所周知的原因，我们往往不想将我们的邮件转给疼 …"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://bobobo80.com/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2011-02-16 00:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="2011"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="gae"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="mail"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="python"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="短信提醒"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://bobobo80.com/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "利用GAE实现新邮件短信提醒",
+  "headline": "利用GAE实现新邮件短信提醒",
+  "datePublished": "2011-02-16 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html",
+  "description": "由于gmail好像没有短信提醒功能，而139，qq，163什么的邮箱就有这个功能。所以可以用邮件自动转发实现短信提醒。 但是，由于众所周知的原因，我们往往不想将我们的邮件转给疼 …"
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+    <li class="nav-github"><a aria-label="Github" href="https://github.com/bobobo80" target="_blank"><i class="icon icon-github" aria-hidden="true"></i>
+    <span>github</span>
+    </a></li>
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">2011</span>
+        </span>
+        <h1 class="post-title">利用GAE实现新邮件短信提醒</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="https://bobobo80.com/author/bobobo80.html">
+                <img class="author-profile-image" src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            bobobo80
+          </h4>
+          <time datetime="Wed 16 February 2011">Wed 16 February 2011</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p>由于gmail好像没有短信提醒功能，而139，qq，163什么的邮箱就有这个功能。所以可以用邮件自动转发实现短信提醒。</p>
+<p>但是，由于众所周知的原因，我们往往不想将我们的邮件转给疼讯，移动等看，所以，可以利用GAE（google app engine）来实现提醒转发。即将gmail的邮件转发给gae的，然后gae收到新邮件通知，然后发送一封通知邮件给支持短信提醒的邮箱。这样gmail有新邮件时，短信提醒也能第一时间收到，同时gmail邮件不会被转发到疼讯手中。（当前已经有人应用gmail-gae-google calendar的方法同样实现的短信提醒，<a href="http://donotdot.cn/project/mail2sms">http://donotdot.cn/project/mail2sms</a>），应用GAE收发邮件的api，只需要几行代码就可以了。</p>
+<p>如果配合手机上能拦截固定号码短信，然后到邮箱收取信件的客户端，那么就还能实现伪pushmail。</p>
+<p>下面说说实现方法</p>
+<p><a href="http://appengine.google.com/" title="Google App Engine注册">1，http://appengine.google.com/</a>注册个gae，第一次需要手机号，这个不多说了，不知道的google一下。</p>
+<p>2，下载文件，<a href="http://forwardnoticemail.googlecode.com/files/forwardnoticemail-0.1.zip">http://forwardnoticemail.googlecode.com/files/forwardnoticemail-0.1.zip</a>，可以看出，只有50多行代码，有用的就那么几行。修改app.yaml的appid为自己注册的那个id，修改sendmail.py里的appid和SendNoticeMail的信息，SendNoticeMail是有短信提醒的那个邮箱地址。</p>
+<p>3，上传，一般还是要用SDK上传的，网上的什么上传工具没用过。SDK下载页面：<a href="http://code.google.com/intl/zh-CN/appengine/downloads.html">http://code.google.com/intl/zh-CN/appengine/downloads.html</a></p>
+<p>4，设置gmail或你需要有提醒的邮箱，转发到send@appid.appspotmail.com这个邮箱，gmail的话会有确认邮件，到短信提醒的那个邮箱查看，恩，应该已经有的那封确认邮件了。确认就可以了。</p>
+<p>5，至于短信提醒怎么设置，具体邮箱可能还都不太一样，遇到问题google之。我用的是qq的企业邮箱的短信提醒。</p>
+<p>前面注册，上传什么可以参考gappproxy等教程。</p>
+<p>update：软件更新至0.3版。下载地址是：<a href="http://forwardnoticemail.googlecode.com/files/forwardnoticemail-0.3.zip">http://forwardnoticemail.googlecode.com/files/forwardnoticemail-0.3.zip</a></p>
+<p>update：软件更新至0.4版<a href="http://bobobo80.com/19237">http://bobobo80.com/19237</a>。使用新版本api，使用python2.7以适应threadsafe要求，适应High Replication要求。所以需要重新建立新的app，将老的Master/Slave储存方式去掉，不然无法上传成功。下载地址是：<a href="http://forwardnoticemail.googlecode.com/files/forwardnoticemail-0.4.zip">http://forwardnoticemail.googlecode.com/files/forwardnoticemail-0.4.zip</a></p>
+          </section>
+
+
+          <section class="post-footer" >
+            <div class="post-share">
+              <span class="post-info-label">Share</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=利用GAE实现新邮件短信提醒&amp;url=https://bobobo80.com/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://bobobo80.com/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html&amp;title=利用GAE实现新邮件短信提醒" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=利用GAE实现新邮件短信提醒&amp;body=https://bobobo80.com/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+            <aside class="post-tags">
+<a href="https://bobobo80.com/tag/gae.html">gae</a><a href="https://bobobo80.com/tag/mail.html">mail</a><a href="https://bobobo80.com/tag/python.html">python</a><a href="https://bobobo80.com/tag/duan-xin-ti-xing.html">短信提醒</a>            </aside>
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <div id="sssc-iframe-container"
+            data-host="https://comment.bobobo80.com"
+            data-slug="/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html"
+            data-url="https://bobobo80.com/2011/li-yong-gaeshi-xian-xin-you-jian-duan-xin-ti-xing.html"
+            data-title="利用GAE实现新邮件短信提醒">
+          </div>
+          <script async src="https://comment.bobobo80.com/dist/js/sssc.js"></script>
+
+          <aside class="post-nav">
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">On the wing 展翼 &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>

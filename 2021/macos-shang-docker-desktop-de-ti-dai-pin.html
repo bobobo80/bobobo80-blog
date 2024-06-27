@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>MacOS 上 docker desktop 的替代品</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html" rel="canonical" />
+  <!-- Feed -->
+  <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="On the wing 展翼 Full Atom Feed" />
+  <link href="https://bobobo80.com/feeds/tech.atom.xml" type="application/atom+xml"
+    rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = 'https://bobobo80.com';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="最近，也不算太近，docker desktop 宣布要改变授权，对于商业用途且具有一定的规模的话，明年就要开始收费了。很多公司都是使用 mac …">
+
+    <meta name="author" content="bobobo80">
+
+    <meta name="tags" content="docker">
+    <meta name="tags" content="portainer">
+    <meta name="tags" content="lima">
+    <meta name="tags" content="podman">
+    <meta name="tags" content="macos">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="On the wing 展翼"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="MacOS 上 docker desktop 的替代品"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="最近，也不算太近，docker desktop 宣布要改变授权，对于商业用途且具有一定的规模的话，明年就要开始收费了。很多公司都是使用 mac …"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2021-10-25 00:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="Tech"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="docker"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="portainer"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="lima"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="podman"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="macos"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://bobobo80.com/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "MacOS 上 docker desktop 的替代品",
+  "headline": "MacOS 上 docker desktop 的替代品",
+  "datePublished": "2021-10-25 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html",
+  "description": "最近，也不算太近，docker desktop 宣布要改变授权，对于商业用途且具有一定的规模的话，明年就要开始收费了。很多公司都是使用 mac …"
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+    <li class="nav-github"><a aria-label="Github" href="https://github.com/bobobo80" target="_blank"><i class="icon icon-github" aria-hidden="true"></i>
+    <span>github</span>
+    </a></li>
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">Tech</span>
+        </span>
+        <h1 class="post-title">MacOS 上 docker desktop 的替代品</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="https://bobobo80.com/author/bobobo80.html">
+                <img class="author-profile-image" src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            bobobo80
+          </h4>
+          <time datetime="Mon 25 October 2021">Mon 25 October 2021</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p>最近，也不算太近，docker desktop 宣布要改变授权，对于商业用途且具有一定的规模的话，明年就要开始收费了。很多公司都是使用 mac 作为开发电脑的，虽然对于大公司的话应该也会管这个 docker 费用的，但是我还是在 mac 上试用了其他的两个替代方案，折腾了一下。</p>
+<h2>lima</h2>
+<p>在 docker 要收费的消息出来不久，就有一篇<a href="https://medium.com/nttlabs/containerd-and-lima-39e0b64d2a59">ntt 写的文章介绍 lima</a>。另外还有中文的翻译稿。搜索引擎搜索的排名也很高。我也就尝试安装了 lima。安装非常简单，brew 一条命令就安装上了，</p>
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>lima
+</code></pre></div>
+
+<p>安装好之后要用 lima 创建一个虚拟机，可以先使用 default 配置，命令如下</p>
+<div class="highlight"><pre><span></span><code>limactl<span class="w"> </span>start
+</code></pre></div>
+
+<p>这个时间会稍微有点长，然后虚拟机就创建好了。然后就可以使用了，基本就是使用 lima nerdctl 来代替 docker，使用 docker 的各种 run，pull，images 什么的，比如</p>
+<div class="highlight"><pre><span></span><code>lima<span class="w"> </span>nerdctl<span class="w"> </span>ps<span class="w"> </span>--all
+</code></pre></div>
+
+<p>这里 lima 其实是创建了一个 linux 虚拟机，在 Mac 的任务管理器里，能看到一个 qemu 的检查，那个就是虚拟机了。</p>
+<h3>坑</h3>
+<p>这里注意一个问题是，那个 ntt 的文章里后面还写了 GUI，rancher desktop。但是实际上，这个 rancher 和 brew 安装的 lima 是分离的，不在一起。在安装和启动 rancher desktop 后，rancher 会在再创建一个虚拟机，给你安装 nerdctl 和 k3s 的环境，实际上 rancher desktop 是用 lima 再建一个虚拟机，并提供另一套 nerdctl 和 k3s 环境。rancher desktop 启动后，在命令行输入的 nerdctl 是 rancher 的 nerdctl，而用 lima nerdctl 是自己安装 lima 的 nerdctl。而且 rancher desktop 提供的功能和 docker desktop 也不太一样。只提供了 k8s 的版本，images，和系统资源占用的配置。docker 里的 container dashboard 是没有的。</p>
+<h2>podman</h2>
+<p>lima 的方案相当于是 lima 虚拟机+containerd 的方案。还有另一个方案现在在 Mac 上也可以运行了，那就是 podman。可以参考(podman 的文档进行安装和设置)[https://podman.io/getting-started/installation]。</p>
+<div class="highlight"><pre><span></span><code>brew<span class="w"> </span>install<span class="w"> </span>podman
+</code></pre></div>
+
+<p>安装好后，用 podman machine 命令创建和启动虚拟机就可以了</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>machine<span class="w"> </span>init
+podman<span class="w"> </span>machine<span class="w"> </span>start
+</code></pre></div>
+
+<p>之后，就是使用 podman 命令代替 docker 了。</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>ps<span class="w"> </span>--all
+</code></pre></div>
+
+<p>有个(podman 的 GUI 工具)[https://github.com/heyvito/podman-macos]，可以显示当前的 containers，但是我试用了下，会导致 cpu 使用率高，不知道是什么原因。不过之前提到的 portainer 是支持 podman 的，可以用 portainer 来管理 posman。这里注意 docker run 里需要加上 privileged 参数，同时 docker.sock 对应的 volume 也变成了 podman.sock。这样就能用本地的 9000 端口（或者换成自己需要的端口）来管理 docker 了。</p>
+<div class="highlight"><pre><span></span><code>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">9000</span>:9000<span class="w"> </span>--privileged<span class="w"> </span>--name<span class="o">=</span>portainer<span class="w"> </span>--restart<span class="o">=</span>always<span class="w"> </span>-v<span class="w"> </span>/run/user/1000/podman/podman.sock:/var/run/docker.sock<span class="w"> </span>-v<span class="w"> </span>portainer_data:/data<span class="w"> </span>portainer/portainer-ce
+</code></pre></div>
+
+<p>两个工具都是先起一个 linux 虚拟机，lima 是 ubuntu，podman 是 fedora（podman 背后是 redhat 出的）。然后各自在其虚拟机开始 containerd 和 podman 环境来替代 docker。</p>
+<h2>后续</h2>
+<p>由于公司的项目中有用到用旧版本来编译 protobuf 文件，所以使用 docker 来创建就版本 protoc 环境就比较方便了，因为还有新项目用新版本 protoc，使用 docker 的不同镜像可以分离不同的环境。这时 podman 这个工具就不行了，因为 podman 在 mac 下还不支持挂载 mac 下的目录，就是说 podman 的容器读取不到 mac 的文件，所以，无法像 docker 一样，用容器的运行环境，读取宿主机的 protobuf 文件，然后生成对应的比如 pb.go 文件到宿主机上。而 lima 是可以的，不过在生成 pb.go 文件到宿主机这一步，需要开启一个写宿主机文件的权限。 ~/.lima/default/lima.yaml 例如如果是默认设置是这个文件，然后修改 mount 下的 write 为 true 就可以了。</p>
+          </section>
+
+
+          <section class="post-footer" >
+            <div class="post-share">
+              <span class="post-info-label">Share</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=MacOS 上 docker desktop 的替代品&amp;url=https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html&amp;title=MacOS 上 docker desktop 的替代品" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=MacOS 上 docker desktop 的替代品&amp;body=https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+            <aside class="post-tags">
+<a href="https://bobobo80.com/tag/docker.html">docker</a><a href="https://bobobo80.com/tag/portainer.html">portainer</a><a href="https://bobobo80.com/tag/lima.html">lima</a><a href="https://bobobo80.com/tag/podman.html">podman</a><a href="https://bobobo80.com/tag/macos.html">macos</a>            </aside>
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <div id="sssc-iframe-container"
+            data-host="https://comment.bobobo80.com"
+            data-slug="/2021/macos-shang-docker-desktop-de-ti-dai-pin.html"
+            data-url="https://bobobo80.com/2021/macos-shang-docker-desktop-de-ti-dai-pin.html"
+            data-title="MacOS 上 docker desktop 的替代品">
+          </div>
+          <script async src="https://comment.bobobo80.com/dist/js/sssc.js"></script>
+
+          <aside class="post-nav">
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">On the wing 展翼 &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>

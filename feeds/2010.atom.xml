@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>On the wing 展翼 - 2010</title><link href="https://bobobo80.com/" rel="alternate"></link><link href="https://bobobo80.com/feeds/2010.atom.xml" rel="self"></link><id>https://bobobo80.com/</id><updated>2010-12-18T00:00:00+08:00</updated><entry><title>简单布置了一下about.me</title><link href="https://bobobo80.com/2010/jian-dan-bu-zhi-liao-yi-xia-aboutme.html" rel="alternate"></link><published>2010-12-18T00:00:00+08:00</published><updated>2010-12-18T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-12-18:/2010/jian-dan-bu-zhi-liao-yi-xia-aboutme.html</id><content type="html">&lt;p&gt;今晚简单布置了下&lt;a href="http://about.me"&gt;about.me&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;看看我的新自我介绍，呵呵。&lt;a href="http://about.me/bobobo80"&gt;Check out my about.me profile!&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="about-me"></category></entry><entry><title>由学python编程到网络隐私安全</title><link href="https://bobobo80.com/2010/you-xue-pythonbian-cheng-dao-wang-luo-yin-si-an-quan.html" rel="alternate"></link><published>2010-12-05T00:00:00+08:00</published><updated>2010-12-05T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-12-05:/2010/you-xue-pythonbian-cheng-dao-wang-luo-yin-si-an-quan.html</id><summary type="html">&lt;p&gt;由于工作需要，要研究研究Motionbuilder的SDK，所以要学学python。我已是无数次学习新语言了，每种语言，不管是上课还是自己看书，都是学个开 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;由于工作需要，要研究研究Motionbuilder的SDK，所以要学学python。我已是无数次学习新语言了，每种语言，不管是上课还是自己看书，都是学个开头，难以深入，对于涉及到调用别的什么库阿，什么的，就看不懂了。&lt;/p&gt;
+&lt;p&gt;初学python，感觉很容易上手，对于感觉在面向对象方面，更容易让人理解。所以，我也能很快地学着自己实现点东西了。由于看了看黑莓手机，它的pushmail很有意思，可以依靠服务器不断的去读取邮箱信息，当有新邮件时，就能及时的推送到手机上。&lt;/p&gt;
+&lt;p&gt;依据这个原理，我也试着用python做了一个，应用gmailatom，调用了别人的模块读取邮箱中的未读信息，当有消息时，通过给移动的邮箱发邮件来做到及时的给手机推送消息。&lt;/p&gt;
+&lt;p&gt;这种推送服务也有其他第三方公司在做。就我目前来看，第三方还很难（oauth）在不知道用户密码的情况下来推送服务。这就有一个很严重的问题，我们的邮箱密码必然会在第三方上储存，我们是否信任第三方呢？密码给了第三方是否安全呢？这些问题用户想过吗？&lt;/p&gt;
+&lt;p&gt;网络隐私从很早就倍受关注，但现在网络环境很难说有什么隐私了。所以有些人就有了这样的想法了，“我的邮件又没什么重要的东西，谁看也无所谓”，确实，这也许是大众普遍存在的一种观念。是的，也许我们的隐私不是那么的重要，我们并不那么在乎，但是，这不代表我们的隐私就能被随意的侵犯，别人能肆意的查看我的隐私。也许我们不在乎，但是隐私应该被保护。&lt;/p&gt;
+&lt;p&gt;各种软件扫描硬盘已经是不争的事实，IT界的潜规则了。我只能说，自己的隐私，自己要注意。这是我们的权力。&lt;/p&gt;</content><category term="2010"></category><category term="gmail"></category><category term="网络隐私"></category></entry><entry><title>硅谷——美国梦的创造工厂</title><link href="https://bobobo80.com/2010/huo-gu-mei-guo-meng-de-chuang-zao-gong-han.html" rel="alternate"></link><published>2010-11-24T00:00:00+08:00</published><updated>2010-11-24T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-11-24:/2010/huo-gu-mei-guo-meng-de-chuang-zao-gong-han.html</id><summary type="html">&lt;p&gt;这些天看了记录facebook的‘social network’电影，看来关于google的《星球google，我们是怎么样被一家公司改变的》，关于拉里.埃里森的《硅谷顽童》。种种这些 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;这些天看了记录facebook的‘social network’电影，看来关于google的《星球google，我们是怎么样被一家公司改变的》，关于拉里.埃里森的《硅谷顽童》。种种这些，都是在硅谷这个在极具传奇色彩的美国中最具传奇色彩的地方，发生的一个个不可思议的创业故事。&lt;/p&gt;
+&lt;p&gt;以前看了关于apple的故事，再和这些比较比较，真是一家有一家的方法，“条条大路通罗马”，在“努力努力就成功”的美国梦的信念下，各个主角们都通过不同的方式获得的一定的成功。&lt;/p&gt;
+&lt;p&gt;这其中可能google的故事相对其他故事更为特殊了，特殊在google的两位创始人是两位博士毕业的科研人员，最开始也是致力于学术上的成就。和硅谷中众多大学没毕业的boss来说，博士生的身份反倒显得他们很另类了。所以google的故事也就和他们的故事略带区别了，科研人做出的事和这些“疯狂”的创始人做出的事是不会一样的。&lt;/p&gt;
+&lt;p&gt;然后这些公司都有其共同点，创新——别出新材的在某个领域的新产品。发展——发展才是硬道理，在80到90年代的信息化的时代，高速、疯狂的发展。个性——不管是CEO个人特点的个性还是公司的理念个性，都使它们独树一帜，别具一格。&lt;/p&gt;
+&lt;p&gt;好了，下一本书，《我是沃兹 》，关于apple的另一位创始人steve.wozniak的书，看看geek的故事。&lt;/p&gt;</content><category term="2010"></category><category term="apple"></category><category term="book"></category><category term="google"></category><category term="埃里森"></category><category term="沃兹"></category></entry><entry><title>IE6 Waining</title><link href="https://bobobo80.com/2010/ie6-waining.html" rel="alternate"></link><published>2010-11-24T00:00:00+08:00</published><updated>2010-11-24T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-11-24:/2010/ie6-waining.html</id><content type="html">&lt;p&gt;本站和宫爆鸡丁都加入了IE6警告的插件。当使用IE6浏览时，会弹出警告。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://wordpress.org/extend/plugins/shockingly-big-ie6-warning/"&gt;插件主页：http://wordpress.org/extend/plugins/shockingly-big-ie6-warning/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.incerteza.org/blog/projetos/shockingly-big-ie6-warning/"&gt;http://www.incerteza.org/blog/projetos/shockingly-big-ie6-warning/&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="ie"></category><category term="wp"></category><category term="插件"></category></entry><entry><title>博客转入yardvps账户</title><link href="https://bobobo80.com/2010/bo-ke-zhuan-ru-yardvpszhang-hu.html" rel="alternate"></link><published>2010-11-19T00:00:00+08:00</published><updated>2010-11-19T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-11-19:/2010/bo-ke-zhuan-ru-yardvpszhang-hu.html</id><content type="html">&lt;p&gt;恩，如题，vps运行转入更便宜的速度稍微快点的yardvps。 我的推广链接：&lt;a href="http://www.yardvps.com/billing/aff.php?aff=061"&gt;http://www.yardvps.com/billing/aff.php?aff=061&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="vps"></category></entry><entry><title>梦想这东西和经典一样，永远不会因为时间而褪色，反而更显珍贵</title><link href="https://bobobo80.com/2010/meng-xiang-zhe-dong-xi-he-jing-dian-yi-yang-yong-yuan-bu-hui-yin-wei-shi-jian-er-tun-se-fan-er-geng-xian-zhen-gui.html" rel="alternate"></link><published>2010-11-19T00:00:00+08:00</published><updated>2010-11-19T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-11-19:/2010/meng-xiang-zhe-dong-xi-he-jing-dian-yi-yang-yong-yuan-bu-hui-yin-wei-shi-jian-er-tun-se-fan-er-geng-xian-zhen-gui.html</id><summary type="html">&lt;p&gt;转眼之间，11度青春系列网络剧在网上流行起来。其中，《老男孩》颇受好评，感动了不少人。 由于种种原因，我今天才完整的看了《老男孩》，从故事时间来说，也许我还没 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;转眼之间，11度青春系列网络剧在网上流行起来。其中，《老男孩》颇受好评，感动了不少人。 由于种种原因，我今天才完整的看了《老男孩》，从故事时间来说，也许我还没有到那个年龄，但是，已经23+的我来说，也是颇为感动的。 同名主题曲《老男孩》更是颇为令人感动，'青春如同奔流的江河,一去不回来不及道别'&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;青春不再返，一去不复还
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="2010"></category><category term="老男孩"></category></entry><entry><title>通知</title><link href="https://bobobo80.com/2010/tong-zhi.html" rel="alternate"></link><published>2010-11-05T00:00:00+08:00</published><updated>2010-11-05T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-11-05:/2010/tong-zhi.html</id><summary type="html">&lt;p&gt;由于国内网络环境状况，我决定，给我认识的人提供网络技术支持，便于了解和接触真正的网络世界。 暂定先提供ssh帐号，未来将 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;由于国内网络环境状况，我决定，给我认识的人提供网络技术支持，便于了解和接触真正的网络世界。 暂定先提供ssh帐号，未来将提供vpn服务。&lt;/p&gt;</content><category term="2010"></category><category term="通知"></category></entry><entry><title>致广大读者的一封信</title><link href="https://bobobo80.com/2010/zhi-yan-da-du-zhe-de-yi-feng-xin.html" rel="alternate"></link><published>2010-11-03T00:00:00+08:00</published><updated>2010-11-03T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-11-03:/2010/zhi-yan-da-du-zhe-de-yi-feng-xin.html</id><summary type="html">&lt;p&gt;亲爱的读者：&lt;/p&gt;
+&lt;p&gt;当您看到这封信的时候，我们刚刚作出了一个非常艰难的决定。在mircosoft停止对IE进行垄断之前，我们决定将在使用IE访问本BLOG的停止浏览本博客内容。我们深知这样会给 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;亲爱的读者：&lt;/p&gt;
+&lt;p&gt;当您看到这封信的时候，我们刚刚作出了一个非常艰难的决定。在mircosoft停止对IE进行垄断之前，我们决定将在使用IE访问本BLOG的停止浏览本博客内容。我们深知这样会给您造成一定的不便，我们诚恳地向您致歉。盼望得到您的理解和支持。&lt;/p&gt;</content><category term="2010"></category><category term="疼讯句式"></category><category term="经典语录"></category></entry><entry><title>我也要制定个计划了</title><link href="https://bobobo80.com/2010/wo-ye-yao-zhi-ding-ge-ji-hua-liao.html" rel="alternate"></link><published>2010-11-02T00:00:00+08:00</published><updated>2010-11-02T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-11-02:/2010/wo-ye-yao-zhi-ding-ge-ji-hua-liao.html</id><summary type="html">&lt;p&gt;鉴于目前混乱的课余时间安排，无数时间花费在网上乱逛，所以，我也来仿照sheldon，制定一下每周各天都干点什么事吧。&lt;/p&gt;
+&lt;p&gt;周一，恩 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;鉴于目前混乱的课余时间安排，无数时间花费在网上乱逛，所以，我也来仿照sheldon，制定一下每周各天都干点什么事吧。&lt;/p&gt;
+&lt;p&gt;周一，恩，因为周二的课没什么，所以，周一是read night，这天晚上在进行完日常的活动之后，要读书，各种书，什么都行，最近是那本google的闲书和一本英文的论文写作辅导。&lt;/p&gt;
+&lt;p&gt;周二，恩，因为周三没什么课，周二晚上有课，那么，周二是scholar night，看些学术文章，上网找些工作相关的内容阅读，比如最近在找动作捕捉的信息。为这一周的工作做做准备，当然，今晚不是加班干活。&lt;/p&gt;
+&lt;p&gt;周三，恩，周四一般要交写作作业，所以周三完一般都在补作业，所以，周三是IT night，在写完作业后折腾一下代码，维护一下几个网站，转换一下思维，恩，就是这样，挺好。&lt;/p&gt;
+&lt;p&gt;周四，恩，周五上午的课，要起早，同时周四晚上有课，所以，周四是movie night，在忙碌了一天后看一部英文电影或几集美剧，恩不错。就是这样。&lt;/p&gt;
+&lt;p&gt;周五，恩，在小学，周五是胜利大逃亡，因此，周五就是game night，虽然现在不怎么玩游戏了，但是，不限定于电脑游戏嘛，和同学玩玩三国杀，halo，或是什么什么游戏，也是不错的。&lt;/p&gt;
+&lt;p&gt;周六，恩，一般在家吧，周末就随意了，所以，周六是random night，干点什么都行，都行。&lt;/p&gt;
+&lt;p&gt;周日，恩，一般会回到学校，开始一周的打酱油生活，所以，周日是housework night，本来想写shopping night呢，但是发现不对，在买一周战备粮和用品后，还有一项艰巨的任务就是TBBT中常有的Laundry，恩，所以就叫housework night吧。&lt;/p&gt;
+&lt;p&gt;这些都是需要在干完当天的日常活动和相关任务后的活动，所以，可能，许多时候都在补作业。&lt;/p&gt;</content><category term="2010"></category><category term="night"></category><category term="tbbt"></category><category term="总结"></category><category term="感想"></category><category term="计划"></category></entry><entry><title>google的广告都知道我英语不好了</title><link href="https://bobobo80.com/2010/googlede-yan-gao-du-zhi-dao-wo-ying-yu-bu-hao-liao.html" rel="alternate"></link><published>2010-10-31T00:00:00+08:00</published><updated>2010-10-31T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-10-31:/2010/googlede-yan-gao-du-zhi-dao-wo-ying-yu-bu-hao-liao.html</id><content type="html">&lt;p&gt;有图有真相 &lt;a href="http://tu.6.cn/pic/show-new/id/11193010"&gt;&lt;img alt="" src="images/30f44f7f7de6bb9cfae8a6d22f4c88aa.jpeg"&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="图床"></category><category term="趣图"></category></entry><entry><title>GFW又发威，我们的头像</title><link href="https://bobobo80.com/2010/gfwyou-fa-wei-wo-men-de-tou-xiang.html" rel="alternate"></link><published>2010-10-16T00:00:00+08:00</published><updated>2010-10-16T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-10-16:/2010/gfwyou-fa-wei-wo-men-de-tou-xiang.html</id><content type="html">&lt;p&gt;近期GFW升级了，包括mtime等著名网站离我们远去。同时gravatar（就是那个通用头像）也被墙了，如你所见，墙内的观众，你将看不到头像了。就是这样。&lt;/p&gt;</content><category term="2010"></category><category term="gfw"></category><category term="gravatar"></category></entry><entry><title>北航的同学都在看什么？</title><link href="https://bobobo80.com/2010/bei-hang-de-tong-xue-du-zai-kan-shi-yao.html" rel="alternate"></link><published>2010-10-09T00:00:00+08:00</published><updated>2010-10-09T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-10-09:/2010/bei-hang-de-tong-xue-du-zai-kan-shi-yao.html</id><summary type="html">&lt;p&gt;从buaa的图书馆检索中能够发现些有趣的东西，比如最近图书馆的书目检索，同学们都搜索了哪些关键词？&lt;/p&gt;
+&lt;p&gt;下面列出：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;热门检索：&lt;/strong&gt;一个月以内的热门检索词(检索次数)&lt;/p&gt;
+&lt;table border="0" cellspacing="0" cellpadding="4" width="98%"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width="25%"&gt;matlab …&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;</summary><content type="html">&lt;p&gt;从buaa的图书馆检索中能够发现些有趣的东西，比如最近图书馆的书目检索，同学们都搜索了哪些关键词？&lt;/p&gt;
+&lt;p&gt;下面列出：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;热门检索：&lt;/strong&gt;一个月以内的热门检索词(检索次数)&lt;/p&gt;
+&lt;table border="0" cellspacing="0" cellpadding="4" width="98%"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width="25%"&gt;matlab (174)&lt;/td&gt;&lt;td width="25%"&gt;弹性力学 (137)&lt;/td&gt;&lt;td width="25%"&gt;理论力学 (137)&lt;/td&gt;&lt;td width="25%"&gt;linux (108)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;catia (94)&lt;/td&gt;&lt;td width="25%"&gt;java (88)&lt;/td&gt;&lt;td width="25%"&gt;c++ (84)&lt;/td&gt;&lt;td width="25%"&gt;ansys (83)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;c语言 (82)&lt;/td&gt;&lt;td width="25%"&gt;数学分析 (81)&lt;/td&gt;&lt;td width="25%"&gt;数值分析 (81)&lt;/td&gt;&lt;td width="25%"&gt;平凡的世界 (80)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;单片机 (79)&lt;/td&gt;&lt;td width="25%"&gt;opengl (79)&lt;/td&gt;&lt;td width="25%"&gt;英语 (78)&lt;/td&gt;&lt;td width="25%"&gt;c (77)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;高等数学 (72)&lt;/td&gt;&lt;td width="25%"&gt;android (70)&lt;/td&gt;&lt;td width="25%"&gt;线性代数 (67)&lt;/td&gt;&lt;td width="25%"&gt;数理统计 (64)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;货币战争 (61)&lt;/td&gt;&lt;td width="25%"&gt;公务员 (59)&lt;/td&gt;&lt;td width="25%"&gt;心理学 (58)&lt;/td&gt;&lt;td width="25%"&gt;线性系统 (57)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;高等数学竞赛 (56)&lt;/td&gt;&lt;td width="25%"&gt;solidworks (54)&lt;/td&gt;&lt;td width="25%"&gt;经济学原理 (53)&lt;/td&gt;&lt;td width="25%"&gt;矩阵 (52)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;gre (51)&lt;/td&gt;&lt;td width="25%"&gt;labview (49)&lt;/td&gt;&lt;td width="25%"&gt;自动控制原理 (48)&lt;/td&gt;&lt;td width="25%"&gt;应用数理统计 (48)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;矩阵分析 (46)&lt;/td&gt;&lt;td width="25%"&gt;托业 (46)&lt;/td&gt;&lt;td width="25%"&gt;电机 (45)&lt;/td&gt;&lt;td width="25%"&gt;传感器 (45)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;photoshop (45)&lt;/td&gt;&lt;td width="25%"&gt;数据结构 (44)&lt;/td&gt;&lt;td width="25%"&gt;百年孤独 (43)&lt;/td&gt;&lt;td width="25%"&gt;概率 (43)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;山楂树之恋 (43)&lt;/td&gt;&lt;td width="25%"&gt;fortran (42)&lt;/td&gt;&lt;td width="25%"&gt;visual c++ (40)&lt;/td&gt;&lt;td width="25%"&gt;思维导图 (40)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;随机过程 (39)&lt;/td&gt;&lt;td width="25%"&gt;材料力学 (38)&lt;/td&gt;&lt;td width="25%"&gt;矩阵论 (38)&lt;/td&gt;&lt;td width="25%"&gt;dsp (38)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;王小波 (37)&lt;/td&gt;&lt;td width="25%"&gt;机械设计 (36)&lt;/td&gt;&lt;td width="25%"&gt;sap (35)&lt;/td&gt;&lt;td width="25%"&gt;矩阵理论 (35)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;adams (34)&lt;/td&gt;&lt;td width="25%"&gt;阴谋论 (34)&lt;/td&gt;&lt;td width="25%"&gt;设计模式 (33)&lt;/td&gt;&lt;td width="25%"&gt;概率论与数理统计 (33)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;数字电路 (33)&lt;/td&gt;&lt;td width="25%"&gt;基础物理实验 (33)&lt;/td&gt;&lt;td width="25%"&gt;明朝那些事儿 (32)&lt;/td&gt;&lt;td width="25%"&gt;结构力学 (32)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;离散数学 (32)&lt;/td&gt;&lt;td width="25%"&gt;晶体 (32)&lt;/td&gt;&lt;td width="25%"&gt;挪威的森林 (32)&lt;/td&gt;&lt;td width="25%"&gt;计算机图形学 (32)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;张量 (32)&lt;/td&gt;&lt;td width="25%"&gt;初等数论 (31)&lt;/td&gt;&lt;td width="25%"&gt;复变函数 (31)&lt;/td&gt;&lt;td width="25%"&gt;数字信号处理 (31)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;算法导论 (31)&lt;/td&gt;&lt;td width="25%"&gt;计算机视觉中的数学方法 (30)&lt;/td&gt;&lt;td width="25%"&gt;simulink (30)&lt;/td&gt;&lt;td width="25%"&gt;算法 (30)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;信号与系统 (30)&lt;/td&gt;&lt;td width="25%"&gt;c51 (30)&lt;/td&gt;&lt;td width="25%"&gt;机器学习 (29)&lt;/td&gt;&lt;td width="25%"&gt;机械设计手册 (29)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;面试 (29)&lt;/td&gt;&lt;td width="25%"&gt;protel (29)&lt;/td&gt;&lt;td width="25%"&gt;html (29)&lt;/td&gt;&lt;td width="25%"&gt;材料x射线 (28)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;国际经济学 (28)&lt;/td&gt;&lt;td width="25%"&gt;单片机实验与实践教程 (28)&lt;/td&gt;&lt;td width="25%"&gt;c++ primer (28)&lt;/td&gt;&lt;td width="25%"&gt;面试英语 (28)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;物理 (28)&lt;/td&gt;&lt;td width="25%"&gt;液压 (28)&lt;/td&gt;&lt;td width="25%"&gt;明朝那些事 (28)&lt;/td&gt;&lt;td width="25%"&gt;论语 (27)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;indesign (27)&lt;/td&gt;&lt;td width="25%"&gt;流体力学 (27)&lt;/td&gt;&lt;td width="25%"&gt;资治通鉴 (27)&lt;/td&gt;&lt;td width="25%"&gt;after effects cs (27)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;口才 (27)&lt;/td&gt;&lt;td width="25%"&gt;人性的弱点 (27)&lt;/td&gt;&lt;td width="25%"&gt;ubuntu (26)&lt;/td&gt;&lt;td width="25%"&gt;mfc (26)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td width="25%"&gt;fpga (26)&lt;/td&gt;&lt;td width="25%"&gt;数字图像处理 (26)&lt;/td&gt;&lt;td width="25%"&gt;考研数学 (26)&lt;/td&gt;&lt;td width="25%"&gt;物理化学 (26)&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;发现还是课程学习为主，同时也有些人文读物，有趣的是山楂树之恋以43次的检索率还是很靠前的，说明其广告投放还是很有效果的（食堂天天广告）。java小胜c++，也反应的当前的现状，惊奇的是android非常靠前，看来大家对于移动平台也很感兴趣。同时linux排名第4，我很欣慰。&lt;/p&gt;</content><category term="2010"></category><category term="图书馆"></category></entry><entry><title>我发现了city bloxx的游戏原型了</title><link href="https://bobobo80.com/2010/wo-fa-xian-liao-city-bloxxde-you-xi-yuan-xing-liao.html" rel="alternate"></link><published>2010-10-03T00:00:00+08:00</published><updated>2010-10-03T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-10-03:/2010/wo-fa-xian-liao-city-bloxxde-you-xi-yuan-xing-liao.html</id><content type="html">&lt;p&gt;较早的nokiaS60第三版的手机都会附带一个叫city bloxx的盖房子游戏。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/City0Bloxx.jpg" title="city bloxx"&gt;&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;现在貌似出了3D版的了&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/tower-bloxx-deluxe-3d_2.jpg" title="tower bloxx"&gt;&lt;/p&gt;
+&lt;p&gt;而今日外出，发现了现实中的版本&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/bb9942461cea6012d1bb4dfd4f600032.jpg" title="fang1"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/fea84d5c648ff11757efd79acff544a8.jpg" title="fang2"&gt;&lt;/p&gt;</content><category term="2010"></category><category term="新发现"></category></entry><entry><title>家装什么的，最讨厌了</title><link href="https://bobobo80.com/2010/jia-zhuang-shi-yao-de-zui-tao-yan-liao.html" rel="alternate"></link><published>2010-10-02T00:00:00+08:00</published><updated>2010-10-02T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-10-02:/2010/jia-zhuang-shi-yao-de-zui-tao-yan-liao.html</id><summary type="html">&lt;p&gt;最近家里装修，发现这个行业水很深，我估计我爸吃亏不少。&lt;/p&gt;
+&lt;p&gt;刷墙，贴砖什么的，没参与，不知道。仅就家具来说说。&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;以IT行业打比方，家具也有 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;最近家里装修，发现这个行业水很深，我估计我爸吃亏不少。&lt;/p&gt;
+&lt;p&gt;刷墙，贴砖什么的，没参与，不知道。仅就家具来说说。&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;以IT行业打比方，家具也有DIY和品牌机，DIY对于高手来说，不仅价格便宜，而且定制自由。但是对于来说，不仅价格便宜不了，样式什么的可能还不好看。&lt;/p&gt;
+&lt;p&gt;品牌机就不一样，大体相同的配置，中端价格，漂亮的外观，所谓的售后，等等。&lt;/p&gt;
+&lt;p&gt;家长喜欢纯木的中式或略带欧式的家具，所以客厅什么的投入巨资买了两件红木家具。同时，卧室选择二线品牌“世纪华伟”的普通实木家具。&lt;/p&gt;
+&lt;p&gt;由于那个实木家具的设计我实在是看不顺眼，而想华日等大厂的实木家具超出预算。故我来考察下平民化的板式家具。&lt;/p&gt;
+&lt;p&gt;板式家具线条简单，风格简约，很适合喜欢现代风格的我。但由于材料本身问题，环保性能可能不太好，甲醛容易超标。所以我又看了看板材的材料。&lt;/p&gt;
+&lt;p&gt;一般的这种牌子都是买成品板材，然后自己加工。这就好比电脑用的cpu，cpu都不是品牌机自己造的，得选个好的cpu牌子和型号。&lt;/p&gt;
+&lt;p&gt;目前“cpu”分国内和国外，国内主要是吉林露水河的和另一个什么厂的。国外的主要是爱格和欧德森的。请允许我先忽略国内，虽然不想via和intel、amd的那么大的差距。但是，天朝，不解释。&lt;/p&gt;
+&lt;p&gt;爱格板材和欧德森板材貌似就是amd与intel了。恩，从环保角度来说，貌似欧德森比爱格要好一点吧，因为欧德森符合的什么F4标准的甲醛指标要低于爱格板材符合的E0－E1标准的甲醛指标。其实，到了这么低的指标的话，它已经不是主要影响因素了。这就要看加工和材切了。&lt;/p&gt;
+&lt;p&gt;品牌吧，不放心。牛牌子贵的买不起。国内吧，找个牌子响的，别再是想联想那样的，牌子响，东西垃圾。所以，待考察，带考察。&lt;/p&gt;
+&lt;p&gt;今天去定了灯，发现，太暴利了，毕竟家装不像电脑，换的快，信息透明。这个行业水太深。如今，能买的了房子的就半死不活了，在经过家装，可以励炼成仙了。&lt;/p&gt;</content><category term="2010"></category><category term="家装"></category></entry><entry><title>百度，你得和这个世界谈谈</title><link href="https://bobobo80.com/2010/bai-du-ni-de-he-zhe-ge-shi-jie-tan-tan.html" rel="alternate"></link><published>2010-09-26T00:00:00+08:00</published><updated>2010-09-26T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-09-26:/2010/bai-du-ni-de-he-zhe-ge-shi-jie-tan-tan.html</id><summary type="html">&lt;p&gt;百度：百毒。由于这个“著名”的搜索引擎是竞价排名的，所以由此导致的一系列问题。&lt;/p&gt;
+&lt;p&gt;作为华人创办的公司，百度多少受到了GOVERN和群众的照顾 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;百度：百毒。由于这个“著名”的搜索引擎是竞价排名的，所以由此导致的一系列问题。&lt;/p&gt;
+&lt;p&gt;作为华人创办的公司，百度多少受到了GOVERN和群众的照顾，但就算如此。官媒CCAV就多次报道了百度由于竞价排名导致的种种恶行。比如著名的假药。&lt;/p&gt;
+&lt;p&gt;为什么今天写？&lt;/p&gt;
+&lt;p&gt;恩。它又犯事了。恩，最先在推特上看到，百毒搜索支付宝，搜索的第一个就是个支付宝的钓鱼网站。目前，我这里百毒已经给修改了。&lt;/p&gt;
+&lt;p&gt;百毒的规则就是先交个注册费，然后竞拍排名，出价最高的排第一，然后用户点击的话就给百毒交钱。&lt;/p&gt;
+&lt;p&gt;恩，后果就是。你搜索不到你想要的。什么所谓的我们更懂中文？其实在竞价面前，应该是我们更懂收费。&lt;/p&gt;</content><category term="2010"></category><category term="搜索"></category></entry><entry><title>原版生活大爆炸第4季第一集出了！</title><link href="https://bobobo80.com/2010/yuan-ban-sheng-huo-da-bao-zha-di-4ji-di-yi-ji-chu-liao.html" rel="alternate"></link><published>2010-09-24T00:00:00+08:00</published><updated>2010-09-24T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-09-24:/2010/yuan-ban-sheng-huo-da-bao-zha-di-4ji-di-yi-ji-chu-liao.html</id><summary type="html">&lt;p&gt;备受期待的生活大爆炸TBBT第4季开始播出了，今天第一集登场！下周是第二集。&lt;/p&gt;
+&lt;p&gt;搜狐视频目前购买了国内播放版权，和人人影视合作。所以，搜狐 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;备受期待的生活大爆炸TBBT第4季开始播出了，今天第一集登场！下周是第二集。&lt;/p&gt;
+&lt;p&gt;搜狐视频目前购买了国内播放版权，和人人影视合作。所以，搜狐视频上能看到人人的双语版本。恩，不错。&lt;/p&gt;
+&lt;p&gt;给个链接：&lt;a href="http://gbjd.tk/160"&gt;http://gbjd.tk/160&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://tv.sohu.com/20100924/n275228720.shtml"&gt;http://tv.sohu.com/20100924/n275228720.shtml&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="tbbt"></category><category term="生活大爆炸"></category></entry><entry><title>中秋到</title><link href="https://bobobo80.com/2010/zhong-qiu-dao.html" rel="alternate"></link><published>2010-09-21T00:00:00+08:00</published><updated>2010-09-21T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-09-21:/2010/zhong-qiu-dao.html</id><content type="html">&lt;p&gt;中秋国庆大撞车，&lt;/p&gt;
+&lt;p&gt;上班放假很繁琐。&lt;/p&gt;
+&lt;p&gt;连续下雨特别冷，&lt;/p&gt;
+&lt;p&gt;吃块月饼很暖和。&lt;/p&gt;</content><category term="2010"></category><category term="小湿"></category></entry><entry><title>小通报</title><link href="https://bobobo80.com/2010/xiao-tong-bao.html" rel="alternate"></link><published>2010-09-20T00:00:00+08:00</published><updated>2010-09-20T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-09-20:/2010/xiao-tong-bao.html</id><summary type="html">&lt;p&gt;经过昨天的不能连接的虚惊一场，今天vps的线路又恢复正常了。鉴于burstnet的不稳定，正在考虑更换vps。&lt;/p&gt;
+&lt;p&gt;另外广告一下，&lt;a href="http://gbjd.tk/"&gt;宫爆鸡丁-http://gbjd.tk/&lt;/a&gt;，这是我用来放转载、分享 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;经过昨天的不能连接的虚惊一场，今天vps的线路又恢复正常了。鉴于burstnet的不稳定，正在考虑更换vps。&lt;/p&gt;
+&lt;p&gt;另外广告一下，&lt;a href="http://gbjd.tk/"&gt;宫爆鸡丁-http://gbjd.tk/&lt;/a&gt;，这是我用来放转载、分享、tweet等有趣、闲杂东西的地方，内容开放，开放注册，欢迎留言、发贴。域名先用免费的，等我想个好玩的再说。&lt;/p&gt;
+&lt;p&gt;关于本blog，一般记录本人原创文，个人感想等，不再转载其他精彩的文章。&lt;/p&gt;</content><category term="2010"></category><category term="通告"></category></entry><entry><title>博客又一次搬家</title><link href="https://bobobo80.com/2010/bo-ke-you-yi-ci-ban-jia.html" rel="alternate"></link><published>2010-09-18T00:00:00+08:00</published><updated>2010-09-18T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-09-18:/2010/bo-ke-you-yi-ci-ban-jia.html</id><summary type="html">&lt;p&gt;由于在共享ip主机被墙，无奈把个人博客搬到自己的vps上，感想国家，我在不断地折腾中学到了很多，既然在自己的vps上那就更可以随便说说了。宿舍网络开通了 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;由于在共享ip主机被墙，无奈把个人博客搬到自己的vps上，感想国家，我在不断地折腾中学到了很多，既然在自己的vps上那就更可以随便说说了。宿舍网络开通了，以后会常更新的。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://yfrog.com/bftykij"&gt;http://yfrog.com/bftykij&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="搬家"></category></entry><entry><title>开学牢骚文</title><link href="https://bobobo80.com/2010/kai-xue-lao-sao-wen.html" rel="alternate"></link><published>2010-09-10T00:00:00+08:00</published><updated>2010-09-10T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-09-10:/2010/kai-xue-lao-sao-wen.html</id><summary type="html">&lt;p&gt;又是半年一次的开学。自然都是经过一个不适应阶段。换了个宿舍，就更加不适应了。由本科非在册劳动力转入廉价劳动力 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;又是半年一次的开学。自然都是经过一个不适应阶段。换了个宿舍，就更加不适应了。由本科非在册劳动力转入廉价劳动力，宿舍由8人间变成4人。但其实真是不如8人那个大集体，就好比住50平二环和100五环，地理位置才关键。何况这4人的拥挤成度并不亚于8人，那儿童床具加超低楼层高度。大运村看起来是为小学生运动会准备的。当初建设时“领导们”你们拿了多少？买的二环还是三环房？买了宝马还是奥迪？去了几次天上人间？同时学校的“领导们”及有关部门，为了那不足科研经费的多少分之一，把3人间改成4人间。“你们是哪个部门的？谁叫你改的？”我国学校从未意识到学校是为学生服务的。一直以教育界的国营商店自居，爱学不学的服务员口吻时刻在嘴边。现在出国容易了，你们早晚像那些商店一样，要么被walmart等取代，要么自身商业化成山寨wumart。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>测试图库</title><link href="https://bobobo80.com/2010/ce-shi-tu-ku.html" rel="alternate"></link><published>2010-09-05T00:00:00+08:00</published><updated>2010-09-05T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-09-05:/2010/ce-shi-tu-ku.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="images/diploma_create.php.jpeg" title="测试图库"&gt;&lt;/p&gt;
+&lt;p&gt;盛大的麦库，是个在线笔记，类似evernote，不过这个图片外链以后会不会封了阿？&lt;/p&gt;
+&lt;p&gt;http://note.sdo.com/register?ac=1173159178&lt;/p&gt;
+&lt;p&gt;推广链接，用三国杀那个帐号就 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="" src="images/diploma_create.php.jpeg" title="测试图库"&gt;&lt;/p&gt;
+&lt;p&gt;盛大的麦库，是个在线笔记，类似evernote，不过这个图片外链以后会不会封了阿？&lt;/p&gt;
+&lt;p&gt;http://note.sdo.com/register?ac=1173159178&lt;/p&gt;
+&lt;p&gt;推广链接，用三国杀那个帐号就能登录，不过没有dropbox类似的同步功能，不过也能做类似的网盘，又是墙内网站，貌似U盘不用买了。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>新iPod系列来了！</title><link href="https://bobobo80.com/2010/xin-ipodxi-lie-lai-liao.html" rel="alternate"></link><published>2010-09-02T00:00:00+08:00</published><updated>2010-09-02T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-09-02:/2010/xin-ipodxi-lie-lai-liao.html</id><summary type="html">&lt;p&gt;在今日凌晨苹果发布了新一代的iPod系列产品以及iOS4.1, iTunes 10，和新的apple TV。&lt;/p&gt;
+&lt;p&gt;iPod shuffle: 回归了2代的设计并保留的3代的遥控等功能，容量为 2GB ，售价 49 美元，中国售价为 398 元人民币&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;iPod nano …&lt;/p&gt;</summary><content type="html">&lt;p&gt;在今日凌晨苹果发布了新一代的iPod系列产品以及iOS4.1, iTunes 10，和新的apple TV。&lt;/p&gt;
+&lt;p&gt;iPod shuffle: 回归了2代的设计并保留的3代的遥控等功能，容量为 2GB ，售价 49 美元，中国售价为 398 元人民币&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;iPod nano: 正如网友所言，乔帮主把nano拦腰截断就变成了新的nano和shuffle，shuffle取了原nano的wheel，而新nano取了原nano的屏幕。屏幕变成了支持多点触摸的触屏，不知道那么小的屏幕，多点触摸有那么大的意义吗？总之觉得新nano有点怪怪的感觉。新款 iPod nano 拥有 8GB 和 16GB 两个版本，售价分别为 149 和 179 美元，中国官方售价分别为 1248 元和 1498 元。价格也不便宜。&lt;/p&gt;
+&lt;p&gt;iPod touch： 又正如网友所言，touch与iPhone4的区别就是touch修正了iPhone4有缺陷的电话功能模块。因为除了电话功能，新一代touch具备的iPhone4的许多特性：960 x 640 Retina 显示屏、A4 处理器、三轴陀螺仪、双摄像头、720p 视频拍摄和编辑、FaceTime 视频通话、Game Center ，这相当有吸引力。不过没有GPS，比较遗憾。关于外观，这次touch的外形之所以和ip4不一样，我想是因为乔帮主不希望买touch4的人用苹果皮或skype等假装ip4，以保护ip4用户的虚荣心和至高无上感，看到新touch的外形，可能会有用户放心购买iPhone4，不用担心有个比iPhone一半价格还便宜的东西和自己的ip4具有一样的外观和除电话功能的所有功能和特性。价格，第四代 iPod touch 8GB 版本价格仍为 229 美元，没有 16GB 版本，直接就到 32GB 和 64GB 版本，售价分别为 299 和 399 美元。中国官方售价分别为 1798 元、2398 元和 3198 元。&lt;/p&gt;
+&lt;p&gt;iTunes 10: 没用过这个东西，不评价，核心的更新应该是多了ping这个类似社交化的东西。&lt;/p&gt;
+&lt;p&gt;iOS: 没用过的东西，感觉大概就是一些小的新功能和一些bug修正。&lt;/p&gt;
+&lt;p&gt;Apple TV: 国情，不关注。&lt;/p&gt;
+&lt;p&gt;图图图！&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/ipodliveblog20100177rmeng.jpg" title="ipod1"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/iPod-nano_6gen-.jpg" title="ipod nano6"&gt;&lt;/p&gt;</content><category term="2010"></category><category term="apple"></category><category term="ipod"></category></entry><entry><title>北航剪影（一）</title><link href="https://bobobo80.com/2010/bei-hang-jian-ying-yi.html" rel="alternate"></link><published>2010-08-08T00:00:00+08:00</published><updated>2010-08-08T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-08-08:/2010/bei-hang-jian-ying-yi.html</id><summary type="html">&lt;p&gt;每天 我都在这里 向天天吃早饭的他说一声早安 和刚刚踏入校园的她讲一句加油 或是跟离别的他们道一句珍重&lt;!--more--&gt; 这里只 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;每天 我都在这里 向天天吃早饭的他说一声早安 和刚刚踏入校园的她讲一句加油 或是跟离别的他们道一句珍重&lt;!--more--&gt; 这里只是北航的平凡角落 人来人往中 我祝福所有的上课 也迎接所有的放学 我是谁 你看不见我 我是悲剧TD签到系统 北航TD正在您身边&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.shareapic.net/View-23116661-TD走廊.html"&gt;&lt;img alt="" src="images/023116661.jpg"&gt;&lt;/a&gt;&lt;a href="http://www.shareapic.net/View-23116665-TD走廊.html"&gt;&lt;img alt="" src="images/023116665.jpg"&gt;&lt;/a&gt; &lt;a href="http://www.shareapic.net/View-23116663-TD走廊.html"&gt;&lt;img alt="" src="images/023116663.jpg"&gt;&lt;/a&gt; &lt;a href="http://www.shareapic.net/View-23116662-TD走廊.html"&gt;&lt;img alt="" src="images/023116662.jpg"&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="buaa"></category><category term="毕业"></category></entry><entry><title>手机来写个博客</title><link href="https://bobobo80.com/2010/shou-ji-lai-xie-ge-bo-ke.html" rel="alternate"></link><published>2010-08-02T00:00:00+08:00</published><updated>2010-08-02T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-08-02:/2010/shou-ji-lai-xie-ge-bo-ke.html</id><summary type="html">&lt;p&gt;早就料到有今天，没有电脑的日子，智能手机显得多么的重要。幸好我早已为博客加入WAP版，方便手机登陆和发布文章。就写到 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;早就料到有今天，没有电脑的日子，智能手机显得多么的重要。幸好我早已为博客加入WAP版，方便手机登陆和发布文章。就写到这里吧。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>RSS阅读器使用感受</title><link href="https://bobobo80.com/2010/rssyue-du-qi-shi-yong-gan-shou.html" rel="alternate"></link><published>2010-07-28T00:00:00+08:00</published><updated>2010-07-28T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-28:/2010/rssyue-du-qi-shi-yong-gan-shou.html</id><summary type="html">&lt;p&gt;近些天使用测试了一些rss阅读器，主要原因是google reader需要用google的帐号登录，我又不想让浏览器记住google帐户的密码，所以尝试一些其他的RSS阅读器。分别是一下几个：鲜果，抓虾 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;近些天使用测试了一些rss阅读器，主要原因是google reader需要用google的帐号登录，我又不想让浏览器记住google帐户的密码，所以尝试一些其他的RSS阅读器。分别是一下几个：鲜果，抓虾，netvibes，bloglines，google reader。&lt;/p&gt;
+&lt;!--more--&gt;
+&lt;p&gt;由于feedbuner被墙，所以离线阅读器不是太好用了，开始试用在线的RSS阅读器。按使用顺序依次：&lt;/p&gt;
+&lt;p&gt;1，&lt;a href="http://xianguo.com"&gt;鲜果&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/logo.png" title="xianguo"&gt;&lt;/p&gt;
+&lt;p&gt;第一个鲜果，基本使用正常，但是发现这个鲜果并不鲜，文章更新的不是很及时。对于一天可能要读好几次RSS的我来说，可能感觉会不太新鲜。同时，在未读文章积累太多时，浏览器反应会比较慢。&lt;/p&gt;
+&lt;p&gt;2，&lt;a href="http://zhuaxia.com"&gt;抓虾&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/welcome_logo.gif" title="抓虾"&gt;&lt;/p&gt;
+&lt;p&gt;好像据说是国内最强的RSS阅读了？抓虾倒是更新没问题，但是与鲜果有着同样一个问题是，它们都是采用网站抓取的，这样会导致一些feedbuner订阅的站无法阅读。同时抓虾在使用中还发现，但文章有评论时，会造成该篇文章在评论数不同时多次抓取。&lt;/p&gt;
+&lt;p&gt;3，&lt;a href="http://www.netvibes.com/"&gt;netvibes&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/netvibes.png" title="netvibes"&gt;&lt;/p&gt;
+&lt;p&gt;由于众所周知的原因，我就没有在体验国内的阅读器了，开始试试国外的。第一个是这个，netvibes。这个大概和我以前用的igoogle差不多个意思，不只RSS，还提供很多其他功能，由widgets扩展出等等一些功能。这个网页面比较华丽，所以伴随着可能会有点卡，大概都是些javascript，所以使用chrome浏览器会速度好一点。这个东西的RSS阅读不错，同时更新速度也还可以，并且通过一些插件能够方便的共享到“非死不可”等网站上。&lt;/p&gt;
+&lt;p&gt;4，&lt;a href="http://www.bloglines.com"&gt;bloglines&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/blogo225x50.gif" title="bloglines"&gt;&lt;/p&gt;
+&lt;p&gt;这个玩艺用的时间最短，首先因为没有简体中文，中文语言上只有繁体，看起来不舒服，另外，这个网看似设计简约，但是在我这里的反应相当慢，也可能是网速慢的原因。所以体验相当不好，没用多长时间。&lt;/p&gt;
+&lt;p&gt;5，&lt;a href="http://www.google.com/reader"&gt;google reader&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/reader_logo.gif" title="googlereader"&gt;&lt;/p&gt;
+&lt;p&gt;最后来说GR，说明我最终还是选择了这个RSS阅读器，这么多人用它，总是有原因的。首先速度快，无论是firefox还是chrome上，速度都很好。同时更新速度快，不受墙的影响。阅读操作起来还算便利。&lt;/p&gt;</content><category term="2010"></category><category term="rss"></category></entry><entry><title>[转]美国研发陆空两用直升机</title><link href="https://bobobo80.com/2010/zhuan-mei-guo-yan-fa-lu-kong-liang-yong-zhi-sheng-ji.html" rel="alternate"></link><published>2010-07-18T00:00:00+08:00</published><updated>2010-07-18T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-18:/2010/zhuan-mei-guo-yan-fa-lu-kong-liang-yong-zhi-sheng-ji.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.chinanews.com.cn/gj/2010/07-17/2408002.shtml"&gt;中新网&lt;/a&gt;7月17日电 据台湾“东森新闻网”16日报道，美国德州的AVX飞机公司研发了最新型的“陆空两用”变形直升机，能在短短一分钟内完成陆地用车与直升机的“变形”，酷 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.chinanews.com.cn/gj/2010/07-17/2408002.shtml"&gt;中新网&lt;/a&gt;7月17日电 据台湾“东森新闻网”16日报道，美国德州的AVX飞机公司研发了最新型的“陆空两用”变形直升机，能在短短一分钟内完成陆地用车与直升机的“变形”，酷帅造型堪比电影《变形金刚》中的巡弋战将──“冲浪板”(GRINDOR)。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/U255P4T8D2408002F107DT20100717101305.jpg" title="飞行模式图"&gt;&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/U255P4T8D2408002F116DT20100717101305.jpg" title="陆地模式图"&gt;&lt;/p&gt;
+&lt;p&gt;据报道，此款“陆空两用”变形直升机对于在阿富汗、伊拉克等地作战的士兵们，能有效降低路面炸弹以及地雷的威胁，更能在运送军队时，提高安全保 障。&lt;/p&gt;
+&lt;p&gt;报道指出，此款变形直升机在装满燃料时，能同时搭载4名全副武装的士兵，并持续400公里空中或陆地运输；在携带250公斤燃料时，其最高空中 时速可达260公里、平面道路速度到达138公里、山地48公里。但最重要的一点是，操作系统简单，就连没有飞行员执照的士兵也可以轻易掌控。&lt;/p&gt;
+&lt;p&gt;美国五角大楼正考虑将这项设计加以推广应用，AVX飞机公司对此表示，这还只是设计的雏形，如要实际运用在军事操作上还需要一段时间。但有了这 样的设计，未来将能在战场上看到真实版的“变形金刚”了。&lt;/p&gt;
+&lt;p&gt;这应该还在设计阶段，没有完成实体的制造。个人感觉，从图上看这个东西并不是那么难实现，也并非文中所说的什么变形金刚。感觉难点主要在于桨毂的收合变形，和动力输出方式的转换。和V-22来比，应该要简单不少。&lt;/p&gt;
+&lt;p&gt;对于天朝来说，这种装备的实际用途可能在战场上体现更大，而对于我朝急需的应急救援来说，意义并非那么大，搞出大载重级的直升机才是王道。&lt;/p&gt;</content><category term="2010"></category><category term="直升机"></category></entry><entry><title>非常雷人的《生活大爆炸》</title><link href="https://bobobo80.com/2010/fei-chang-lei-ren-de-sheng-huo-da-bao-zha.html" rel="alternate"></link><published>2010-07-14T00:00:00+08:00</published><updated>2010-07-14T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-14:/2010/fei-chang-lei-ren-de-sheng-huo-da-bao-zha.html</id><content type="html">&lt;p&gt;什么都不多说了，有视频有真相&lt;/p&gt;</content><category term="2010"></category><category term="山寨"></category><category term="生活大爆炸"></category></entry><entry><title>转两条生活用品安全帖</title><link href="https://bobobo80.com/2010/zhuan-liang-tiao-sheng-huo-yong-pin-an-quan-tie.html" rel="alternate"></link><published>2010-07-14T00:00:00+08:00</published><updated>2010-07-14T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-14:/2010/zhuan-liang-tiao-sheng-huo-yong-pin-an-quan-tie.html</id><summary type="html">&lt;p&gt;真功夫陷“排骨门” 内部资料曝排骨问题频发：&lt;a href="http://news.qq.com/a/20100714/000960.htm"&gt;http://news.qq.com/a/20100714/000960.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;媒体曝霸王洗发水含致癌物质 股价大跌13%：&lt;a href="http://biz.xinmin.cn/zhengquan/2010/07/14/5768994.html"&gt;http://biz.xinmin.cn/zhengquan/2010 …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;真功夫陷“排骨门” 内部资料曝排骨问题频发：&lt;a href="http://news.qq.com/a/20100714/000960.htm"&gt;http://news.qq.com/a/20100714/000960.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;媒体曝霸王洗发水含致癌物质 股价大跌13%：&lt;a href="http://biz.xinmin.cn/zhengquan/2010/07/14/5768994.html"&gt;http://biz.xinmin.cn/zhengquan/2010/07/14/5768994.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;同前不久麦当劳什么什么门，类似消息就没断过。该吃什么吃什么吧，中国除了河豚，其他都有毒。&lt;/p&gt;</content><category term="2010"></category><category term="食品安全"></category></entry><entry><title>搬家完成</title><link href="https://bobobo80.com/2010/ban-jia-wan-cheng.html" rel="alternate"></link><published>2010-07-10T00:00:00+08:00</published><updated>2010-07-10T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-10:/2010/ban-jia-wan-cheng.html</id><summary type="html">&lt;p&gt;今天把原百毒空间（百度）的文都转了过来，还算轻松，通过blogbus中转了一下，再转换的wordpress里。&lt;/p&gt;
+&lt;p&gt;本次博客搬家使用了这个&lt;a href="http://blog.huyo.org/?p=336"&gt;小程序&lt;/a&gt;，感谢作者。&lt;/p&gt;
+&lt;p&gt;有些分 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;今天把原百毒空间（百度）的文都转了过来，还算轻松，通过blogbus中转了一下，再转换的wordpress里。&lt;/p&gt;
+&lt;p&gt;本次博客搬家使用了这个&lt;a href="http://blog.huyo.org/?p=336"&gt;小程序&lt;/a&gt;，感谢作者。&lt;/p&gt;
+&lt;p&gt;有些分类还需要调整，不知道怎么合并。&lt;/p&gt;</content><category term="2010"></category><category term="博客搬家"></category></entry><entry><title>bbpress使用小总结</title><link href="https://bobobo80.com/2010/bbpressshi-yong-xiao-zong-jie.html" rel="alternate"></link><published>2010-07-09T00:00:00+08:00</published><updated>2010-07-09T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-09:/2010/bbpressshi-yong-xiao-zong-jie.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="images/bborg-title-background.png" title="bbpress logo"&gt;&lt;/p&gt;
+&lt;p&gt;用&lt;a href="http://bbpress.org/"&gt;bbpress程序&lt;/a&gt;建了个&lt;a href="http://bb.i80.be/"&gt;论坛&lt;/a&gt;，因为在&lt;a href="http://i.appinn.com/"&gt;小众软件&lt;/a&gt;上无意中看到的这个bbpress，比较喜欢这个风格，所以也来尝试一下。&lt;/p&gt;
+&lt;p&gt;首先先找个空间，同是要 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="" src="images/bborg-title-background.png" title="bbpress logo"&gt;&lt;/p&gt;
+&lt;p&gt;用&lt;a href="http://bbpress.org/"&gt;bbpress程序&lt;/a&gt;建了个&lt;a href="http://bb.i80.be/"&gt;论坛&lt;/a&gt;，因为在&lt;a href="http://i.appinn.com/"&gt;小众软件&lt;/a&gt;上无意中看到的这个bbpress，比较喜欢这个风格，所以也来尝试一下。&lt;/p&gt;
+&lt;p&gt;首先先找个空间，同是要有个mysql数据库。然后到&lt;a href="http://bbpress.org/download/"&gt;这个网站&lt;/a&gt;下载程序，或是直接用主机wget。然后要下中文语言包，官方没有，所以找民间的。我是在&lt;a href="http://code.google.com/p/wpcn/downloads/list"&gt;这里&lt;/a&gt;下的，解压然后放到my-languages文件夹下。&lt;/p&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;打开对应bbpress的网页，会自动出现安装界面，选择好数据库信息，等等，就安装好了。&lt;/p&gt;
+&lt;p&gt;安装好后发现，初始论坛相当简陋，基本只能打文字。这就需要插件了，就好像wordpress一样。不过，现在这个版本的bbpress的插件安装还很麻烦，需有手动下载插件文件，然后放到bb-plugins里，然后在bbpress的后台启用。给出来一些有用的插件。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bbpress.org/plugins/topic/bb-smilies/"&gt;bbPress Smilies&lt;/a&gt; 添加表情插件&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bbpress.org/plugins/topic/bbcode-lite/"&gt;BBcode Lite for bbPress&lt;/a&gt; 不知道怎么表达这个插件，就是使一些语句生效，配合BBcode Buttons这个插件，就可以在编辑帖子时多出一些按钮来实现链接，图片，引用的功能。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bbpress.org/plugins/topic/bbcode-buttons/"&gt;BBcode Buttons&lt;/a&gt; 配合上面的插件的。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bbpress.org/plugins/topic/human-test/"&gt;Human Test for bbPress&lt;/a&gt; 一个在注册时需要回答一道简单计算题的插件，防止机器人注册。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bbpress.org/plugins/topic/private-forums/"&gt;Private Forums&lt;/a&gt; 可以让论坛的部分或全部拥有权限设置，可以让什么非注册用户不可见等等。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://bbpress.org/plugins/topic/instant-password/"&gt;Instant Password&lt;/a&gt; 让用户在注册时可以自行设定密码，对于不支持发邮件的论坛很适用，但最好配合上上面的数学题插件。&lt;/p&gt;
+&lt;p&gt;由于上传附件什么的空间小，所以没有用，&lt;a href="http://bbpress.org/plugins/"&gt;这个页面&lt;/a&gt;能下载更多插件，但好像搜索功能不太好。&lt;/p&gt;</content><category term="2010"></category><category term="bbpress"></category></entry><entry><title>使用bbpress建了个小坛子</title><link href="https://bobobo80.com/2010/shi-yong-bbpressjian-liao-ge-xiao-tan-zi.html" rel="alternate"></link><published>2010-07-08T00:00:00+08:00</published><updated>2010-07-08T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-08:/2010/shi-yong-bbpressjian-liao-ge-xiao-tan-zi.html</id><content type="html">&lt;p&gt;使用bbpress建了个小坛子，网址是&lt;a href="http://bb.i80.be/"&gt;bb.i80.be&lt;/a&gt;。目前我也不会用，欢迎随意来灌水。链接在链接表里也有。&lt;/p&gt;</content><category term="2010"></category><category term="bbpress"></category></entry><entry><title>生病通知</title><link href="https://bobobo80.com/2010/sheng-bing-tong-zhi.html" rel="alternate"></link><published>2010-07-06T00:00:00+08:00</published><updated>2010-07-06T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-06:/2010/sheng-bing-tong-zhi.html</id><summary type="html">&lt;p&gt;经医院诊断，本人再次患气胸，这次病情较轻，并无大碍，只是刚刚才做了1个多月的手术，为了防止复发。没想到这就又来了。&lt;/p&gt;
+&lt;p&gt;病因不明，也许 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;经医院诊断，本人再次患气胸，这次病情较轻，并无大碍，只是刚刚才做了1个多月的手术，为了防止复发。没想到这就又来了。&lt;/p&gt;
+&lt;p&gt;病因不明，也许这，也许那的。这就是一种说不清道不明的病，各种原因都有可能诱发。先天体质如此，没办法。就这样吧。&lt;/p&gt;
+&lt;p&gt;本文设置无法回复，就别回复了。&lt;/p&gt;</content><category term="2010"></category><category term="一句话"></category></entry><entry><title>毕业了</title><link href="https://bobobo80.com/2010/bi-ye-liao.html" rel="alternate"></link><published>2010-07-01T00:00:00+08:00</published><updated>2010-07-01T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-07-01:/2010/bi-ye-liao.html</id><summary type="html">&lt;p&gt;毕业了，回家了。&lt;/p&gt;
+&lt;p&gt;转眼间，大学四年就这样的过去了，4年时间，我和童鞋们收获颇多，也改变颇多。4年前，踏入校园，有人激动，有人失望，有人 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;毕业了，回家了。&lt;/p&gt;
+&lt;p&gt;转眼间，大学四年就这样的过去了，4年时间，我和童鞋们收获颇多，也改变颇多。4年前，踏入校园，有人激动，有人失望，有人欣然接受，有人愤然退学，有人努力学习，有人堕入世俗，不管怎么样，都过去了，就这样了。 &lt;!--more--&gt; 想大一上数分科，模糊而又勤奋的记笔记，课下每日去主M写作业。想大一得气胸，错过了篮球赛，并忍着痛去主M4层上毛概课。体育课看别人在操场奔跑，黯然神伤。想各系机房，轮流上网，不为别的，打发时光。想各类考试复习，在新主楼度过的一个个夜晚。&lt;/p&gt;
+&lt;p&gt;想大二办理网通上网，分不清交换机和路由，错买了交换机，但先一起打了一下午CS，自得其乐。想无心上课，一心上网，各种经典游戏，通通品尝。想考试突击，3号楼4层，共度的时光。&lt;/p&gt;
+&lt;p&gt;想大三自由散漫，随意跷课，11点起床。想考前突击，各种套题，考试默写答案。想娱乐冯如杯，重在参与，突破自己，实现设想。想多次6级，依然不过，心情坦荡荡。想保研无望，考研慌张。想西安实习，游兵马俑，骊山，华山，各种墓陵，实习游玩3周时光。&lt;/p&gt;
+&lt;p&gt;想大四缓缓进入考研准备，紧张复习，学校家辅导班三地奔波忙。想考研英语，阅读未懂，各种不会，数学失误，各种不爽。想分数公布，英语42，心情惆怅，最后通过，也未疯狂。想毕设悠闲时光，游泰山，坐火车，很爽。想气胸手术，忍一时疼痛，为今后不再痛苦。想毕设答辩，修改格式，各种打印，很累很忙。想各种散伙饭，酒过多巡，离别感伤。&lt;/p&gt;
+&lt;p&gt;回不去的从前，再见了，童鞋们，再见了，兄弟们。&lt;/p&gt;</content><category term="2010"></category><category term="buaa"></category><category term="毕业"></category></entry><entry><title>京东有趣雷人的评论</title><link href="https://bobobo80.com/2010/jing-dong-you-qu-lei-ren-de-ping-lun.html" rel="alternate"></link><published>2010-06-27T00:00:00+08:00</published><updated>2010-06-27T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-27:/2010/jing-dong-you-qu-lei-ren-de-ping-lun.html</id><summary type="html">&lt;p&gt;前不久，京东商城推出了钻石，还有一些价格天文的类型，这就引起了一些无聊的网民前来围观，并留下累人的留言：&lt;/p&gt;
+&lt;p&gt;来看看 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;前不久，京东商城推出了钻石，还有一些价格天文的类型，这就引起了一些无聊的网民前来围观，并留下累人的留言：&lt;/p&gt;
+&lt;p&gt;来看看将近一个亿的钻石，有什么客户咨询。 &lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;咨询内容：&lt;/p&gt;
+&lt;p&gt;你们有现货吗？我家那厕所兜穿了个孔，这颗红色的石头刚好可以堵住！有的话，我马上用火车运钱去买回来，急用啊！不然浪费水！有的话请马上联系我，电话 8888-999999.&lt;/p&gt;
+&lt;p&gt;京东回复：&lt;/p&gt;
+&lt;p&gt;您好！您可以直接下订单，我司会有专人与您联系的。感谢您对京东的支持！祝您购物愉快！&lt;/p&gt;
+&lt;p&gt;咨询内容：&lt;/p&gt;
+&lt;p&gt;请问存该血钻的库房在哪？是否有专人保全？保全人员交接班是什么时间？库房安全级别是多少？ 谢谢！&lt;/p&gt;
+&lt;p&gt;京东回复：&lt;/p&gt;
+&lt;p&gt;您好！保密。感谢您对京东的支持！祝您购物愉快！&lt;/p&gt;
+&lt;p&gt;咨询内容：&lt;/p&gt;
+&lt;p&gt;您好 发票能开办公用品么？&lt;/p&gt;
+&lt;p&gt;京东回复：&lt;/p&gt;
+&lt;p&gt;您好！一般是可以的。感谢您对京东的支持！祝您购物愉快！&lt;/p&gt;
+&lt;p&gt;咨询内容：&lt;/p&gt;
+&lt;p&gt;KFMM,买颗送给你，你会不会嫁给我 @.@ 呵呵&lt;/p&gt;
+&lt;p&gt;京东回复：&lt;/p&gt;
+&lt;p&gt;您好！O(∩_∩)O ，不会嫁您的，感谢您对京东的支持！祝您购物愉快！&lt;/p&gt;
+&lt;p&gt;更多爆笑咨询请猛击&lt;a href="http://club.360buy.com/allconsultations/252767-1-1.html"&gt;这里。&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="京东"></category><category term="转载"></category></entry><entry><title>怀进鹏校长在2010届本科生毕业典礼上的讲话</title><link href="https://bobobo80.com/2010/huai-jin-peng-xiao-chang-zai-2010jie-ben-ke-sheng-bi-ye-dian-li-shang-de-jiang-hua.html" rel="alternate"></link><published>2010-06-26T00:00:00+08:00</published><updated>2010-06-26T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-26:/2010/huai-jin-peng-xiao-chang-zai-2010jie-ben-ke-sheng-bi-ye-dian-li-shang-de-jiang-hua.html</id><summary type="html">&lt;p&gt;仰望星空，德才兼备报效祖国&lt;/p&gt;
+&lt;p&gt;脚踏实地，知行合一成就梦想&lt;/p&gt;
+&lt;p&gt;——在2010届本科生毕业典礼上的讲话&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://news.buaa.edu.cn/dispnews.php?type=1&amp;amp;nid=64834&amp;amp;s_table=news_txt"&gt;转自北航新闻网&lt;/a&gt; &lt;!--more--&gt; 亲爱的2010届毕业生同学们，大家好！&lt;/p&gt;
+&lt;p&gt;今天是一个值得永远铭 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;仰望星空，德才兼备报效祖国&lt;/p&gt;
+&lt;p&gt;脚踏实地，知行合一成就梦想&lt;/p&gt;
+&lt;p&gt;——在2010届本科生毕业典礼上的讲话&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://news.buaa.edu.cn/dispnews.php?type=1&amp;amp;nid=64834&amp;amp;s_table=news_txt"&gt;转自北航新闻网&lt;/a&gt; &lt;!--more--&gt; 亲爱的2010届毕业生同学们，大家好！&lt;/p&gt;
+&lt;p&gt;今天是一个值得永远铭记的日子，我们在这里相聚，隆重举行北京航空航天大学2010届本科生毕业典礼，我和所有北航人，以及你们的亲友团共同见证这一庄严 神圣的时刻。首先，请允许我代表全校师生员工，向你们，2937名毕业生同学表示最热烈的祝贺！同时，我提议，全体毕业生同学，用你们最真挚的掌声，向辛 勤培育你们的老师，表示衷心的感谢！特别是，我还要对你们的家长们说，孩子们的成就寄托了你们的嘱托！是我们共同的财富！&lt;/p&gt;
+&lt;p&gt;这几天，校园里布满了一种气息，空气中弥漫着一种情绪，这里充满了激情和信心，这就是青春和腾飞的冲动！同学们，你们今天就要从这里启航，去放飞梦想，去 拥抱未来，去履行新的使命！作为你们的校长、老师，也作为你们的一个老朋友，我的心情和大家一样，已经做好准备，相信你们会用坚强的毅力去实践多彩和挑战 的人生！但是，此时此刻，我心中对你们更是满怀眷恋，舍不得你们离开，因为充满朝气和智慧的你们也是北航的主人！&lt;/p&gt;
+&lt;p&gt;四年前，你们循着陌生的路径，带着离家的寂寞，揣着一颗兴奋的心和憧憬的梦，相约、相聚在北航，开始了一段专属北航的记忆，也许你们还记得开学典礼，老校 长殷切希望，你们要立志成为祖国建设发展的领军领导人才，从此，北航成为你们成就梦想、激情飞扬的起点。&lt;/p&gt;
+&lt;p&gt;过去的4年，你们共同拥有了许多珍贵难忘的人生经历。你们用青春的激情追求理想，用奋斗的汗水成就梦想，用昂扬的斗志面对生活，从服务奥运的北航志愿者名 片到汶川、玉树地震的无私帮助，展现了你们的责任与爱心，从共同见证嫦娥奔月、“神七”升空到60年国庆的北航军团，从考试和答辩的精心准备到科技竞赛上 摘金夺银，赢得荣誉。四年来，你们既受到学校的教育和熏陶，你们也用自己的智慧和行动为母校增光添彩，亲身见证和参与了北航跻身一流大学的进程！&lt;/p&gt;
+&lt;p&gt;同样，过去的4年，你们共同拥有了许多苦辣酸甜的校园经历，你们经历过军训中汗水挥洒、考试前的焦虑与“恶补”、运动场上的对抗激战、宿舍中的嬉笑怒骂， 以及国内外形势与人生哲理的唇枪舌战，你们曾经有过很多快乐，也有许多遗憾和困惑，在这里，你们体验过对食堂和医院的无奈，感受过有些课程和教学水平就像 餐厅饭菜的质量和服务态度，（掌声雷动。）我们还没有实现学生所企盼的真正的优秀课程！因此，我也请求你们的原谅，但是北航必须做出改变，必须解决问题，并树立起新的、 更远大的目标！让你们的师弟师妹们更好地体验北航的卓越！&lt;/p&gt;
+&lt;p&gt;令我感动和骄傲的是，在激情燃烧的四年时光里，你们挑战自我、不断超越，不仅取得了优异的学习成绩，而且你们关注社会发展，勇于挑战、善于创造、敢于担 当，涌现出了一大批德才兼备的优秀同学和团结奋进的先进集体。如，理学院裴森和软件学院孟繁荣两位同学荣获第11届挑战杯竞赛一等奖，展现了北航学生较强 的科技创新能力；奥运火炬护跑手、北京奥运会杰出志愿者、理学院刘军同学，他四年中无偿献血20余次，在汶川地震后不顾个人安危奔赴余震频发的地震灾区参 加志愿工作，以实际行动践行了“责任人生”；机械学院2006级一个宿舍8名男生全部保研，创造了新的记录；你们有3500人次获北航各级各类奖学 金，230名同学获北京市和学校优秀志愿者称号；有214班次获得北航和北京市先进班集体和优秀团支部表彰。还有许多可圈可点的感人事迹，北航因你们而自 豪！&lt;/p&gt;
+&lt;p&gt;过去的四年，你们一路走来，经历了青涩的大一、迷茫的大二、充实的大三、精彩的大四，这里已经是你们熟悉和眷恋的家园，但，今天你们就要重新打点行装，循 着那熟悉的道路走出校园，仰望星空，扬帆启航！我相信，你们已经为明天做好了准备！&lt;/p&gt;
+&lt;p&gt;同学们，你们生长在一个充满机遇和希望的时代，改革开放30年造就了奇迹，祖国正处于新的重要战略机遇期，金融危机正在催生新的科技革命和产业革命，你们 是时代的佼佼者，再过10年要实现全面小康社会，而未来的40年，我们要建成中等发达国家水平，这正是你们大展宏图和创造业绩的时代！同样为了追求卓越， 北航也正处在新的起点上！建设空天信融合特色的世界一流大学已成为北航发展的必然选择，我们不能自满地停留在舒适地改革和创新中，我们也必须改变！因为追 求卓越是北航人共同的目标。&lt;/p&gt;
+&lt;p&gt;今天，建设创新型国家和人力资源强国已成为中国发展的主题，它需要一大批优秀的建设者和领军、领导人才，我希望你们都能成为有大志向的人，在向你们告别之 际，作为你们的校长、老师和朋友，我有两点建议：&lt;/p&gt;
+&lt;p&gt;一是，不论你们走到哪里，从事何种工作，希望大家秉承北航人“尚德务实、求真拓新”的理念，立造福天下之大“德”，坚定报国之志，凭借你们追求卓越的勇气 和创新的激情，不断追求和坚持真理，开拓进取，成为祖国未来的领航人，为祖国和人民“立功、立言”！&lt;/p&gt;
+&lt;p&gt;二是，希望你们继续弘扬北航人“德才兼备、知行合一”的品质，敢为人先，勇往直前地去追求远大目标！今后，你们将会接触到许多新的思想、新的变化，乃至新 的困惑和挑战，希望你们，保持身心强健，坚韧不拔，担负起社会和时代赋予你们的重任，我更期待着你们放声歌唱，创造出新的辉煌！&lt;/p&gt;
+&lt;p&gt;我向你们告别，希望大家无论走到哪里都关注和支持北航的改革和发展，常回家看看，你们永远属于北航，就像北航也永远属于你们一样！&lt;/p&gt;
+&lt;p&gt;我向你们告别，祝愿亲爱的同学们，放飞梦想，卓越启航！&lt;/p&gt;
+&lt;p&gt;仰望星空，德才兼备报效祖国。&lt;/p&gt;
+&lt;p&gt;脚踏实地，知行合一成就梦想。&lt;/p&gt;
+&lt;p&gt;谢谢大家！&lt;/p&gt;</content><category term="2010"></category><category term="buaa"></category><category term="毕业"></category></entry><entry><title>校长讲话</title><link href="https://bobobo80.com/2010/xiao-chang-jiang-hua.html" rel="alternate"></link><published>2010-06-26T00:00:00+08:00</published><updated>2010-06-26T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-26:/2010/xiao-chang-jiang-hua.html</id><summary type="html">&lt;p&gt;毕业典礼上，校长的两句话引起全场掌声雷动，第一句：大家四年见证了食堂饭菜和校医院的无奈；第二句：有些教学水平就 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;毕业典礼上，校长的两句话引起全场掌声雷动，第一句：大家四年见证了食堂饭菜和校医院的无奈；第二句：有些教学水平就像食堂的饭菜一样~~&lt;/p&gt;
+&lt;p&gt;来自推特上的BUAAer。&lt;/p&gt;</content><category term="2010"></category><category term="毕业"></category></entry><entry><title>用vbox安装debian并配置基本应用（3）</title><link href="https://bobobo80.com/2010/yong-vboxan-zhuang-debianbing-pei-zhi-ji-ben-ying-yong-3.html" rel="alternate"></link><published>2010-06-25T00:00:00+08:00</published><updated>2010-06-25T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-25:/2010/yong-vboxan-zhuang-debianbing-pei-zhi-ji-ben-ying-yong-3.html</id><summary type="html">&lt;p&gt;今天来配置ssh，和ftp。&lt;/p&gt;
+&lt;p&gt;因为&lt;a href="http://i80.be/105"&gt;（2）&lt;/a&gt;中已经设置好了host与虚拟机的桥接，所以就可以通过ssh和ftp来管理虚拟机中的debian了。&lt;/p&gt;
+&lt;p&gt;这个两个东西都很好搞，强大的deb包管理，只需两条命令就可以 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;今天来配置ssh，和ftp。&lt;/p&gt;
+&lt;p&gt;因为&lt;a href="http://i80.be/105"&gt;（2）&lt;/a&gt;中已经设置好了host与虚拟机的桥接，所以就可以通过ssh和ftp来管理虚拟机中的debian了。&lt;/p&gt;
+&lt;p&gt;这个两个东西都很好搞，强大的deb包管理，只需两条命令就可以了。&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://debian.linuxsir.org/doc/inthedebianway/openssh/openssh.debian.zh-3.html"&gt;ssh相关配置帮助&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install openssh-server ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;一些config复杂了，不那么在乎特别安全的话，默认就可以了吧。&lt;/p&gt;
+&lt;p&gt;在host里的终端&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;ssh&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="mf"&gt;@192.168.56&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;XX&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;这里我出现了一个问题，在host里的终端ssh root@192.168.56.XX时，不能连接上&lt;/p&gt;
+&lt;p&gt;说什么RSA什么错误之类的吧，因为我前面和虚拟机里的以前的系统ssh过了，ip地址是一样的，所以RSA什么证书之类的就不一样了，所以要删除./.ssh/known_hosts里的对应的那个密钥，麻烦的话把这个文件删了应该也成。&lt;/p&gt;
+&lt;p&gt;这样连接时就会出现yes/no选择，输入yes就会生成新密钥。就可以了&lt;/p&gt;
+&lt;p&gt;ftp用据说最简单的vsftpd&lt;/p&gt;
+&lt;p&gt;一条命令安装&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install vsftpd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后你就可以在host里用filezilla之类的匿名连接上了。&lt;/p&gt;
+&lt;p&gt;更复杂的设置要修改/etc/vsftpd.conf了&lt;/p&gt;
+&lt;p&gt;可以看看这个&lt;a href="http://hi.baidu.com/cassati/blog/item/3469bcfd12725c8eb901a0a7.html"&gt;用VSFTP搭建FTP服务器&lt;/a&gt;，我就不那么了解了，不需要了解那么深。&lt;/p&gt;
+&lt;p&gt;再看看有什么其他的要配置，以后再说。&lt;/p&gt;
+&lt;p&gt;i80.be原创&lt;/p&gt;</content><category term="2010"></category><category term="linux"></category><category term="ssh"></category><category term="vbox"></category><category term="vsftpd"></category></entry><entry><title>据说是未来的html5应用展示？</title><link href="https://bobobo80.com/2010/ju-shuo-shi-wei-lai-de-html5ying-yong-zhan-shi.html" rel="alternate"></link><published>2010-06-24T00:00:00+08:00</published><updated>2010-06-24T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-24:/2010/ju-shuo-shi-wei-lai-de-html5ying-yong-zhan-shi.html</id><content type="html">&lt;p&gt;网上看到的，据说是未来的html5应用展示。很有趣的3D googlebox&lt;/p&gt;
+&lt;p&gt;&lt;a href="/http://www.addyosmani.com/resources/googlebox/"&gt;http://www.addyosmani.com/resources/googlebox/&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="html5"></category><category term="有趣的东西"></category></entry><entry><title>用vbox安装debian并配置基本应用（1）</title><link href="https://bobobo80.com/2010/yong-vboxan-zhuang-debianbing-pei-zhi-ji-ben-ying-yong-1.html" rel="alternate"></link><published>2010-06-23T00:00:00+08:00</published><updated>2010-06-23T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-23:/2010/yong-vboxan-zhuang-debianbing-pei-zhi-ji-ben-ying-yong-1.html</id><summary type="html">&lt;p&gt;i80.be原创&lt;/p&gt;
+&lt;p&gt;今日闲来无事，开始折腾。&lt;/p&gt;
+&lt;p&gt;想来自己用linux已经有点年头了，但水平还是很菜，一直都是只玩桌面，不玩命令。&lt;/p&gt;
+&lt;p&gt;自己搞博客刚开始，发现对linux的底层的东西了解甚少，计 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;i80.be原创&lt;/p&gt;
+&lt;p&gt;今日闲来无事，开始折腾。&lt;/p&gt;
+&lt;p&gt;想来自己用linux已经有点年头了，但水平还是很菜，一直都是只玩桌面，不玩命令。&lt;/p&gt;
+&lt;p&gt;自己搞博客刚开始，发现对linux的底层的东西了解甚少，计划未来也可能自己玩vps，所以先训练一下吧。&lt;/p&gt;
+&lt;p&gt;vbox虚拟机在ubuntu下很好安装，加源，apt即可，不多说了。&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;我下载了debian最小的网络安装iso，40+M，然后设置好NAT网络链接模式，这里下载﻿http://&lt;a href="http://www.debian.org/distrib/netinst"&gt;www.debian.org/distrib/netinst&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;iso加入到vbox中启动，弱弱的选择了图形化安装，一路和ubuntu安装差不多，有趣的是校园对于中国那个源相应速度特别的快，所以我也没有改源。安装哪些包只选择了标准系统，没有选数据库什么的。 装好了root登录，不用update了，因为是网络安装。都是源里最新的。改装LAMP了。我是参考U坛里这篇&lt;a href="http://forum.ubuntu.org.cn/viewtopic.php?f=43&amp;amp;t=219318"&gt;http://forum.ubuntu.org.cn/viewtopic.php?f=43&amp;amp;t=219318&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;不过我没有在命令行中找到lamp-server这个组合包，貌似得用新立德才行，所以要分别安装。按那个贴的顺序来：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install ssh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install mysql-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install apache2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install php5 libapache2-mod-php5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;然后重启apache服务&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;/etc/init.d/apache2 restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;安装phpmyadmin&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;apt-get install phpmyadmin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;如何测试apache?由于没有X，所以这里用w3m&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;w3m localhost
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;OK，显示it works&lt;/p&gt;
+&lt;p&gt;（按上文）测试mysql&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;netstat -tap | grep mysql
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;应该显示tcp 0 0 localhost.localdomain:mysql *:* LISTEN -&lt;/p&gt;
+&lt;p&gt;测试PHP debian的根目录位于/var/www中 在里面添加一个测试文件test.php文件，内容 &amp;lt;?php phpinfo(); ?&amp;gt; 浏览器重输入http://localhost/test.php ，看到php信息网页，则说明PHP安装成功&lt;/p&gt;
+&lt;p&gt;里面的编辑部分都用vim了，虽然我也不会用vi，基本的打字还是能用的。&lt;/p&gt;
+&lt;p&gt;先写到这，等会写下，如何在主机host的浏览器上查看/var/www/的内容。&lt;/p&gt;
+&lt;p&gt;i80.be原创&lt;/p&gt;</content><category term="2010"></category><category term="lamp"></category><category term="linux"></category><category term="vbox"></category></entry><entry><title>用vbox安装debian并配置基本应用（2）</title><link href="https://bobobo80.com/2010/yong-vboxan-zhuang-debianbing-pei-zhi-ji-ben-ying-yong-2.html" rel="alternate"></link><published>2010-06-23T00:00:00+08:00</published><updated>2010-06-23T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-23:/2010/yong-vboxan-zhuang-debianbing-pei-zhi-ji-ben-ying-yong-2.html</id><summary type="html">&lt;p&gt;i80.be原创&lt;/p&gt;
+&lt;p&gt;首先修改语言环境，由于中文显不出来，所以索性就改成英文吧。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dpkg-reconfigure locales
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;由于vbox的NAT方式的网络连接不能让主机和虚拟机平级，所以要在vbox中再设置一个网卡，网络设置中再加如网络链接 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;i80.be原创&lt;/p&gt;
+&lt;p&gt;首先修改语言环境，由于中文显不出来，所以索性就改成英文吧。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;dpkg-reconfigure locales
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;由于vbox的NAT方式的网络连接不能让主机和虚拟机平级，所以要在vbox中再设置一个网卡，网络设置中再加如网络链接2，&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.shareapic.net/content.php?id=22734474"&gt;&lt;img alt="" src="images/022734474.png"&gt;&lt;/a&gt; &lt;!--more--&gt; 如图，host-only adapt。&lt;/p&gt;
+&lt;p&gt;然后，应该要到dabian的网卡设置中设置一下，还好是DHCP，非常简单。&lt;/p&gt;
+&lt;p&gt;网卡设置：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;vim /etc/network/interface
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;加入如下信息，就可以了，什么静态设置的，不懂，就不研究了：&lt;/p&gt;
+&lt;p&gt;auto eth1 iface eth1 inet dhcp&lt;/p&gt;
+&lt;p&gt;恩，ifconfig eth1 up应该就可以了，重启一下更保险。&lt;/p&gt;
+&lt;p&gt;好了，用ifconfig查看eth1的ip地址，应该是192.168.56.XX什么，在host里ping一下这个ip，一个1ms以内就应该是它了。&lt;/p&gt;
+&lt;p&gt;这时，host和虚拟机的连接就好了，用host的浏览器查看http://192.168.56.XX，恩，it works&lt;/p&gt;
+&lt;p&gt;恩，这就连上了。&lt;/p&gt;
+&lt;p&gt;有了这个基础，过几天可以再试试ssh连接，ftp连接什么的，应该都是可以的，越来越像远程操作了吧。等下篇继续。。。&lt;/p&gt;
+&lt;p&gt;i80.be原创&lt;/p&gt;</content><category term="2010"></category><category term="linux"></category><category term="vbox"></category></entry><entry><title>类4sq的软件，街旁</title><link href="https://bobobo80.com/2010/lei-4sqde-ruan-jian-jie-pang.html" rel="alternate"></link><published>2010-06-22T00:00:00+08:00</published><updated>2010-06-22T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-22:/2010/lei-4sqde-ruan-jian-jie-pang.html</id><summary type="html">&lt;p&gt;4sq我不多说了。我还没用过就。。。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/logo.1275274036.png" title="街旁"&gt;&lt;/p&gt;
+&lt;p&gt;今天来介绍街旁，和与之配套的街推。&lt;/p&gt;
+&lt;p&gt;这种软件就是使用手机，告诉别人或在网上记录你现在的位置，在街 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;4sq我不多说了。我还没用过就。。。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/logo.1275274036.png" title="街旁"&gt;&lt;/p&gt;
+&lt;p&gt;今天来介绍街旁，和与之配套的街推。&lt;/p&gt;
+&lt;p&gt;这种软件就是使用手机，告诉别人或在网上记录你现在的位置，在街旁里称“签到”，官方引用：当你告诉街旁"我在这个地方"，这叫做一次签到。&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;通过在街旁签到，你可以记录自己每天生活的点点滴滴。你可以签到餐厅、咖啡馆、公园、酒吧、博物 馆、以及你能想象到的一切地点。目前可用通过iphone和Android或是&lt;a href="http://m.jiepang.com"&gt;m.jiepang.com&lt;/a&gt;（我等诺记用户只能在浏览器中存这个标签了）来签到。你的每一次签到，都可以分享给新浪微博、开心、人人和豆瓣的朋友们。&lt;/p&gt;
+&lt;p&gt;官方引用：通过街旁，你可以知道朋友们正在什么地方吃喝玩乐。说不定你会发现志明正在你家楼下吃大排档、春娇正在你公司隔壁玩三国杀呢！你还可以看到自己准备去的地方都有哪些朋友已经去过了，去之前可以向他们取取经噢！（弱弱的问一句，志明和春娇是谁？）在街旁，你能发现各种各样的小攻略：什么最好吃？什么最好看？什么最好玩？来到这个地方，一定不能错过的又是什么？你可以在周一到周五收藏各种小攻略，然后周末去一一实践它们！通过街旁，让你的城市生活更美好。&lt;/p&gt;
+&lt;p&gt;在 30 天内签到一个地点次数最多的用户，将成为这个地点的地主！快行动起来，成为自己最喜欢的地点的地主吧！&lt;/p&gt;
+&lt;p&gt;当你签到了一些有趣的地点之后，街旁会送给你一个徽章作为纪念。&lt;/p&gt;
+&lt;p&gt;街旁有遍布全国的合作商户，我们共同为用户提供有吸引力的优惠与折扣，比如 5 折自助餐、免费音乐会等。不同商户提供优惠与折扣的方式各不相同，有些提供给地主、有些提供给签到n次以上的用户、有些提供给拥有某个徽章的用户。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://jiepang.com/overview"&gt;官方网页介绍http://jiepang.com/overview&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;悄悄的说，街推算是街旁的分支部分吧（用词不准确），由于街旁只提供新浪微博、开心、人人和豆瓣的朋友们，而不同步到常用的推，所以应该是根据API搞的这个&lt;a href="http://jietweet.com/"&gt;街推&lt;/a&gt;，这样就可以用街旁发推了。恩，就是这样。希望这个不错的健康的网络应用能够保持“健康”。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>试试图片链接</title><link href="https://bobobo80.com/2010/shi-shi-tu-pian-lian-jie.html" rel="alternate"></link><published>2010-06-21T00:00:00+08:00</published><updated>2010-06-21T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-21:/2010/shi-shi-tu-pian-lian-jie.html</id><content type="html">&lt;p&gt;只是试试。&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.shareapic.net/View-22718523-blog.html"&gt;&lt;img alt="" src="images/022718523.png"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;用这个&lt;a href="http://www.shareapic.net/user/bobobo80"&gt;http://www.shareapic.net/user/bobobo80&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;华山游记：&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.shareapic.net/View-22718814-.html"&gt;&lt;img alt="" src="images/022718814.jpg"&gt;&lt;/a&gt; &lt;a href="http://www.shareapic.net/View-22718821-.html"&gt;&lt;img alt="" src="images/022718821.jpg"&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="图床"></category></entry><entry><title>[转]我们的世界，他们的杯</title><link href="https://bobobo80.com/2010/zhuan-wo-men-de-shi-jie-ta-men-de-bei.html" rel="alternate"></link><published>2010-06-21T00:00:00+08:00</published><updated>2010-06-21T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-21:/2010/zhuan-wo-men-de-shi-jie-ta-men-de-bei.html</id><summary type="html">&lt;p&gt;&lt;a href="http://www.my1510.cn/article.php?id=78ae238dd26ad414"&gt;我们的世界，他们的杯 / 北海乘桴&lt;/a&gt; 2010-06-15 11:46&lt;/p&gt;
+&lt;p&gt;02年韩日世界杯，中央5台播放了一则巴西足球的工作短片。直播间里，一个首如飞蓬的肥佬在激情四射地咆哮，而 “解说词”只有一句：“罗 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://www.my1510.cn/article.php?id=78ae238dd26ad414"&gt;我们的世界，他们的杯 / 北海乘桴&lt;/a&gt; 2010-06-15 11:46&lt;/p&gt;
+&lt;p&gt;02年韩日世界杯，中央5台播放了一则巴西足球的工作短片。直播间里，一个首如飞蓬的肥佬在激情四射地咆哮，而 “解说词”只有一句：“罗纳尔多！罗纳尔多！罗纳尔多！罗纳尔多！……罗纳尔多——！！！！”罗纳尔多最终进球了，肥佬把肥罗名字的尾音的拖长了吼，吼得荡气回肠。&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;06年德国世界杯，中国足球解说员黄健翔为“伟大的格罗索”放开喉咙，那句分贝极高的“意大利万岁”震醒了昏昏欲睡的中国观众。但是，“解说门”很快被定性为一场播出事故，张斌认为黄“失声、失礼、失态、失常”。民间也有诸多非议，大概在中国人看来，这种调门只有赌球押了重注的人才吼得出来吧。&lt;/p&gt;
+&lt;p&gt;巴中两国足球直播迥异的风格由此可见一斑。&lt;/p&gt;
+&lt;p&gt;中国人把足球直播评论员称之为“解说员”，其实极具中国特色。因为中国足球基本进不了世界杯，中国球迷支持的并不是中国队，而电视上那些与自己毫不相干的人。巴西人即使在半决赛被淘汰，也会对决赛没什么兴趣。只有中国人能从小组赛几乎一场不落地看到决赛，且不亦乐乎。所以，你可以判定一个中国“球迷”不是 “中迷”，但是很难分辨他在看比赛的一刻是“英迷”、“阿迷”或者“意迷”。这样一来，如果“解说员”在评论中偏袒了某一方，或者是情绪失控，都会得罪无数的人。&lt;/p&gt;
+&lt;p&gt;所以央视的解说员每次解说都会战战兢兢，尤其是英阿、法德，也包括巴萨皇马这类国家德比的比赛中，都难得轻松。最保险的方法，当然就是442、433、圣诞树、长传冲吊似的知识普及了。所以，中国“解说员”的职业素养在于：专业、冷静、客观。&lt;/p&gt;
+&lt;p&gt;显然，巴西肥佬用他那只高速震颤的声带击碎了中国“解说员”正襟危坐的绅士范儿。他让我们明白，至少在巴西这类国家，“解说员”并没有存在的理由。一场由自己球队主导的比赛，球迷看球基本一high至死，能需要“解释”什么？又需要“说明”什么？想象一下，他们的电视台会不会播放肥罗的进球分解画面？会不会用红色箭头标出足球飞行的轨迹？会不会有个手握铅笔的“某指导”去分析教练的战术意图？我想不会，罗纳尔多进球了，肥佬只需要和球迷一起高呼“罗纳尔多”的名字，直至声嘶力竭。&lt;/p&gt;
+&lt;p&gt;和那个巴西肥佬一起嚎叫的巴西人才算球迷，那我们中国“球迷”算什么？其实，人家“解说员”不是早就说过了吗，我们是“电视机前的观众朋友”啊！中国人看足球不是看中国球队，而是看勺子、看落叶、看马赛回旋和人球分过——说到底，是在看一出足球综艺节目。西班牙赢了，我们兴奋一会；法国输了，我们也不是太难过。有马赛回旋就好，多放几个回放，至于做这个动作的是齐达内还是普约尔，都无所谓。但是，你能想象一个巴西人既热爱卡卡又喜欢梅西吗？这就像一个加泰罗尼亚人既热爱巴萨有痴迷皇马一样荒谬。&lt;/p&gt;
+&lt;p&gt;而这些，电视机前的中国人做得到，解说员们有句口头禅说得好：“谁输谁赢不重要，比赛精彩就对了。”我们都是局外人，所以看的不是比赛，而是电视节目。这两者有着天壤之别，前者只有喜欢和讨厌，而后者却有切肤的爱与切齿的恨；所以，看电视的人不爽，最多会把电视给关了；而看比赛的人怒火攻心，则会砸掉电视。说到底，他们看的是球，我们呢，看得是寂寞。&lt;/p&gt;
+&lt;p&gt;我常常听一个中国人说自己是英格兰的拥趸，或者是阿根廷的粉丝。尤其在世界杯期间，13亿人口仿佛分别加入三十几个国籍，俨然进入了新“战国时代”。但是，这些所谓的“球迷”究竟在“迷”什么呢？只不过是迷恋一堆各自不同的电视影像罢了。从这个意义上看，那些“球迷”以专业的资格指斥“伪球迷”并无道理，你迷恋梅西的盘带动作，你老婆迷恋贝克汉姆的脸蛋，两者之间有什么区别呢？我甚至觉得，真正的球迷“迷球”的程度与“专业”程度相反。这道理就像一个不懂音乐的人才可以成为“玉米”一样，也只有一个不懂足球的人才会成为某只球队的铁杆球迷。至少我认为，那些扒光了在球场飞奔、或者砸球员家玻璃的流氓，比央视演播厅那些442、433、532的术语专家更像“球迷”。&lt;/p&gt;
+&lt;p&gt;不管你是专业与否，你喜欢的球队都跟你无关。所以，说到底，我们中国人都是“伪球迷”。&lt;/p&gt;
+&lt;p&gt;如果一个中国“球迷”回顾世界杯，他的脑子会像三棱镜一样折射出许多色彩，是穿着不同队服的队伍共同组成了我们美好的回忆。但是，一个巴西人不同，他回忆起的大约只有黄色，就像荷兰人只有橙色、意大利只有蓝色一样。而我们呢，看到红色断然想不起国足，而看到国足想起什么……也就不用多说了……&lt;/p&gt;
+&lt;p&gt;比赛很多都是精彩的，甚至你为之拍案欢呼，但是胜利的荣耀、失败的屈辱、命悬一线的紧张只有当事的双方的球迷才明白。不在乎输赢，并不意味着我们超脱，而是我们没有跟人家一较高下的资格罢了。所以，巴西和葡萄牙大战在即，只有我们会在C罗与卡卡之间纠结，而巴葡双方的球迷自己，早已经和队伍一起磨刀霍霍了。我们只能看到皮球，看到花哨的动作，但是我们不会真正体味那其中的喜怒哀乐、爱恨情仇。记分牌上的比分我们看得清，但是那背后夹杂的两个宿敌之间的积怨，我们并不理解。那些美好的画面对于我们也仅仅是画面，它可以直达我们的神经末梢，但是永远会在内心之外止步。&lt;/p&gt;
+&lt;p&gt;那这届世界杯举例，在门将格林愚蠢脱手时，中国的英迷会忍不住笑出声的；而一个英国佬可能已经操起板砖直奔格林的住处了。巴拉克赛前被铲伤，我们会觉得遗憾；而德国人自己会如失手足甚至如丧考妣。因为巴拉克是我们的明星，但却是他们的队长。再比如马拉多纳，对中国人而言，他更多是定格在1986年的一个心醉神迷的球王影像，而对于阿根廷人自己而言，这个如今腰围胜过身高、没有了脖子、西装极不合体的猥琐男人究竟意味这什么，只有阿根廷人自己明白。&lt;/p&gt;
+&lt;p&gt;当一个男人告诉一个女人，我喜欢你的眼睛，喜欢你的眉毛，或者说喜欢你的风情以及知性时，他都不是真心，真心的爱不是建立在某一个部分的嗜好之上。一个球队也是如此，当我们中国人只是因为全攻全守喜欢荷兰，或者因为短传配合喜欢阿根廷时，也就仅仅是喜欢，最多也不过是欣赏、钦慕，离热爱差的太远。试想，如果荷兰队改打防守反击，如果阿根廷改打长传冲吊，荷兰人和阿根廷人就会因此将球队弃之如敝屣吗？这种事，也只能是中国的“荷迷”和“阿迷”做得出来。&lt;/p&gt;
+&lt;p&gt;世界杯对我们而言是盛宴，但只是视觉盛宴、感官盛宴，与内心深处的情怀无关。隔着电视屏幕，我们的一切欢呼都没有回应，它终究只是一档提神醒脑的电视综艺节目。这期间，我们也有感情的跌宕起伏，这些都是真诚的，但也只是被剧情打动而已，因为剧情太精彩，我们就应该信以为真吗？以阿根廷为例，86年与马拉多纳一起高呼“Argentina！”的不是我们，你喊了的话发音也不标准。而02年，也是阿根廷人在跟巴蒂斯图塔一起痛哭，我们或许也哭过，但哭过后也在继续看，一直到阿根廷人的宿敌巴西捧得大力神杯。&lt;/p&gt;
+&lt;p&gt;世界杯之于我们，只是一则故事，我们是读者，不是故事中的人。朱丽叶死了，罗密欧便自杀了，而我们这些捧着剧本的读者，最多感慨一番。因为我们知道，那些都是假的。因此，只有罗密欧会为朱丽叶殉情，而我们不会，与其沉浸在悲剧中不能自拔，不如把剧本扔掉，然后打开另一本书。比如，《哈利波特》。而当小巫师骑着扫把漫天飞的时候，我们就会把那段所谓感天动地的爱情故事忘得一干二净。&lt;/p&gt;</content><category term="2010"></category><category term="世界杯"></category><category term="转载"></category></entry><entry><title>各个版本的飘扬的旗帜</title><link href="https://bobobo80.com/2010/ge-ge-ban-ben-de-piao-yang-de-qi-zhi.html" rel="alternate"></link><published>2010-06-20T00:00:00+08:00</published><updated>2010-06-20T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-20:/2010/ge-ge-ban-ben-de-piao-yang-de-qi-zhi.html</id><summary type="html">&lt;p&gt;作为本届世界杯的主题曲或是叫主题歌（我也分不清），飘扬的旗帜有各个版本，本人非常喜欢这个调调，所以做一收集。&lt;/p&gt;
+&lt;p&gt;世界 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;作为本届世界杯的主题曲或是叫主题歌（我也分不清），飘扬的旗帜有各个版本，本人非常喜欢这个调调，所以做一收集。&lt;/p&gt;
+&lt;p&gt;世界杯版，附歌词： &lt;!--more--&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Give&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;me&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;freedom&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;give&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;me&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;fire&lt;/span&gt;,
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;give&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;me&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;reason&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;me&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;higher&lt;/span&gt;
+&lt;span class="nv"&gt;See&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;champions&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;take&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;field&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;now&lt;/span&gt;,
+&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;define&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;us&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;make&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;us&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;feel&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;proud&lt;/span&gt;
+&lt;span class="nv"&gt;In&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;streets&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;are&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;exaliftin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;,
+&lt;span class="nv"&gt;as&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;we&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;lose&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;our&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;inhibition&lt;/span&gt;,
+&lt;span class="nv"&gt;Celebration&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;its&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;around&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;us&lt;/span&gt;,
+&lt;span class="nv"&gt;every&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;nations&lt;/span&gt;,&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;all&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;around&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;us&lt;/span&gt;
+&lt;span class="nv"&gt;Singin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;forever&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;young&lt;/span&gt;,
+&lt;span class="nv"&gt;singin&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;songs&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;underneath&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;that&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;sun&lt;/span&gt;
+&lt;span class="nv"&gt;Lets&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;rejoice&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;beautiful&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;game&lt;/span&gt;.
+&lt;span class="nv"&gt;And&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;together&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;end&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;day&lt;/span&gt;.
+&lt;span class="nv"&gt;WE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;ALL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;SAY&lt;/span&gt;
+&lt;span class="nv"&gt;When&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;get&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;older&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;I&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;stronger&lt;/span&gt;
+&lt;span class="nv"&gt;They&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ll call me freedom Just like a wavin&amp;#39;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;flag&lt;/span&gt;
+&lt;span class="nv"&gt;And&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;then&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;it&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;goes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;back&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;英语，西班牙语版&lt;/p&gt;
+&lt;p&gt;英法版本&lt;/p&gt;
+&lt;p&gt;英阿拉伯版&lt;/p&gt;
+&lt;p&gt;中文版，同是定了中文名叫——旗开得胜。&lt;/p&gt;
+&lt;p&gt;还有许多其它语言版本，就不收录了。下面是原版，不是为了世界杯而创作，是为了战争中的儿童&lt;/p&gt;
+&lt;p&gt;原版，附歌词：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;when&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;get&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;older&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;i&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;will&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;be&lt;/span&gt;
+&lt;span class="nv"&gt;stronger&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ll call me freedom just&lt;/span&gt;
+&lt;span class="err"&gt;like a wavin flag&lt;/span&gt;
+
+&lt;span class="err"&gt;when i get older i will be&lt;/span&gt;
+&lt;span class="nv"&gt;stronger&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ll call me freedom just&lt;/span&gt;
+&lt;span class="err"&gt;like a waving flag&lt;/span&gt;
+&lt;span class="err"&gt;and then it goes back (3x)&lt;/span&gt;
+&lt;span class="err"&gt;ahhho ahhho ahhho&lt;/span&gt;
+
+&lt;span class="err"&gt;born to a throne&lt;/span&gt;
+&lt;span class="err"&gt;stronger than rome&lt;/span&gt;
+&lt;span class="err"&gt;but violent prone&lt;/span&gt;
+&lt;span class="err"&gt;poor people zone&lt;/span&gt;
+&lt;span class="err"&gt;but its my home&lt;/span&gt;
+&lt;span class="err"&gt;all i have known&lt;/span&gt;
+&lt;span class="err"&gt;where i got grown&lt;/span&gt;
+&lt;span class="err"&gt;streets we would roam&lt;/span&gt;
+
+&lt;span class="err"&gt;out of the darkness&lt;/span&gt;
+&lt;span class="err"&gt;i came the farthest&lt;/span&gt;
+&lt;span class="err"&gt;among the hardest survive&lt;/span&gt;
+&lt;span class="err"&gt;learn form these streets&lt;/span&gt;
+&lt;span class="err"&gt;it can be bleak&lt;/span&gt;
+&lt;span class="err"&gt;accept no defeet&lt;/span&gt;
+&lt;span class="err"&gt;surrender retreat&lt;/span&gt;
+&lt;span class="err"&gt;(so we struggling)&lt;/span&gt;
+&lt;span class="err"&gt;fighting to eat&lt;/span&gt;
+&lt;span class="err"&gt;(and we wondering)&lt;/span&gt;
+&lt;span class="err"&gt;when we will be free&lt;/span&gt;
+&lt;span class="err"&gt;so we patiently wait&lt;/span&gt;
+&lt;span class="err"&gt;for that faithful day&lt;/span&gt;
+&lt;span class="err"&gt;its not far away&lt;/span&gt;
+&lt;span class="err"&gt;but for now we say&lt;/span&gt;
+
+&lt;span class="err"&gt;when i get older i will be&lt;/span&gt;
+&lt;span class="nv"&gt;stronger&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ll call me freedom just&lt;/span&gt;
+&lt;span class="err"&gt;like a waving flag&lt;/span&gt;
+&lt;span class="err"&gt;and then it goes back (3x)&lt;/span&gt;
+
+&lt;span class="err"&gt;ahhho ahhho ahhho&lt;/span&gt;
+
+&lt;span class="err"&gt;so many wars&lt;/span&gt;
+&lt;span class="err"&gt;settling scores&lt;/span&gt;
+&lt;span class="err"&gt;bring us promises&lt;/span&gt;
+&lt;span class="err"&gt;leaving us poor&lt;/span&gt;
+&lt;span class="err"&gt;i heard them say&lt;/span&gt;
+&lt;span class="err"&gt;love is the way&lt;/span&gt;
+&lt;span class="err"&gt;love is the answer&lt;/span&gt;
+&lt;span class="err"&gt;thats what they say&lt;/span&gt;
+
+&lt;span class="err"&gt;but look how they treat us&lt;/span&gt;
+&lt;span class="err"&gt;make us believers&lt;/span&gt;
+&lt;span class="err"&gt;we fight there battles&lt;/span&gt;
+&lt;span class="err"&gt;then they deceive us&lt;/span&gt;
+&lt;span class="err"&gt;try to control us&lt;/span&gt;
+&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;couldn&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;t hold us&lt;/span&gt;
+
+&lt;span class="err"&gt;cause we just move forward&lt;/span&gt;
+&lt;span class="err"&gt;like buffalo soldiers&lt;/span&gt;
+&lt;span class="err"&gt;(but we strugglin)&lt;/span&gt;
+&lt;span class="err"&gt;fighting to eat&lt;/span&gt;
+&lt;span class="err"&gt;(and we wondering)&lt;/span&gt;
+&lt;span class="err"&gt;when we will be free&lt;/span&gt;
+&lt;span class="err"&gt;so we patiently wait&lt;/span&gt;
+&lt;span class="err"&gt;for that faithfully day&lt;/span&gt;
+&lt;span class="err"&gt;its not far away&lt;/span&gt;
+&lt;span class="err"&gt;but for now we say&lt;/span&gt;
+
+&lt;span class="err"&gt;when i get older i will be&lt;/span&gt;
+&lt;span class="nv"&gt;stronger&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ll call me freedom just&lt;/span&gt;
+&lt;span class="err"&gt;like a waving flag&lt;/span&gt;
+&lt;span class="err"&gt;and then it goes back (3x)&lt;/span&gt;
+
+&lt;span class="err"&gt;and then it goes when i get older i will be&lt;/span&gt;
+&lt;span class="nv"&gt;stronger&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ll call me freedom just&lt;/span&gt;
+&lt;span class="err"&gt;like a wavin flag&lt;/span&gt;
+&lt;span class="err"&gt;and then it goes back (3x)&lt;/span&gt;
+&lt;span class="err"&gt;ahhhooo ahhhoooo ahhhooo&lt;/span&gt;
+
+&lt;span class="err"&gt;and everybody will be singing it&lt;/span&gt;
+&lt;span class="err"&gt;and you and i will be singing it&lt;/span&gt;
+&lt;span class="err"&gt;and we all will be singing it&lt;/span&gt;
+&lt;span class="err"&gt;wo wah wo ah wo ah&lt;/span&gt;
+
+&lt;span class="err"&gt;when i get older i will be&lt;/span&gt;
+&lt;span class="nv"&gt;stronger&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ll call me freedom just&lt;/span&gt;
+&lt;span class="err"&gt;like a wavin flag&lt;/span&gt;
+&lt;span class="err"&gt;and then it goes back (3x)&lt;/span&gt;
+
+&lt;span class="err"&gt;and then it goes when i get older i will be&lt;/span&gt;
+&lt;span class="nv"&gt;stronger&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;they&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;ll call me freedom just&lt;/span&gt;
+&lt;span class="err"&gt;like a wavin flag&lt;/span&gt;
+&lt;span class="err"&gt;and then it goes back (3x)&lt;/span&gt;
+&lt;span class="err"&gt;a oh a oh a oh&lt;/span&gt;
+
+&lt;span class="err"&gt;when i get older&lt;/span&gt;
+&lt;span class="err"&gt;when i get older&lt;/span&gt;
+&lt;span class="err"&gt;i will be stronger&lt;/span&gt;
+
+&lt;span class="err"&gt;just like a wavin flag (3x)&lt;/span&gt;
+&lt;span class="err"&gt;flag flag&lt;/span&gt;
+&lt;span class="err"&gt;just like a wavin flag&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content><category term="2010"></category><category term="世界杯"></category><category term="音乐"></category></entry><entry><title>wordpress升级到3.0了</title><link href="https://bobobo80.com/2010/wordpresssheng-ji-dao-30liao.html" rel="alternate"></link><published>2010-06-20T00:00:00+08:00</published><updated>2010-06-20T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-20:/2010/wordpresssheng-ji-dao-30liao.html</id><summary type="html">&lt;p&gt;wordpress升级到3.0了，在刚刚笨拙的完成了域名的转移后，我又笨拙的完成了wordpress的升级工作，看别人说，又有新功能了，我表示压力不大，因为wordpress就还没搞明白呢。慢慢来吧 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;wordpress升级到3.0了，在刚刚笨拙的完成了域名的转移后，我又笨拙的完成了wordpress的升级工作，看别人说，又有新功能了，我表示压力不大，因为wordpress就还没搞明白呢。慢慢来吧。在等毕设答辩展示视频渲染的时间来更新下blog。恩，就是这样。&lt;/p&gt;</content><category term="2010"></category><category term="一句话"></category></entry><entry><title>来自推特，段子</title><link href="https://bobobo80.com/2010/lai-zi-tui-te-duan-zi.html" rel="alternate"></link><published>2010-06-14T00:00:00+08:00</published><updated>2010-06-14T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-14:/2010/lai-zi-tui-te-duan-zi.html</id><summary type="html">&lt;p&gt;duanzi Via @teenchen: 某日上佛学选修课，一方丈给大家讲学，同学们例行问了几个问题： 问：大师，这门课点名么？ 答：不点。 问：大师，这门课考试 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;duanzi Via @teenchen: 某日上佛学选修课，一方丈给大家讲学，同学们例行问了几个问题： 问：大师，这门课点名么？ 答：不点。 问：大师，这门课考试吗？ 答：不考。 问：大师，那期末的成绩怎么办？ 答：随缘吧~~~~ 全班崩溃。#段子 http://goo.gl/STNo&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>还是湿兄好阿 Resending @...</title><link href="https://bobobo80.com/2010/huan-shi-shi-xiong-hao-a-resending.html" rel="alternate"></link><published>2010-06-13T00:00:00+08:00</published><updated>2010-06-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-13:/2010/huan-shi-shi-xiong-hao-a-resending.html</id><content type="html">&lt;p&gt;还是湿兄好阿 Resending @&lt;a href="http://twitter.com/qkshan"&gt;qkshan&lt;/a&gt;: 帮师兄的项目改了一天代码，500RMB，比老板2个月给的还多&lt;/p&gt;</content><category term="2010"></category><category term="bobobo80又在tweet上说话了："></category></entry><entry><title>今天小折腾了一下，换个主题</title><link href="https://bobobo80.com/2010/jin-tian-xiao-zhe-teng-liao-yi-xia-huan-ge-zhu-ti.html" rel="alternate"></link><published>2010-06-13T00:00:00+08:00</published><updated>2010-06-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-13:/2010/jin-tian-xiao-zhe-teng-liao-yi-xia-huan-ge-zhu-ti.html</id><content type="html">&lt;p&gt;昨交的论文初稿，貌似要大改，不爽。&lt;/p&gt;
+&lt;p&gt;故不看论文了。&lt;/p&gt;
+&lt;p&gt;折腾。。。。。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>Resending @buchong: [转载]</title><link href="https://bobobo80.com/2010/resending-buchong-zhuan-zai.html" rel="alternate"></link><published>2010-06-13T00:00:00+08:00</published><updated>2010-06-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-13:/2010/resending-buchong-zhuan-zai.html</id><content type="html">&lt;p&gt;Resending @&lt;a href="http://twitter.com/buchong"&gt;buchong&lt;/a&gt;: [转载]当今中国震惊世界的25个倒数第一 知道差距是为了清醒 &lt;a href="http://goo.gl/tH7p"&gt;http://goo.gl/tH7p&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category><category term="bobobo80又在tweet上说话了："></category></entry><entry><title>Resending @chinanewsweek: 【</title><link href="https://bobobo80.com/2010/resending-chinanewsweek.html" rel="alternate"></link><published>2010-06-13T00:00:00+08:00</published><updated>2010-06-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-13:/2010/resending-chinanewsweek.html</id><summary type="html">&lt;p&gt;Resending @&lt;a href="http://twitter.com/chinanewsweek"&gt;chinanewsweek&lt;/a&gt;: 【温家宝驾农用机与农民一起收麦种玉米】6月9日至10日，中共中央政治局常委、国务院总理温家宝来到许昌，调研当前的“三夏”生产 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Resending @&lt;a href="http://twitter.com/chinanewsweek"&gt;chinanewsweek&lt;/a&gt;: 【温家宝驾农用机与农民一起收麦种玉米】6月9日至10日，中共中央政治局常委、国务院总理温家宝来到许昌，调研当前的“三夏”生产和农业农村工作。44岁的农民吕素斌做梦也没想到，自己会和温家宝总理坐在收割机上一起收麦子。http:/…&lt;/p&gt;</content><category term="2010"></category><category term="bobobo80又在tweet上说话了："></category></entry><entry><title>中午了。准备吃饭。</title><link href="https://bobobo80.com/2010/zhong-wu-liao-zhun-bei-chi-fan.html" rel="alternate"></link><published>2010-06-13T00:00:00+08:00</published><updated>2010-06-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-13:/2010/zhong-wu-liao-zhun-bei-chi-fan.html</id><content type="html">&lt;p&gt;中午了。准备吃饭。&lt;/p&gt;</content><category term="2010"></category><category term="bobobo80又在tweet上说话了："></category></entry><entry><title>（转）分析CCTV5直播世界杯的3D效果是如何实现的</title><link href="https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html" rel="alternate"></link><published>2010-06-13T00:00:00+08:00</published><updated>2010-06-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-13:/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html</id><summary type="html">&lt;p&gt;&lt;a href="http://list.it.com.cn/show.php?articleid=823387"&gt;http://list.it.com.cn/show.php?articleid=823387&lt;/a&gt;&lt;/p&gt;
+&lt;table cellspacing="0" cellpadding="0" width="100%"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width="2" bgcolor="#f7fafc"&gt;&lt;/td&gt;&lt;td bgcolor="#f7fafc"&gt;出处：IT.com.cn(IT世界网)&amp;nbsp;&amp;nbsp; 作者：Panx&amp;nbsp;&amp;nbsp; 时间：[2010-06-13 15:36:50]&lt;/td&gt;&lt;td width="2" bgcolor="#f7fafc"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;昨天CCTV5《豪门盛宴》在解读2010年世界杯的时候，在节目现场展示了虚拟技术合成的 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="http://list.it.com.cn/show.php?articleid=823387"&gt;http://list.it.com.cn/show.php?articleid=823387&lt;/a&gt;&lt;/p&gt;
+&lt;table cellspacing="0" cellpadding="0" width="100%"&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td width="2" bgcolor="#f7fafc"&gt;&lt;/td&gt;&lt;td bgcolor="#f7fafc"&gt;出处：IT.com.cn(IT世界网)&amp;nbsp;&amp;nbsp; 作者：Panx&amp;nbsp;&amp;nbsp; 时间：[2010-06-13 15:36:50]&lt;/td&gt;&lt;td width="2" bgcolor="#f7fafc"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;昨天CCTV5《豪门盛宴》在解读2010年世界杯的时候，在节目现场展示了虚拟技术合成的3D南非世界杯各个球场，而且可以随着镜头的变化发 生视角和纵深的变化，今天看到网上很多人对这个技术很感兴趣，暂时还没有人出来具体解释这种技术，我在这里就大胆抛砖引玉，把我2004年时候做的研究生 项目拿出来解释一下原理，虽然时隔6年，各种技术，从互动程序到3D合成和电视播出，都比2004年要先进太多了，但是他们实现的基本原理还是相似的，我 就大胆揣测一下吧。&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;基本来说，这种技术的名称是AR(Augmented Reality)，也就是“增强现实”。AR(增强现实)与我们都很熟悉的VR(虚拟现实)的区别就在于，VR是“脱离”现实场景的，而AR是在真实场景 上增加虚拟内容。&lt;/p&gt;
+&lt;p&gt;AR技术的应用从2000至今，还在不断探索和实验中，目前还没有出现所谓的Killer App，所以也就没有被广泛应用。至今为止，最具有实用意义的应用，应该是某家汽车品牌的专家级工程师所使用的AR 电子说明书，简言之，就是工程师戴上HMD(head mounted display)设备，通过HMD上的透明显示器，可以观察到现实中的汽车配件的各个细节(用肉眼也能看见的那些)，同时，HMD上会根据所观察的零件不 同，显示出该零件的一切数字化信息，这样，工程师就不需要爬到山一样的文档中去查找这些信息了。用电脑搜索不也是一样的吗，为什么要用AR?很简单，因为 并不是所有的零件上都有标号可以查询，面对一个光突突没有任何标记的螺丝帽，用电脑也无济于事，而AR技术是可以识别的。当然，这是一个高级的例子，言归 正传，《豪门盛宴》中所使用的AR技术并没有这么高级，而是像我当年做的那种最初级的技术。&lt;/p&gt;
+&lt;p&gt;下面我们来看一下AR的原理，由于我太懒了，所以拿一段很早以前写的解释直接放上来，先看个大概，后面还有分析：cctv5豪门盛宴中的AR技 术&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;最终呈现在屏幕上的效果类似于这样：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/100613_AR001.jpg"&gt; &lt;strong&gt;看过上面的原理，你就知道AR的几个基本设备了：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1.摄像头-用来捕捉标记图案&lt;/p&gt;
+&lt;p&gt;2.可识别的唯一图案&lt;/p&gt;
+&lt;p&gt;3.现实设备&lt;/p&gt;
+&lt;p&gt;4.当然所有这些设备都需要连接到运行AR toolkit的电脑上&lt;/p&gt;
+&lt;p&gt;这些都完成之后，摄像头就可以自由活动了，合成的3D内容(静态模型或动画都可以)也会随着摄像机镜头的活动而活动，当然视角很重要(当年为了 把视角调教一致，我就花了1整天时间)。&lt;/p&gt;
+&lt;p&gt;cctv5南非世界杯《豪门盛宴》中的3D虚拟球场就是这么实现的：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用于识别的图案极可能是这个，或者部分：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/100613_AR002.jpg"&gt;图案识别后，合成任何3D模型和动画都可以，还可以与3D内容互动(需要类似电子手套或鼠标之类的输入设备)：&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="images/100613_AR003.jpg"&gt;最后，主持人走入3D球场区域后，可以看出cctv5世界杯豪门3D盛宴虚拟球场技术使用的是AR技术，而不是别的什么新技术，所以现场观众什 么都看不到。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>又换了一个空间</title><link href="https://bobobo80.com/2010/you-huan-liao-yi-ge-kong-jian.html" rel="alternate"></link><published>2010-06-12T00:00:00+08:00</published><updated>2010-06-12T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-12:/2010/you-huan-liao-yi-ge-kong-jian.html</id><content type="html">&lt;p&gt;又换了一个空间，那个空间被墙了，汗。&lt;/p&gt;
+&lt;p&gt;这个就不一样了。首页最下面有我推特的最新更新。恩，这个不错。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>博客搬家了</title><link href="https://bobobo80.com/2010/bo-ke-ban-jia-liao.html" rel="alternate"></link><published>2010-06-09T00:00:00+08:00</published><updated>2010-06-09T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-09:/2010/bo-ke-ban-jia-liao.html</id><content type="html">&lt;p&gt;博客搬到自己建的wordpress了。虽然不会玩，但是比百毒这个blog可玩性高。&lt;br&gt;
+&lt;a href="http://i80.be/"&gt;i80.be&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>伪高考零分作文</title><link href="https://bobobo80.com/2010/wei-gao-kao-ling-fen-zuo-wen.html" rel="alternate"></link><published>2010-06-09T00:00:00+08:00</published><updated>2010-06-09T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-09:/2010/wei-gao-kao-ling-fen-zuo-wen.html</id><summary type="html">&lt;p&gt;转载，出处不明。&lt;/p&gt;
+&lt;p&gt;《站在历史天空下的幻想——高考感怀七十二行诗》&lt;/p&gt;
+&lt;p&gt;西子泛舟范蠡老，三千越甲虎狼师。沧桑变幻慨国是，东方又晓 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;转载，出处不明。&lt;/p&gt;
+&lt;p&gt;《站在历史天空下的幻想——高考感怀七十二行诗》&lt;/p&gt;
+&lt;p&gt;西子泛舟范蠡老，三千越甲虎狼师。沧桑变幻慨国是，东方又晓唱雄鸡。&lt;/p&gt;
+&lt;p&gt;回首清末乱象出，辱国从来未如此。金瓯残缺山河破，春花秋月无人题。&lt;/p&gt;
+&lt;p&gt;岂道正义世间无，善恶有报天自知。梅自高洁玉自白，列强吞象可笑痴。&lt;/p&gt;
+&lt;p&gt;春风离离原上草，春雨新燕啄春泥。绿野千里奔烈马，何惧风霜严相逼。 &lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;十月革命将民教，五四运动火种育。佞臣身与名俱臭，马列主义救危局。&lt;/p&gt;
+&lt;p&gt;镰刀斧头天铸就，山城重庆谈统一。可笑蒋家王朝蠢，技穷犹自效黔驴。&lt;/p&gt;
+&lt;p&gt;通电下野金蝉脱，遗憾宝岛还分离。我党改革能务实，中华雄起立国际。&lt;/p&gt;
+&lt;p&gt;国不再锁关不闭，财源滚滚进我门。世界遍布中国造，更能收购美国车。&lt;/p&gt;
+&lt;p&gt;打黑风暴除公害，惩治贪官蛀虫死。持续发展讲科学，低碳经济对路子。&lt;/p&gt;
+&lt;p&gt;美帝面前严说不，分清大非与大是。谷歌不是好东东，党的政策亚克西。&lt;/p&gt;
+&lt;p&gt;玉成宝璧靠心琢，修成金刚不怕磨。尔有反华心肠诡，我有锦囊万条计。&lt;/p&gt;
+&lt;p&gt;金融危机毫不乱，借风借力把帆扯。岂怕台独丧家狗，分裂分子空放屁。&lt;/p&gt;
+&lt;p&gt;春风十里如画卷，台湾同胞游故里。感怀和谐无限意，停车杏林有所思。&lt;/p&gt;
+&lt;p&gt;早闻大陆多礼让，和睦不分我和你。今见桑梓确如报，游子心头喜上喜。&lt;/p&gt;
+&lt;p&gt;镜头芳菲随心拍，怎比安居歇鞍马。机遇在手岂能溜，叶落归根是所须。&lt;/p&gt;
+&lt;p&gt;良辰美景碧云天，台胞定居桑梓下。中华自古家为大，四海归一龙脉吉。&lt;/p&gt;
+&lt;p&gt;三通惠政春意到，自此骨肉不两处。七夕挽手渡银河，中秋同乐烹紫蟹。&lt;/p&gt;
+&lt;p&gt;正邪相生自古有，台独妖风又如何。纵使小丑挟民意，台胞岂能忘大义。&lt;/p&gt;
+&lt;p&gt;圣人展目细查考，权衡天下剑小试。内政外交藏玄机，霸权不敢觑神器。&lt;/p&gt;
+&lt;p&gt;当年甲午腕空扼，马关割台秋肃杀。今朝三军各逞能，龙腾虎跃彰国力。&lt;/p&gt;
+&lt;p&gt;社稷利器数二炮，领先战鹰早研制。北斗导航定目标，百步穿杨神箭准。&lt;/p&gt;
+&lt;p&gt;航天产业振群科，神舟巡天大鹏举。俯瞰九州景无遗，澄清玉宇扫邪毒。&lt;/p&gt;
+&lt;p&gt;宝岛丰饶世间无，岂容肖小暗窥视。机遇当前须奋进，落后挨打休停步。&lt;/p&gt;
+&lt;p&gt;勿忘日寇九一八，窃我东北折我股。倭鬼再敢犯海疆，钓鱼岛上定鞭尸。&lt;/p&gt;
+&lt;p&gt;勿忘北约谋东扩，美帝处处耍阴招。炸我使馆兽行暴，欲吞全球毒牙利。&lt;/p&gt;
+&lt;p&gt;美日合围无复加，我自一笑鼎三分。拔剑扬眉闻鸡舞，激浊扬清除时弊。&lt;/p&gt;
+&lt;p&gt;泰山压顶合掌推，冲破岛链大道出。横扫蚍蜉众蝼蚁，振兴华夏我民族。&lt;/p&gt;
+&lt;p&gt;中华当兴信无误，两岸同是汉家人。台湾好比一游子，琉球诸屿是群弟。&lt;/p&gt;
+&lt;p&gt;当年闻氏一多老，泣血作墨歌七子。港澳已归算当今，跨越海峡应指日。&lt;/p&gt;
+&lt;p&gt;讨贼檄文丹心写，重整乾坤续史诗。贼子分裂犹可骂，阿扁之流不如猪。&lt;/p&gt;
+&lt;p&gt;壮士手提屠龙刀，誓收台海成一快。众心好似长江水，澎湃激荡沸腾热。&lt;/p&gt;
+&lt;p&gt;乱弹穿空大作为，惊涛拍岸为人民。万里红霞五星出，台独溃败丧元气。&lt;/p&gt;
+&lt;p&gt;手拈飞蛾银灯剔，笑尔也敢生反骨。外衣烧尽马甲扒，不过螳臂一泼皮。&lt;/p&gt;
+&lt;p&gt;青龙刀下将汝斩，尔曹尸身垫马蹄。席卷千军城寨拔，定擒余孽与爪牙。&lt;/p&gt;
+&lt;p&gt;英雄上山惯擒虎，豪杰为国乐捐躯。美帝若敢阻统一，管叫白宫大地震。&lt;/p&gt;
+&lt;p&gt;美日虾兵和蟹将，中华航母秒杀汝。宝岛回归礼花爆，漫天牡丹与金菊!&lt;/p&gt;
+&lt;p&gt;后记：&lt;/p&gt;
+&lt;p&gt;幻想推动现实，幻想照亮生命，我中华民族即使于危难之际，也不曾失去对大同社会美好生活之幻想，多少仁人志士为此流血牺牲!历史证明，非我党不能救中国。现实证明，非我党不能领导中国。幻想未来，亦非我党不能完成统一台湾，复兴中华之大业！&lt;/p&gt;
+&lt;p&gt;今日之诗句，实乃出乎本生一片爱党爱国之心!至于每句末字又连缀成四言小诗，实巧合耳。望老师怀容人之雅量，展伯乐之慧眼，参照周海洋兄《站在黄花岗门口》打分之先例，给予满分为盼！&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>2010北京高考作文题——仰望星空与脚踏实地</title><link href="https://bobobo80.com/2010/2010bei-jing-gao-kao-zuo-wen-ti-yang-wang-xing-kong-yu-jiao-ta-shi-di.html" rel="alternate"></link><published>2010-06-07T00:00:00+08:00</published><updated>2010-06-07T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-07:/2010/2010bei-jing-gao-kao-zuo-wen-ti-yang-wang-xing-kong-yu-jiao-ta-shi-di.html</id><summary type="html">&lt;p&gt;2010北京高考作文题——仰望星空与脚踏实地。&lt;/p&gt;
+&lt;p&gt;这次的高考题与北航刚刚定的校歌有某些联系，不排除北航教师参与命题的可能性。&lt;/p&gt;
+&lt;p&gt;同时。不说了 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;2010北京高考作文题——仰望星空与脚踏实地。&lt;/p&gt;
+&lt;p&gt;这次的高考题与北航刚刚定的校歌有某些联系，不排除北航教师参与命题的可能性。&lt;/p&gt;
+&lt;p&gt;同时。不说了。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>Hello world！</title><link href="https://bobobo80.com/2010/hello-world.html" rel="alternate"></link><published>2010-06-07T00:00:00+08:00</published><updated>2010-06-07T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-07:/2010/hello-world.html</id><content type="html">&lt;p&gt;欢迎使用 WordPress 。这是系统自动生成的演示文章。编辑或者删除它，开始您的博客！&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>史上最牛坦克大战没有之一</title><link href="https://bobobo80.com/2010/shi-shang-zui-niu-tan-ke-da-zhan-mei-you-zhi-yi.html" rel="alternate"></link><published>2010-06-07T00:00:00+08:00</published><updated>2010-06-07T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-06-07:/2010/shi-shang-zui-niu-tan-ke-da-zhan-mei-you-zhi-yi.html</id><content type="html">&lt;p&gt;&lt;a href="http://player.youku.com/player.php/sid/XMTc3MzIwMTk2/v.swf"&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>使用ssl加密的google搜索</title><link href="https://bobobo80.com/2010/shi-yong-ssljia-mi-de-googlesou-suo.html" rel="alternate"></link><published>2010-05-29T00:00:00+08:00</published><updated>2010-05-29T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-05-29:/2010/shi-yong-ssljia-mi-de-googlesou-suo.html</id><summary type="html">&lt;p&gt;由于众所周知的原因，使用普通google搜索会遇到种种麻烦。&lt;br&gt;
+今日看到google支持ssl加密搜索，故可以对搜索内容进行加密。所以。。。  &lt;/p&gt;
+&lt;p&gt;使用方法：&lt;br&gt;
+&lt;a href="https://www.google.com/"&gt;https://www.google.com/&lt;/a&gt;&lt;br&gt;
+恩，就是这个网址，前面 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;由于众所周知的原因，使用普通google搜索会遇到种种麻烦。&lt;br&gt;
+今日看到google支持ssl加密搜索，故可以对搜索内容进行加密。所以。。。  &lt;/p&gt;
+&lt;p&gt;使用方法：&lt;br&gt;
+&lt;a href="https://www.google.com/"&gt;https://www.google.com/&lt;/a&gt;&lt;br&gt;
+恩，就是这个网址，前面是https  &lt;/p&gt;
+&lt;p&gt;不过，一般你直接点会自动链接到hk的，要再&lt;a href="http://www.google.com/ncr"&gt;点一下下面的Go to Google.com&lt;/a&gt;&lt;br&gt;
+然后，再打开一次&lt;a href="https://www.google.com/"&gt;https://www.google.com/&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;OK，google图标右上角出现了一个小锁，恩，ssl搜索还是beta版，按疼讯的理论，这个已经很稳定了。  &lt;/p&gt;
+&lt;p&gt;不多说了，可以用了。想了解更多具体的google ssl搜索，&lt;a href="http://www.google.com/support/websearch/bin/answer.py?answer=173733&amp;amp;hl=en"&gt;点击http://www.google.com/support/websearch/bin/answer.py?answer=173733&amp;amp;hl=en&lt;/a&gt;&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>纪念Dropbox君！（转）</title><link href="https://bobobo80.com/2010/ji-nian-dropboxjun-zhuan.html" rel="alternate"></link><published>2010-05-14T00:00:00+08:00</published><updated>2010-05-14T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-05-14:/2010/ji-nian-dropboxjun-zhuan.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href="http://www.ipc.me/goodbye-dropbox.html/comment-page-1#comments"&gt;www.ipc.me/goodbye-dropbox.html/comment-page-1#comments&lt;/a&gt;&lt;br&gt;
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;中华民国九十九年五月十日，就是 &lt;a href="http://www.ipc.me/goodbye-dropbox.html"&gt;Dropbox&lt;/a&gt; 君遇害的那一天，我独在墙外徘徊，遇见推友们，前来问我道，“先生可 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;&lt;a href="http://www.ipc.me/goodbye-dropbox.html/comment-page-1#comments"&gt;www.ipc.me/goodbye-dropbox.html/comment-page-1#comments&lt;/a&gt;&lt;br&gt;
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;中华民国九十九年五月十日，就是 &lt;a href="http://www.ipc.me/goodbye-dropbox.html"&gt;Dropbox&lt;/a&gt; 君遇害的那一天，我独在墙外徘徊，遇见推友们，前来问我道，“先生可曾为 Dropbox 君写了一点什么没有？”我说“没有”。他们就正告我，“先生还是写一点罢；很多人都是听先生的推荐才知道Dropbox君的。”&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.ipc.me/goodbye-dropbox.html"&gt;&lt;img alt="Dropbox" src="images/1.jpg" title="Dropbox"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这是我知道的，凡我用过的网络存储服务，大概是因为功能和速度的缘故，甚少使用，更不会推荐给他人，直至遇到&lt;a href="http://www.ipc.me/goodbye-dropbox.html"&gt;Dropbox君&lt;/a&gt;， 在这样的生活中，毅然将Dropbox放入我电脑“启动”组里的软件，这几年来就只有她。我也早觉得有写一点东西的必要了，倘使我能够相信真有所谓“在天 之灵”，那自然可以得到更大的安慰，——但是，现在，却只能如此而已。&lt;/p&gt;
+&lt;p&gt;可是我实在无话可说。我只觉得所住的并非人间。放在Dropbox里数百兆的工作和学习文档都再也无法访问，使我艰于呼吸视听，那里还能有什么言 语？长歌当哭，是必须在痛定之后的。而此后几个五毛的阴险的论调，尤使我觉得悲哀。我已经出离愤怒了。我将深味这非人间的浓黑的悲凉；以我的最大哀痛显示 于非人间，使它们快意于我的苦痛，就将这作为后死者的菲薄的祭品，奉献于逝者的灵前。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;二&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;真的猛士，敢于直面惨淡的人生，敢于正视淋漓的鲜血。这是怎样的哀痛者和幸福者？然而造化又常常为庸人设计，以时间的流驶，来洗涤旧迹，仅使留下淡 红的血色和微漠的悲哀。在这淡红的血色和微漠的悲哀中，又给人暂得偷生，维持着这似人非人的世界。我不知道这样的世界何时是一个尽头！&lt;/p&gt;
+&lt;p&gt;我们还在这样的世上活着；我也早觉得有写一点东西的必要了。离2012还有两年，忘却的救主快要降临了罢，我正有写一点东西的必要了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;三&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在无数被害网站之中，&lt;a href="http://www.ipc.me/goodbye-dropbox.html"&gt;Dropbox&lt;/a&gt;是 我的最爱。一个划时代的云存储服务，我向来是这样评价她。这样说，现在却觉得有些踌躇了，我应该对她奉献我的悲哀与尊敬。她不是“苟活到现在”的无良网 站，而是一个无辜被封杀的深受网民喜爱的服务。&lt;/p&gt;
+&lt;p&gt;Dropbox的名字第一次为我所见，是在去年Gmail的一封邮件里，我的一个好友发邮件推荐我注册这个服务，就是Dropbox；但是我注册后 发现需要安装客户端，令我踌躇不前。直到后来，越来越多的朋友发来邮件邀请我注册，才令我感到诧异，这到底是个什么服务，居然有这么大的魅力，后来一个好 友告诉我，说：这就是云存储服务。其时我才恍然大悟，原来这个服务能实现多台电脑上文件的自动同步和更新，心中却暗自诧异。我平素想，为了同步文件，无论 如何也需要用U盘将文件拷贝粘贴，总有些麻烦，而使用Dropbox竟然可以自动完成这所有的更新操作，实在节省了我大量的时间，于是我使用 Dropbox的时间就多了起来，直到将其加入“启动”组，成为我电脑必备的软件，虽然中途也见过微软的Mesh等同类软件，到总觉得速度和性能 Dropbox最优，直到昨日Dropbox突然被害，才发现在我的记忆上，昨日的Dropbox就是永别了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;四&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我在十日的早晨，还发文章向网友推荐&lt;a href="http://www.iplaysoft.com/dropbox.html"&gt;Dropbox&lt;/a&gt;，并分享了阮一峰翻译的“Dropbox的创业经历”的PPT；下午便得到噩耗，说 Dropbox居然被封杀，连https都无法访问，而客户端一经退出就再无法登录。但我对于这些传说，竟至于颇为怀疑。我向来是不惮以最坏的恶意，来推 测中国的 □□□□，然而我还不料，也不信竟会下劣凶残到这地步。况且始终没有任何意识形态的工具软件Dropbox，更何至于无端在屏幕前喋血呢？&lt;/p&gt;
+&lt;p&gt;然而即日证明是事实了，作证的便是访问Dropbox出现的“连接被重置”的错误页面。而且又证明着这不但是封杀，简直是定点封杀，因为所有包含 dropbox.com的链接都无法打开。&lt;/p&gt;
+&lt;p&gt;但现在□□□□就有令，说她是包含“有害信息”的工具！&lt;/p&gt;
+&lt;p&gt;但接着就有流言，说她是被“海外敌对势力”利用的。&lt;/p&gt;
+&lt;p&gt;惨象，已使我目不忍视了；流言，尤使我耳不忍闻。我还有什么话可说呢？我懂得衰亡民族之所以默无声息的缘由了。沉默呵，沉默呵！不在沉默中爆发，就 在沉默中灭亡。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;五&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;但是，我还有要说的话。&lt;/p&gt;
+&lt;p&gt;我没有亲见；听说她，&lt;a href="http://www.iplaysoft.com/dropbox.html"&gt;Dropbox&lt;/a&gt;，是一群年轻创业者的创新之作，深受用户欢迎，依靠使用者的口碑传播而获得了数百万注册用户，一 个网络存储工具，稍有人心者，谁也不会料到有这样的结果。但竟在中国遇害了，先是其文件分享域名dl.dropbox.com中弹，已经使得用户分享的文 件无法从网上访问，只是 Dropbox客户端还没有便死，同时使用https的方式还可以访问，但是现在dropbox.com的域名进入了黑名单，IP地址也被封锁，这两种方 式无疑是致命的，Dropbox终于是死掉了。&lt;/p&gt;
+&lt;p&gt;始终没有任何意识形态的网络存储工具Dropbox确是遇害了，这是真的，有“连接被重置”的网页为证；沉勇而友爱的Twitter君也死掉了，有 她的网页为证；只有一样沉勇而友爱的Google君还在香港的医院里呻吟。当三个深受网民喜爱的工具网站从容地转辗于□□□□所发明的防火墙包围中的时 候，这是怎样的一个惊心动魄的伟大呵！□□□□宣称“中国的互联网是开放的”，“中国政府鼓励互联网的发展”的夸夸其词，不幸全被这几缕血痕抹杀了。&lt;/p&gt;
+&lt;p&gt;但是□□□□却居然昂起头来，不知道个个脸上有着血污……。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;六&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我已经说过：我向来是不惮以最坏的恶意来推测中国人的。但这回却很有几点出于我的意外。一是当局者竟会这样地凶残，一是□□□□竟至如此之下劣，一 是不作恶的网站临难竟能如是之从容。&lt;/p&gt;
+&lt;p&gt;苟活者在淡红的血色中，会依稀看见微茫的希望；真的猛士，将更奋然而前行。&lt;/p&gt;
+&lt;p&gt;呜呼，我说不出话，但以此&lt;a href="http://www.ipc.me/goodbye-dropbox.html"&gt;纪念 Dropbox君&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;发表于民国九十九年五月十一日&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>暂时停止更新。</title><link href="https://bobobo80.com/2010/zan-shi-ting-zhi-geng-xin.html" rel="alternate"></link><published>2010-05-13T00:00:00+08:00</published><updated>2010-05-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-05-13:/2010/zan-shi-ting-zhi-geng-xin.html</id><content type="html">&lt;p&gt;暂时停止更新。找个言论自由的地方。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>UBUNTU 10.04 LTS is Here!</title><link href="https://bobobo80.com/2010/ubuntu-1004-lts-is-here.html" rel="alternate"></link><published>2010-04-30T00:00:00+08:00</published><updated>2010-04-30T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-04-30:/2010/ubuntu-1004-lts-is-here.html</id><content type="html">&lt;p&gt;&lt;a href="http://www.ubuntu.com/products/whatisubuntu/1004features"&gt;http://www.ubuntu.com/products/whatisubuntu/1004features&lt;/a&gt;&lt;br&gt;
+不多说了。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>转载一个sheldon的食谱</title><link href="https://bobobo80.com/2010/zhuan-zai-yi-ge-sheldonde-shi-pu.html" rel="alternate"></link><published>2010-03-09T00:00:00+08:00</published><updated>2010-03-09T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-03-09:/2010/zhuan-zai-yi-ge-sheldonde-shi-pu.html</id><summary type="html">&lt;p&gt;转载一个sheldon的食谱&lt;br&gt;
+&lt;a href="http://bt.buaa6.edu.cn/showtopic-5562.aspx"&gt;http://bt.buaa6.edu.cn/showtopic-5562.aspx&lt;/a&gt;（教育网才行）  &lt;/p&gt;
+&lt;p&gt;周一：泰国菜——泰式炒面、沙茶 鸡  &lt;/p&gt;
+&lt;p&gt;周二：汉堡日——以前是Big Boy的中号汉堡（莳萝片、洋葱圈，不要甜品，调 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;转载一个sheldon的食谱&lt;br&gt;
+&lt;a href="http://bt.buaa6.edu.cn/showtopic-5562.aspx"&gt;http://bt.buaa6.edu.cn/showtopic-5562.aspx&lt;/a&gt;（教育网才行）  &lt;/p&gt;
+&lt;p&gt;周一：泰国菜——泰式炒面、沙茶 鸡  &lt;/p&gt;
+&lt;p&gt;周二：汉堡日——以前是Big Boy的中号汉堡（莳萝片、洋葱圈，不要甜品，调味品单放）汉堡，后来是“芝士蛋糕工厂” 的烧烤培根芝士汉堡（烤肉酱、培根、芝士单放）  &lt;/p&gt;
+&lt;p&gt;周 三：奶油土豆汤日——种汤小屋的奶油土豆汤  &lt;/p&gt;
+&lt;p&gt;周四：披萨日——giacomo's的披萨（香肠、蘑菇，少放橄榄油），后来把Big Boy也改在了周四。  &lt;/p&gt;
+&lt;p&gt;周五：不详  &lt;/p&gt;
+&lt;p&gt;周六：早餐：麦片+脂肪含量为2%的纯奶（同时看BBC的神秘博士）&lt;br&gt;
+晚餐：中餐（陈皮鸡柳，西兰花要切丁，黑米饭不要白米饭，韩国芥末酱，低盐酱油）  &lt;/p&gt;
+&lt;p&gt;周日：不详  &lt;/p&gt;
+&lt;p&gt;另外：&lt;br&gt;
+不喝咖啡不喝酒&lt;br&gt;
+不吃熊爪饼&lt;br&gt;
+看电影时要吃爆米花&lt;br&gt;
+生病时要喝汤&lt;br&gt;
+可乐要无糖健怡的&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>新年到！</title><link href="https://bobobo80.com/2010/xin-nian-dao.html" rel="alternate"></link><published>2010-02-13T00:00:00+08:00</published><updated>2010-02-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-02-13:/2010/xin-nian-dao.html</id><content type="html">&lt;p&gt;新年到，祝大家虎年大吉，新年快乐！&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>俄罗斯第五代战斗机首飞（我发布的有点晚了）</title><link href="https://bobobo80.com/2010/e-luo-si-di-wu-dai-zhan-dou-ji-shou-fei-wo-fa-bu-de-you-dian-wan-liao.html" rel="alternate"></link><published>2010-01-31T00:00:00+08:00</published><updated>2010-01-31T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-01-31:/2010/e-luo-si-di-wu-dai-zhan-dou-ji-shou-fei-wo-fa-bu-de-you-dian-wan-liao.html</id><summary type="html">&lt;p&gt;T-50采用常规布局，以苏-27的气动结构为基础，整合了F-22、YF-23以及F-35部分气动特点。采用类似F-35的菱形机头，类似YF-23机身结构设计和类似F-18E/F的进气道设计，内置弹仓，外倾垂尾，配备修型大边条。&lt;br&gt;
+T-50给我们的整体印象是一个类似于苏-27和YF-23的融合体。该机的设计亮点在于全动外倾垂尾以 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;T-50采用常规布局，以苏-27的气动结构为基础，整合了F-22、YF-23以及F-35部分气动特点。采用类似F-35的菱形机头，类似YF-23机身结构设计和类似F-18E/F的进气道设计，内置弹仓，外倾垂尾，配备修型大边条。&lt;br&gt;
+T-50给我们的整体印象是一个类似于苏-27和YF-23的融合体。该机的设计亮点在于全动外倾垂尾以及全动边条前缘。&lt;br&gt;
+T-50从隐身特性上讲，其前向隐身特性应该较好，但是根据波束理论，虽然其边条前缘、主翼前缘、平尾前缘以及后缘平行，不过由于采用全动垂尾， 垂尾在平面内投影显然无法和其他翼面平行，切垂尾无遮挡，全动时会影响波束反射方向，其波束反射方向多于YF-23的四个以及F-22的八个。发动机类似 YF-23后部从机身突起，但是隐身处理明显不如YF-23。另外其座舱也对隐身有一定影响。&lt;br&gt;
+考虑到俄罗斯军工的工艺制造能力，估计其隐身特性应该不如YF-23、F-22和F-35，但优于台风和阵风。&lt;br&gt;
+气动特性上，T-50继承了苏-27整体大升力体的设计思想，可动边条前缘暗示了T-50和F-22一样，飞行气动设计思想从第三代的利用涡流发展到了第 四代的主动控制涡流，这是一次设计思想上的巨大跨越。从图中可以看到，T-50的机翼面积大，翼载较低。而宽大进气道、全动垂尾、推力矢量应该对其大迎角 能力有很大帮助。如能配备较好的飞控系统和较强劲的发动机，其在敏捷性上超过F-35、台风战机等还是有可能的，不过考虑到发动机因素，其机动性距离F- 22应该仍有一段距离。&lt;br&gt;
+&lt;a href="http://military.china.com/zh_cn/important/11052771/20100131/15799070.html"&gt;以上文字来自中华网military.china.com/zh_cn/important/11052771/20100131/15799070.html&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;但据北京晚报所写，该机具有等离子隐身技术，和推理矢量技术来控制俯仰，航向，滚转等，所以和F22的差距还很难说。  &lt;/p&gt;
+&lt;p&gt;以下youku视频。布拉布拉说什么听不懂，全动V尾看着挺清楚。首飞就不做眼镜蛇了，低调。&lt;img alt="" src="images/w_0001.gif"&gt;&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>苹果今日发布iPad平板电脑</title><link href="https://bobobo80.com/2010/ping-guo-jin-ri-fa-bu-ipadping-ban-dian-nao.html" rel="alternate"></link><published>2010-01-28T00:00:00+08:00</published><updated>2010-01-28T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-01-28:/2010/ping-guo-jin-ri-fa-bu-ipadping-ban-dian-nao.html</id><summary type="html">&lt;p&gt;正如人们想象的，苹果在次产品发布会上发布了人们猜测已久的平板电脑——名叫iPad。&lt;br&gt;
+iPad采用1GHz的自产CPU，而不是Intel的ATOM。而容量分为16G,32G,64G版本，同时还 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;正如人们想象的，苹果在次产品发布会上发布了人们猜测已久的平板电脑——名叫iPad。&lt;br&gt;
+iPad采用1GHz的自产CPU，而不是Intel的ATOM。而容量分为16G,32G,64G版本，同时还有&lt;br&gt;
+wifi版和wifi+3G版。wifi据说要到2个月后上市，而3G版要3个月后。据说内置中文和手写和拼&lt;br&gt;
+音输入法但会不会首批在中国上市，还很难说。其他参数方面不说了，看视频吧。  &lt;/p&gt;
+&lt;p&gt;至于广泛评论的没创意，大号iphone，这个有点市场反响来考察。&lt;br&gt;
+而对于难看，边框太宽等质疑，我觉得边框就得那么宽，要不你怎么拿啊。苹果的设计师还不至于&lt;br&gt;
+那么烂，平板电脑不能想当然的想象成去掉笔记本的键盘。&lt;br&gt;
+在广大质疑中诞生的苹果iPad在几个月后将接受市场的考验，不管怎么评价它，我觉得它能火，因为它&lt;br&gt;
+是"水果"牌的。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>种种迹象表明，google真要退出中国了。</title><link href="https://bobobo80.com/2010/chong-chong-ji-xiang-biao-ming-googlezhen-yao-tui-chu-zhong-guo-liao.html" rel="alternate"></link><published>2010-01-19T00:00:00+08:00</published><updated>2010-01-19T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-01-19:/2010/chong-chong-ji-xiang-biao-ming-googlezhen-yao-tui-chu-zhong-guo-liao.html</id><summary type="html">&lt;p&gt;从前一阵的传言到如今联通收到取消google手机暂停发布，种种迹象表明google退出中国已经不远了。&lt;br&gt;
+未来，当在浏览器上输入www.google.com时，很有可能出现的是链接超时。&lt;br&gt;
+看 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;从前一阵的传言到如今联通收到取消google手机暂停发布，种种迹象表明google退出中国已经不远了。&lt;br&gt;
+未来，当在浏览器上输入www.google.com时，很有可能出现的是链接超时。&lt;br&gt;
+看来，学习一下翻墙很有必要了。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>分享。飞机总动员。</title><link href="https://bobobo80.com/2010/fen-xiang-fei-ji-zong-dong-yuan.html" rel="alternate"></link><published>2010-01-19T00:00:00+08:00</published><updated>2010-01-19T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-01-19:/2010/fen-xiang-fei-ji-zong-dong-yuan.html</id><content type="html">&lt;p&gt;貌似是很早的东西了。但是前不久刚在豆瓣上看到的。来分享一下。&lt;br&gt;
+里面的飞机都很Q，但特点明显，很好辨认。&lt;/p&gt;</content><category term="2010"></category></entry><entry><title>毕设是不是做个这个？</title><link href="https://bobobo80.com/2010/bi-she-shi-bu-shi-zuo-ge-zhe-ge.html" rel="alternate"></link><published>2010-01-13T00:00:00+08:00</published><updated>2010-01-13T00:00:00+08:00</updated><author><name>bobobo80</name></author><id>tag:bobobo80.com,2010-01-13:/2010/bi-she-shi-bu-shi-zuo-ge-zhe-ge.html</id><content type="html">&lt;p&gt;创新型国家。。。&lt;br&gt;
+路慢慢兮。&lt;/p&gt;</content><category term="2010"></category></entry></feed>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>个人服务器自动化部署</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html" rel="canonical" />
+  <!-- Feed -->
+  <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="On the wing 展翼 Full Atom Feed" />
+  <link href="https://bobobo80.com/feeds/tech.atom.xml" type="application/atom+xml"
+    rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = 'https://bobobo80.com';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="之前自己做了一个小项目，用于记单词。因为目前的背单词app主要还是记拼写，而我比较欠缺的是记读音，很多单词看见认识，但是听到读音 …">
+
+    <meta name="author" content="bobobo80">
+
+    <meta name="tags" content="docker">
+    <meta name="tags" content="portainer">
+    <meta name="tags" content="github actions">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="On the wing 展翼"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="个人服务器自动化部署"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="之前自己做了一个小项目，用于记单词。因为目前的背单词app主要还是记拼写，而我比较欠缺的是记读音，很多单词看见认识，但是听到读音 …"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2021-10-09 00:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="Tech"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="docker"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="portainer"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="github actions"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://bobobo80.com/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "个人服务器自动化部署",
+  "headline": "个人服务器自动化部署",
+  "datePublished": "2021-10-09 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html",
+  "description": "之前自己做了一个小项目，用于记单词。因为目前的背单词app主要还是记拼写，而我比较欠缺的是记读音，很多单词看见认识，但是听到读音 …"
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+    <li class="nav-github"><a aria-label="Github" href="https://github.com/bobobo80" target="_blank"><i class="icon icon-github" aria-hidden="true"></i>
+    <span>github</span>
+    </a></li>
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">Tech</span>
+        </span>
+        <h1 class="post-title">个人服务器自动化部署</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="https://bobobo80.com/author/bobobo80.html">
+                <img class="author-profile-image" src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            bobobo80
+          </h4>
+          <time datetime="Sat 09 October 2021">Sat 09 October 2021</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p>之前自己做了一个小项目，用于记单词。因为目前的背单词app主要还是记拼写，而我比较欠缺的是记读音，很多单词看见认识，但是听到读音的不知道是哪个单词。所以想着做个程序来记读音，可以先听读音再选是否记住。</p>
+<p>大概背景就是这样。做这个主要也是为了体验一下完整前端后端开发，以及部署的整个流程。毕竟工作中主要是后端，而且其实只做后端的一部分。做个小项目可以体验一下全流程。这次我用了fastapi作为后端，了解一下这个很火的新框架，前端暂时是vue，不过前端部分不会的太多，目标先是能用。</p>
+<p>开发的事暂时按下不表，先来说说是如何部署的。在以前我玩wordpress时，还都是用个lnmp的脚本，然后把php程序上传到服务器，然后启动。之后在人人车，也是差不多，用git拉下来更新，重启服务，用supervisor自动重启挂掉的服务。而到了头条，一下子就先进了，有TCE系统，点一下就发布新镜像部署了。现在shopee的话，介于两者之间，也算是有自动化的部署流程，只不过系统还没整合到一起。对我自己来说，还真没有实践过容器部署和运维，所以也借这个项目实践一下。</p>
+<p>我只买了一台丐中丐级别的vps，buyvm的512mb。一年只要20刀。不过没有新加坡节点，延时大一些。k8s/k3s暂时先不体验了，不想一步迈的太大，配置也不够，咋看起来复杂度也很高。</p>
+<p>我主要参考的是<a href="https://www.kilerd.me/personal-docker-cluster-and-ci-package-pipeline/">这个文章</a>，用的docker swarm加上portainer作为ui来管理，只不过我用了图形化nginx管理工具。这个项目比较简单，数据库用的postgresql(也是我不熟悉的，pgadmin不好用啊🤣），会有一个contianer，然后python后端起一个容器。前端是一个nginx的容器。我用到了<a href="https://nginxproxymanager.com/">nginx proxy manager</a>来管理http/s，这个工具可以设置自动更新ssl证书，另外有ui界面，将subdomain分给portainer，前端，后端。这部分可以用traefik做，不过我还没有研究怎么写配置。</p>
+<p>NPM配置</p>
+<div class="highlight"><pre><span></span><code>version:<span class="w"> </span><span class="s2">&quot;3&quot;</span>
+
+networks:
+<span class="w">  </span>nginx-net:
+<span class="w">    </span>external:<span class="w"> </span>true
+
+volumes:
+<span class="w">  </span>nginx-data:
+<span class="w">    </span>external:
+<span class="w">      </span>name:<span class="w"> </span>nginx-data
+<span class="w">  </span>letsencrypt:
+<span class="w">    </span>external:
+<span class="w">      </span>name:<span class="w"> </span>letsencrypt
+
+services:
+<span class="w">  </span>app:
+<span class="w">    </span>image:<span class="w"> </span><span class="s1">&#39;jc21/nginx-proxy-manager:latest&#39;</span>
+<span class="w">    </span>ports:
+<span class="w">      </span>#<span class="w"> </span>HTTP<span class="w"> </span>port
+<span class="w">      </span>-<span class="w"> </span><span class="s1">&#39;80:80&#39;</span>
+<span class="w">      </span>#<span class="w"> </span>HTTPS<span class="w"> </span>Port:
+<span class="w">      </span>-<span class="w"> </span><span class="s1">&#39;443:443&#39;</span>
+<span class="w">      </span>#<span class="w"> </span>Admin<span class="w"> </span>UI
+<span class="w">      </span>#<span class="w"> </span>-<span class="w"> </span><span class="s1">&#39;81:81&#39;</span>
+<span class="w">    </span>environment:
+<span class="w">      </span>DB_SQLITE_FILE:<span class="w"> </span><span class="s2">&quot;/data/npm.sqlite&quot;</span>
+<span class="w">    </span>volumes:
+<span class="w">      </span>-<span class="w"> </span>nginx-data:/data
+<span class="w">      </span>-<span class="w"> </span>letsencrypt:/etc/letsencrypt
+<span class="w">    </span>networks:
+<span class="w">      </span>-<span class="w"> </span>nginx-net
+</code></pre></div>
+
+<p>npm没有使用官方的mysql配置，用了sqlite数据库，另外设置了两个volumes，用于存配置和证书。在https转发没配置好之前，81端口是对外开发的，在配置好后，注释掉，只保留80和443</p>
+<p>有了这些，只是能让服务跑起来，还没有达到学习目的。为了自动化部署，还有些额外的工作。首先是镜像仓库，鉴于docker/github的私有镜像库免费额度不太够，所以我和那个教程介绍的一样，部署了自己的registry。和教程不一样的，我用了github action，用github action来触发工作流，当在github里发布之后，会触发工作流打包镜像，然后推到自己的registry，然后触发portainer的webhook，更新docker service。这里注意我在生成registry的密码时，用的参考文章的命令有问题，又查了下<a href="https://docs.docker.com/registry/deploying/#native-basic-auth">docker的文档</a>。</p>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--entrypoint<span class="w"> </span>htpasswd<span class="w"> </span>httpd:2<span class="w"> </span>-Bbn<span class="w"> </span>testuser<span class="w"> </span>testpassword<span class="w"> </span>&gt;<span class="w"> </span>auth/htpasswd
+</code></pre></div>
+
+<p>github actions</p>
+<div class="highlight"><pre><span></span><code><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Publish Docker image</span>
+<span class="nt">on</span><span class="p">:</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">release</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">types</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">published</span><span class="p p-Indicator">]</span>
+<span class="nt">jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">push_to_registries</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and Push Docker image to multiple registries</span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
+<span class="w">    </span><span class="nt">permissions</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">packages</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
+<span class="w">      </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">read</span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">get_version</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">battila7/get-version-action@v2</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check out the repo</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Log in to Docker Hub</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/login-action@v1</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">registry</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DOCKER_REGISTRY }}</span>
+<span class="w">          </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DOCKER_USERNAME }}</span>
+<span class="w">          </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.DOCKER_PASSWORD }}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build BE image</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/build-push-action@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">push</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">          </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">server</span>
+<span class="w">          </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">${{ secrets.DOCKER_REGISTRY }}/xxx-be:latest</span>
+<span class="w">            </span><span class="no">${{ secrets.DOCKER_REGISTRY }}/xxx-be:${{ steps.get_version.outputs.version-without-v }}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Invoke BE deploy webhook</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joelwmale/webhook-action@master</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.BE_WEBHOOK_URL }}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build FE image</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker/build-push-action@v2</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">push</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">          </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">web_fe</span>
+<span class="w">          </span><span class="nt">build-args</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VUE_APP_BASE_URL=${{ secrets.VUE_APP_BASE_URL }}</span>
+<span class="w">          </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">${{ secrets.DOCKER_REGISTRY }}/xxx-fe:latest</span>
+<span class="w">            </span><span class="no">${{ secrets.DOCKER_REGISTRY }}/xxx-fe:${{ steps.get_version.outputs.version-without-v }}</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Invoke FE deploy webhook</span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">joelwmale/webhook-action@master</span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.FE_WEBHOOK_URL }}</span>
+</code></pre></div>
+
+<p>github actions这里是前端后端同时部署，可以分开两个action。我用到了取release version的，这样在push到registry时可以附带上version，我们就可以回滚服务了。我这里触发条件是release，所以在merge到main(是的，现在默认变成main分支了)时并不触发部署，只有在release页面打tag后才会。</p>
+<p>有几个坑
+- 为了安全，会把portainer的web端口不暴露在外，由nginx转发，所以在调整nginx容器时一旦挂了，portainer ui也会挂掉。所以一般可以先把9001 ui端口对外打开，设置好nginx之后，再更新portainer的设置。
+- 同理，nginx proxy manager 也有个81端口，在配置好https转发之后，应该更新docker配置，不要让81端口对外。
+- 如果有多台机器组网，对于portainer和db，应该使用配置固定到一台实体机上<a href="https://docs.docker.com/engine/swarm/services/#control-service-placement">docker-swarm deploy placement constraints</a>，因为volume只在一台上，实际上有容器部署db也不算是好的实践啦。
+- 镜像如果有版本tag，registry会越来越多，如果空间小的话，要注意清理，前端的镜像应该比较小，我的python的镜像好像是150多mb。对于总共10g的vps来说，还挺占地方的。
+- 在portainer新建network时，主要加上attachable，不然其他容器后期无法加入网络。</p>
+          </section>
+
+
+          <section class="post-footer" >
+            <div class="post-share">
+              <span class="post-info-label">Share</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=个人服务器自动化部署&amp;url=https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html&amp;title=个人服务器自动化部署" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=个人服务器自动化部署&amp;body=https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+            <aside class="post-tags">
+<a href="https://bobobo80.com/tag/docker.html">docker</a><a href="https://bobobo80.com/tag/portainer.html">portainer</a><a href="https://bobobo80.com/tag/github-actions.html">github actions</a>            </aside>
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <div id="sssc-iframe-container"
+            data-host="https://comment.bobobo80.com"
+            data-slug="/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html"
+            data-url="https://bobobo80.com/2021/ge-ren-fu-wu-qi-zi-dong-hua-bu-shu.html"
+            data-title="个人服务器自动化部署">
+          </div>
+          <script async src="https://comment.bobobo80.com/dist/js/sssc.js"></script>
+
+          <aside class="post-nav">
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">On the wing 展翼 &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>
