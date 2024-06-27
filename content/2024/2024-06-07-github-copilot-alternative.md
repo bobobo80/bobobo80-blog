@@ -10,10 +10,10 @@ Category: Tech
 
 # 试用
 我试了这么几款vs code插件和使用ai llm来进行代码补全和问答的插件。
-* [continue.dev](https://www.continue.dev)
-* [TabbyML](https://tabby.tabbyml.com)
-* [twinny](https://github.com/rjmacarthy/twinny)
-* [privy](https://github.com/srikanth235/privy)
+- [continue.dev](https://www.continue.dev)
+- [TabbyML](https://tabby.tabbyml.com)
+- [twinny](https://github.com/rjmacarthy/twinny)
+- [privy](https://github.com/srikanth235/privy)
 
 这几个应该是开源的支持自定义api的代码补全和问答的插件。这里面privy是主打本地模型，不联网。而Tabby是团队自部署模型服务，还带一个后台管理系统。twinny看文档，其目的也是主要用于连接自建ollama模型，provider里都没有openai，不过支持litellm，可以间接转发。
 
