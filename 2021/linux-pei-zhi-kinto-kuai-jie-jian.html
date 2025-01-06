@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>Linux 配置 kinto 快捷键</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html" rel="canonical" />
+  <!-- Feed -->
+  <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="On the wing 展翼 Full Atom Feed" />
+  <link href="https://bobobo80.com/feeds/tech.atom.xml" type="application/atom+xml"
+    rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = 'https://bobobo80.com';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="时隔多年，我又转回使用 linux 作为个人桌面系统了。主要是目前在使用 win10 时，wsl 性能不是很好，本身笔记本配置比较差，是 amd 的 …">
+
+    <meta name="author" content="bobobo80">
+
+    <meta name="tags" content="linux">
+    <meta name="tags" content="kinto">
+    <meta name="tags" content="shortcut">
+    <meta name="tags" content="manjaro">
+    <meta name="tags" content="xkeysnail">
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="On the wing 展翼"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="Linux 配置 kinto 快捷键"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="时隔多年，我又转回使用 linux 作为个人桌面系统了。主要是目前在使用 win10 时，wsl 性能不是很好，本身笔记本配置比较差，是 amd 的 …"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2021-11-07 00:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="Tech"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="linux"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="kinto"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="shortcut"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="manjaro"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:tag" content="xkeysnail"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://bobobo80.com/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "Linux 配置 kinto 快捷键",
+  "headline": "Linux 配置 kinto 快捷键",
+  "datePublished": "2021-11-07 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html",
+  "description": "时隔多年，我又转回使用 linux 作为个人桌面系统了。主要是目前在使用 win10 时，wsl 性能不是很好，本身笔记本配置比较差，是 amd 的 …"
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+    <li class="nav-github"><a aria-label="Github" href="https://github.com/bobobo80" target="_blank"><i class="icon icon-github" aria-hidden="true"></i>
+    <span>github</span>
+    </a></li>
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">Tech</span>
+        </span>
+        <h1 class="post-title">Linux 配置 kinto 快捷键</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="https://bobobo80.com/author/bobobo80.html">
+                <img class="author-profile-image" src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            bobobo80
+          </h4>
+          <time datetime="Sun 07 November 2021">Sun 07 November 2021</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p>时隔多年，我又转回使用 linux 作为个人桌面系统了。主要是目前在使用 win10 时，wsl 性能不是很好，本身笔记本配置比较差，是 amd 的 2500 和 8G 内存，导致在使用 vs coderemote 到 wsl2 开发时，format 都总是卡住。同时又想折腾一下 linux 桌面了（对了，主要是想折腾了），所以我又把 linux 装回来了。在刚买这个笔记本时，其实已经安装过 linux，只不过由于驱动原因，放弃了。我的本是联想 lenovo 720s AMD 版，cpu 是 2500 内存 8G 焊死。在刚买来是安装 linux 一个是网卡驱动需要单独下载驱动包，这个问题还好。另一个问题是总是卡死，只能强行关机重启。可能是哪个地方的驱动不太行。当时试了 ubuntu 和 manjaro，都是一样。</p>
+<p>这期间我已经换了网卡，因为那个原装 rtl8821ce 本身就不太行，在 windows 下也总是掉线。所以换了个 intel 的网卡。所以这次安装 linux 非常顺利，开箱即用。这次我选了 manjaro kde 版本。</p>
+<p>其他折腾 linux 桌面也没什么可说的。这里主要记录一些我修改了一点点 kinto.sh 配置。</p>
+<p><a href="https://kinto.sh/">Kinto.sh</a>是一个修改键盘映射的工具，可以把 windows 和 linux 的键盘布局改成类似 Mac 的键盘布局，同时还真对一些常用软件的快捷键做了特殊的设置。</p>
+<p>由于工作用的是 Mac，所以快捷键已经比较习惯 mac 的方式。尤其是那个 cmd+cv 系列。回到 win 或 linux 改用 ctrl 会很不习惯。而如果你直接报 ctrl 和 alt 调换的话，又有很多快捷键会变化，比如 alt+tab。所以还是用工具比较方便。</p>
+<p>Kinto 还可以调整 windows 的快捷键，但是我还没有试过，所以先只说 linux。我这个本的键盘最下面从左到右 4 个键依次是 Ctrl-Fn-Win-Alt。Fn 是不能改的。从 mac 迁移过来的习惯当然是，把 alt 改成 ctrl，这样复制粘贴就是 alt+cv 了。同时想浏览器什么的，就是 alt+w 关闭，+r 刷新什么的。Kinto.sh 中这种方式是叫 windows&amp;apple。会将 alt 变成 ctrl，win 变成 alt，ctrl 变成 win。但是在使用终端软件时，会将 alt 变成 ctrl+shift，win 还是 alt，ctrl 还是 ctrl，这样在终端下的复制粘贴就还是使用 alt+cv。kinto 的配置会用针对各种软件的一些单独配置。</p>
+<h2>我的一些特殊需求</h2>
+<p>对于 ctrl 和 alt 的改动，kinto 已经满足了我的需求。不过我还习惯把 capslock 本身功能屏蔽掉，并且让 capslock 按下时，可以使用 hjkl 来当成上下左右键。我查了一下 kinto 依赖的 xkeysnail，应该是并不支持这种设定，因为<a href="https://github.com/mooz/xkeysnail/pull/33">capslock 不是 modifier</a>。不过我通过把 capslock 先改成其他键，间接地实现了这种我的需求。</p>
+<p>kinto.sh 提供了 kinto.py，也就是 kinto config。我可以修改里面的配置来达到自己的目的。
+先修改 define_multipurpose_modmap，把 capslock 换成右 ctrl</p>
+<div class="highlight"><pre><span></span><code><span class="n">define_multipurpose_modmap</span><span class="p">(</span>
+    <span class="p">{</span><span class="n">Key</span><span class="o">.</span><span class="n">CAPSLOCK</span><span class="p">:</span> <span class="p">[</span><span class="n">Key</span><span class="o">.</span><span class="n">RIGHT_CTRL</span><span class="p">,</span> <span class="n">Key</span><span class="o">.</span><span class="n">RIGHT_CTRL</span><span class="p">]</span> <span class="c1"># custom</span>
+    <span class="c1"># {Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL]   # Enter2Cmd</span>
+    <span class="c1"># {Key.CAPSLOCK: [Key.ESC, Key.RIGHT_CTRL]  # Caps2Esc</span>
+    <span class="c1"># {Key.LEFT_META: [Key.ESC, Key.RIGHT_CTRL] # Caps2Esc - Chromebook</span>
+    <span class="c1"># {                                         # Placeholder</span>
+<span class="p">})</span>
+</code></pre></div>
+
+<p>然后修改 General GUI 的配置，加上 ctrl+hjkl 的快捷键变成上下左右。</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># None referenced here originally</span>
+<span class="c1"># - but remote clients and VM software ought to be set here</span>
+<span class="c1"># These are the typical remaps for ALL GUI based apps</span>
+<span class="n">define_keymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">wm_class</span><span class="p">:</span> <span class="n">wm_class</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">remotes</span><span class="p">,{</span>
+    <span class="c1"># K(&quot;RC-Space&quot;): K(&quot;Alt-F1&quot;),                   # Default SL - Launch</span>
+    <span class="o">...</span>
+    <span class="n">K</span><span class="p">(</span><span class="s2">&quot;C-j&quot;</span><span class="p">):</span> <span class="n">K</span><span class="p">(</span><span class="s2">&quot;Down&quot;</span><span class="p">),</span>
+    <span class="n">K</span><span class="p">(</span><span class="s2">&quot;C-h&quot;</span><span class="p">):</span> <span class="n">K</span><span class="p">(</span><span class="s2">&quot;Left&quot;</span><span class="p">),</span>
+    <span class="n">K</span><span class="p">(</span><span class="s2">&quot;C-k&quot;</span><span class="p">):</span> <span class="n">K</span><span class="p">(</span><span class="s2">&quot;Up&quot;</span><span class="p">),</span>
+    <span class="n">K</span><span class="p">(</span><span class="s2">&quot;C-l&quot;</span><span class="p">):</span> <span class="n">K</span><span class="p">(</span><span class="s2">&quot;Right&quot;</span><span class="p">),</span>
+<span class="p">},</span> <span class="s2">&quot;General GUI&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>General GUI 的第一行配置也可以注释掉。这个应该是会影响到输入法切换。</p>
+<p>好了。这样就结束了。虽然这样会占用 ctrl+hjkl 的快捷键，可能会一些软件的快捷键，但是，这样已经是我试验过的比较好的解决方案了。因为把 capslock 换成 win 或 alt 都有有其他一些影响。而 kinto 依赖的 xkeysnail 又不支持将 capslock 单独变成 modifier，或是把 capslock 换成多个 modifier 组合。所以只能是换成 ctrl 对整体使用影响较小。同时需要注意的是，由于修改了 define_multipurpose_modmap，所以如果使用 kinto 自带的 tweak 设置，会导致配置文件错误，需要手工修复。所以在配置文件修改好后，就不要动 tweak 了。</p>
+          </section>
+
+
+          <section class="post-footer" >
+            <div class="post-share">
+              <span class="post-info-label">Share</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=Linux 配置 kinto 快捷键&amp;url=https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html&amp;title=Linux 配置 kinto 快捷键" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=Linux 配置 kinto 快捷键&amp;body=https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+            <aside class="post-tags">
+<a href="https://bobobo80.com/tag/linux.html">linux</a><a href="https://bobobo80.com/tag/kinto.html">kinto</a><a href="https://bobobo80.com/tag/shortcut.html">shortcut</a><a href="https://bobobo80.com/tag/manjaro.html">manjaro</a><a href="https://bobobo80.com/tag/xkeysnail.html">xkeysnail</a>            </aside>
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <div id="sssc-iframe-container"
+            data-host="https://comment.bobobo80.com"
+            data-slug="/2021/linux-pei-zhi-kinto-kuai-jie-jian.html"
+            data-url="https://bobobo80.com/2021/linux-pei-zhi-kinto-kuai-jie-jian.html"
+            data-title="Linux 配置 kinto 快捷键">
+          </div>
+          <script async src="https://comment.bobobo80.com/dist/js/sssc.js"></script>
+
+          <aside class="post-nav">
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">On the wing 展翼 &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>

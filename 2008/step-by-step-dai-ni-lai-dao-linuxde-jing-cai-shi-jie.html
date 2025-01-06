@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>step by step 带你来到linux的精彩世界。</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="https://bobobo80.com/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html" rel="canonical" />
+  <!-- Feed -->
+  <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="On the wing 展翼 Full Atom Feed" />
+  <link href="https://bobobo80.com/feeds/2008.atom.xml" type="application/atom+xml"
+    rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = 'https://bobobo80.com';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="前一阵想自己搞个中文的软件齐全的方便的linux发行版，看了不少文档，觉得实在不是本人的水平所能达到的。我想既然不能授之 …">
+
+    <meta name="author" content="bobobo80">
+
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="On the wing 展翼"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="step by step 带你来到linux的精彩世界。"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="前一阵想自己搞个中文的软件齐全的方便的linux发行版，看了不少文档，觉得实在不是本人的水平所能达到的。我想既然不能授之 …"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://bobobo80.com/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2008-08-29 00:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="2008"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://bobobo80.com/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "step by step 带你来到linux的精彩世界。",
+  "headline": "step by step 带你来到linux的精彩世界。",
+  "datePublished": "2008-08-29 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html",
+  "description": "前一阵想自己搞个中文的软件齐全的方便的linux发行版，看了不少文档，觉得实在不是本人的水平所能达到的。我想既然不能授之 …"
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+    <li class="nav-github"><a aria-label="Github" href="https://github.com/bobobo80" target="_blank"><i class="icon icon-github" aria-hidden="true"></i>
+    <span>github</span>
+    </a></li>
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">2008</span>
+        </span>
+        <h1 class="post-title">step by step 带你来到linux的精彩世界。</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="https://bobobo80.com/author/bobobo80.html">
+                <img class="author-profile-image" src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            bobobo80
+          </h4>
+          <time datetime="Fri 29 August 2008">Fri 29 August 2008</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p>前一阵想自己搞个中文的软件齐全的方便的linux发行版，看了不少文档，觉得实在不是本人的水平所能达到的。我想既然不能授之以鱼，那就写点文档授之以渔,呵呵。<br>
+随之微软发布了有史以来最失败的vista之后，随着apple手机和mp3的流行，越来越多的人都把目光投向了非windows平台。著名硬件杂志微型计算机最近就不止一次地介绍了mac os 和ubuntu linux。<br>
+不管你是厌倦了蓝屏死机，还是厌倦了单调的蓝天白云，不管你是对微软的失望，还是对linux的好奇。不管你对vista特效不能流畅运行的遗憾，还是对linux桌面立方体的惊叹。都希望你能来试试linux。以下是我为没有linux基础的人写的进入linux精彩世界的教程。<br>
+本人水平有限，如有错误，如有意见不同，请指出。  </p>
+<p>第一步：<br>
+在windows适应linux常用的代替软件（如果你还不会用windows可直接调过此步）。其实，决定一个平台的好坏，软件是决定性因素，所以，我认为这一步很重要。看到很多新手装了linux后开始抱怨不好用，其实就是不习惯罢了。<br>
+粗略总结，一般人用电脑常用的一些软件就是office，ie，千千静听，暴风影音，迅雷下载，qq等im软件，winrar，pplive，outlook,再加上点那就是nero，photoshop，vc++等<br>
+下面介绍一些linux下的常用软件来代替这些常用的winows下的软件。  </p>
+<p>1，firefox代替ie<br>
+浏览器我想人人都用，大部分人还是在用ie。我们需要用firefox来代替ie，以习惯这个大部分linux发行版的默认浏览器。firefox不用我多介绍，在windows下也有不少的市场份额。不多说，快下载firefox吧。<a href="http://www.mozilla.org.cn/">http://www.mozilla.org.cn/</a>  </p>
+<p>2，永中office代替microsoft office<br>
+可能有些人会问，为什么不用openoffice。openoffice确实是不错的选择，但是在中国，ms占绝对市场，不得不考虑ms文档的兼容性和中文支持。所以我推荐还是用永中office，要用openoffice当然也可以。<br>
+永中集成Office在一套标准的用户界面下集成了文字处理、电子表格和简报制作三大应用，提供自选图形、艺术字、剪贴画、图表和科教编辑器等附加功能； 基于创新的数据对象储藏库专利技术，有效解决了Office各应用之间的数据集成问题，构成了一套独具特色的集成办公软件。永中官网<a href="www.evermoresw.com.cn/">www.evermoresw.com.cn/</a><br>
+openoffice中文网：<a href="http://zh.openoffice.org/new/zh_cn/index.html">http://zh.openoffice.org/new/zh_cn/index.html</a>  </p>
+<p>3，用thunderbird代替outlook<br>
+outlook可能大家用的少些，就是一个收邮件为主的软件，这个不多说，用过就知道是干什么的了。官网<a href="http://www.mozilla.org.cn/thunderbird/">http://www.mozilla.org.cn/thunderbird/</a>  </p>
+<p>4，im软件<br>
+im软件比较尴尬，从功能上说，linux平台上很难有个全功能的qq，msn还好。windows平台下要体验的话，可能pidgin还比较合适。<br>
+Pidgin(Gaim)是模块化的即时通讯客户程序， 同时支持QQ、MSN、Jabber(gtalk)、AIM、Yahoo! 、ICQ、IRC、SILC、Novell GroupWise、Napster、Zephyr 和Gadu-Gadu。Pidgin(Gaim)基于GTK+，并以GPL 许可协议发行。 支持多平台、多语言、多服务、多插件。它的特点就是多而不精，功能比较少，可能是我不太会装插件。<a href="http://hi.baidu.com/bobobo80/blog/item/2779eb1f4ab4990f314e154b.html">我以前也推荐过这个软件</a>，能同时开很多协议的通讯软件。pidgin中国：<a href="http://cnpidgin.cn/">http://cnpidgin.cn/</a>  </p>
+<p>5，用mplayer代替暴风影音<br>
+mplayer是个播放器了，播放器就不多说了。试试它的上下左右快进后退，非常方便的跳过片头，用惯了会十分顺手，觉得鼠标不好使。mplayer下载（没找到中文的网站，应该是没有）：<a href="http://www.mplayerhq.hu/design7/dload.html">http://www.mplayerhq.hu/design7/dload.html</a>  </p>
+<p>软件代替就先说道着，用发现的以后再补充。  </p>
+<p>第二步：<br>
+在适应一两个月的linux软件后，如果你有心使用linux，那么开始第二步。（贴一篇文章，觉得不错，但其实也不绝对，普通人一样能使用linux，就像使用windows一样。）<br>
+对于学习linux的人来说，选择linux发行版不重要，因为都是相通的，掌握了一个，其他的也就会了。而对于linux使用者来说，选择发行版很重要。因为他们并不一定要了解系统的内部原理等技术上的东西，只是使用linux平台来做日常的工作，所以一个方便好用的发行版非常重要。关于发行版，我写过一篇文，<a href="http://hi.baidu.com/bobobo80/blog/item/3c748a82016af1b96c811987.html">可以参考一下。</a>没用过hiweed，所以不太知道它的情况，我想它应该是很不错的。这里我推荐两个发行版。<br>
+1，magiclinux<br>
+这是中国linux爱好者开发的发行版，我认为还是很不错的，用了1个多月了，没有深入，给我的感觉是系统装完之后除了差一个office软件，已经不需要再做什么修改了，但是由于维护的人员少，包的种类还不太丰富，文档不是太丰富。导致后期扩展上不太方便。  </p>
+<p>2，ubuntu<br>
+这是目前最火的linux发行版，中文环境的配置是中国linux使用者唯一的障碍，一旦了解熟悉了deb包管理方式，安装软件将变的异常简单，两种图形安装方式，点点鼠标即可。<a href="http://forum.ubuntu.org.cn/viewtopic.php?t=35100">ubuntu常见问题解答</a>  </p>
+<p>我建议有点动手能力的人（我举几个例子：能独立上网查找某软件的破解方法并完成破解的人，或通过帮助文件能熟悉一个软件的人等等）可以直接尝试ubuntu，ubuntu的文档比较齐全，论坛也比较活跃，安装和中文化应该不是问题。对自己要是没什么自信的话，那就magiclinux，装完就不用干什么了。当然，也可以选择其它版本，问题应该都不大。<a href="http://hi.baidu.com/bobobo80/blog/item/3c748a82016af1b96c811987.html">linux发行版的介绍</a>。  </p>
+<p>第三步<br>
+安装，配置，使用。由于发行版不同，具体的不说了，只说说方法。安装之前要看看帮助文档，这里提一下分区的问题。作为第一次用，建议就是分个根目录的／，和swap，如果内存大（2G），那就连swap都可以不要。具体的要看文档。<br>
+关于使用，遇到问题了要学会查wiki和搜google。<a href="http://forum.ubuntu.org.cn/viewtopic.php?t=67441">如何通过论坛、wiki、搜索等获得自己需要的知识。</a><br>
+<a href="http://hi.baidu.com/bobobo80/blog/item/f094710920744aca3bc7639d.html">自己总结的ubuntu配置指南</a><br>
+软件是灵魂，寻找替代品往往是前期要做的事。<a href="http://www.linuxrsp.ru/win-lin-soft/table-eng.html">windows替代。</a><br>
+<a href="http://wiki.chinaunix.net/index.php/Linux%E6%A1%8C%E9%9D%A2%E5%BA%94%E7%94%A8#.E7.BC.96.E5.86.99.E7.9B.AE.E6.A0.87">linux桌面应用。</a>  </p>
+<p>第四步<br>
+享受linux带给我们的自由和快捷吧。  </p>
+<p>附图  </p>
+<p><a href="http://hiphotos.baidu.com/bobobo80/pic/item/7fb52c29d4ffe3e799250aaa.jpg"><img alt="" src="images/7fb52c29d4ffe3e799250aaa.jpg"></a></p>
+<p>水立方桌面  </p>
+<p><a href="http://hiphotos.baidu.com/bobobo80/pic/item/5e62b186d4037c2767096eb3.jpg"><img alt="" src="images/5e62b186d4037c2767096eb3.jpg"></a></p>
+<p>鱼缸效果  </p>
+<p><a href="http://hiphotos.baidu.com/bobobo80/pic/item/7fb52c29d4dde3e799250a88.jpg"><img alt="" src="images/7fb52c29d4dde3e799250a88.jpg"></a></p>
+<p>下雨效果  </p>
+<p>先来个一般的，比较牛那个找不到了，呵呵。<br>
+http://www.youtube.com/watch?v=ZxfSwzhSn1c  </p>
+<p>vista vs ubuntu<br>
+http://www.youtube.com/watch?v=xC5uEe5OzNQ</p>
+          </section>
+
+
+          <section class="post-footer" >
+            <div class="post-share">
+              <span class="post-info-label">Share</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=step by step 带你来到linux的精彩世界。&amp;url=https://bobobo80.com/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://bobobo80.com/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html&amp;title=step by step 带你来到linux的精彩世界。" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=step by step 带你来到linux的精彩世界。&amp;body=https://bobobo80.com/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <div id="sssc-iframe-container"
+            data-host="https://comment.bobobo80.com"
+            data-slug="/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html"
+            data-url="https://bobobo80.com/2008/step-by-step-dai-ni-lai-dao-linuxde-jing-cai-shi-jie.html"
+            data-title="step by step 带你来到linux的精彩世界。">
+          </div>
+          <script async src="https://comment.bobobo80.com/dist/js/sssc.js"></script>
+
+          <aside class="post-nav">
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">On the wing 展翼 &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>（转）分析CCTV5直播世界杯的3D效果是如何实现的</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+<link href="https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html" rel="canonical" />
+  <!-- Feed -->
+  <link href="https://bobobo80.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+    title="On the wing 展翼 Full Atom Feed" />
+  <link href="https://bobobo80.com/feeds/2010.atom.xml" type="application/atom+xml"
+    rel="alternate" title="On the wing 展翼 Categories Atom Feed" />
+
+  <link href="https://bobobo80.com/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script>
+    var siteUrl = 'https://bobobo80.com';
+  </script>
+
+  <script>
+    var localTheme = localStorage.getItem('attila_theme');
+    switch (localTheme) {
+      case 'dark':
+        document.documentElement.classList.add('theme-dark');
+        break;
+      case 'light':
+        document.documentElement.classList.add('theme-light');
+        break;
+      default:
+        break;
+    }
+  </script>
+
+
+
+
+
+
+
+    <meta name="description" content="http://list.it.com.cn/show.php?articleid=823387 出处：IT.com.cn(IT世界网)   作者：Panx   时间：[2010-06-13 15:36:50]...">
+
+    <meta name="author" content="bobobo80">
+
+
+
+
+
+<!-- Open Graph -->
+<meta prefix="og: http://ogp.me/ns#" property="og:site_name" content="On the wing 展翼"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:title" content="（转）分析CCTV5直播世界杯的3D效果是如何实现的"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:description" content="http://list.it.com.cn/show.php?articleid=823387 出处：IT.com.cn(IT世界网)   作者：Panx   时间：[2010-06-13 15:36:50]..."/>
+<meta prefix="og: http://ogp.me/ns#" property="og:locale" content="en_US"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:url" content="https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:type" content="article"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:published_time" content="2010-06-13 00:00:00+08:00"/>
+<meta prefix="og: http://ogp.me/ns#" property="article:modified_time" content=""/>
+<meta prefix="og: http://ogp.me/ns#" property="article:author" content="https://bobobo80.com/author/bobobo80.html">
+<meta prefix="og: http://ogp.me/ns#" property="article:section" content="2010"/>
+<meta prefix="og: http://ogp.me/ns#" property="og:image" content="https://bobobo80.com/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "（转）分析CCTV5直播世界杯的3D效果是如何实现的",
+  "headline": "（转）分析CCTV5直播世界杯的3D效果是如何实现的",
+  "datePublished": "2010-06-13 00:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "Bobobo80",
+    "url": "https://bobobo80.com/author/bobobo80.html"
+  },
+  "image": "https://bobobo80.com/theme/images/post-bg.jpg",
+  "url": "https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html",
+  "description": "http://list.it.com.cn/show.php?articleid=823387 出处：IT.com.cn(IT世界网)   作者：Panx   时间：[2010-06-13 15:36:50]..."
+}
+</script>
+</head>
+
+
+
+
+
+
+
+<body class="category-template">
+
+<div class="nav-header">
+  <nav class="nav-wrapper" aria-label="Main">
+<ul>
+
+
+</ul>
+<ul class="nav-meta">
+    <li class="nav-github"><a aria-label="Github" href="https://github.com/bobobo80" target="_blank"><i class="icon icon-github" aria-hidden="true"></i>
+    <span>github</span>
+    </a></li>
+  <li class="nav-search" style="display: none;">
+    <a title="Search">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>Search</span>
+    </a>
+  </li>
+</ul>  </nav>
+
+  <div class="nav-wrapper-control">
+    <div class="inner">
+      <a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>Menu</a>
+      <a class="nav-search" title="Search" role="button" style="display: none;"><i class="icon icon-search" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+<div class="nav-close" role="button" aria-label="Close"></div>
+  <section id="wrapper" class="page-wrapper">
+    <!-- Progressbar -->
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="post-header ">
+      <div class="inner">
+        <span class="post-info">
+          <span class="post-type">Article</span>
+          <span class="post-count">2010</span>
+        </span>
+        <h1 class="post-title">（转）分析CCTV5直播世界杯的3D效果是如何实现的</h1>
+        <div class="post-meta">
+          <div class="post-meta-avatars">
+
+
+            <figure class="post-meta-avatar avatar">
+              <a class="author-avatar" href="https://bobobo80.com/author/bobobo80.html">
+                <img class="author-profile-image" src="https://bobobo80.com/images/avatar.png" alt="bobobo80" />
+              </a>
+            </figure>
+          </div>
+
+          <h4 class="post-meta-author">
+            bobobo80
+          </h4>
+          <time datetime="Sun 13 June 2010">Sun 13 June 2010</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+          <section class="post-content">
+            <p><a href="http://list.it.com.cn/show.php?articleid=823387">http://list.it.com.cn/show.php?articleid=823387</a></p>
+<table cellspacing="0" cellpadding="0" width="100%"><tbody><tr><td width="2" bgcolor="#f7fafc"></td><td bgcolor="#f7fafc">出处：IT.com.cn(IT世界网)&nbsp;&nbsp; 作者：Panx&nbsp;&nbsp; 时间：[2010-06-13 15:36:50]</td><td width="2" bgcolor="#f7fafc"></td></tr></tbody></table>
+
+<p>昨天CCTV5《豪门盛宴》在解读2010年世界杯的时候，在节目现场展示了虚拟技术合成的3D南非世界杯各个球场，而且可以随着镜头的变化发 生视角和纵深的变化，今天看到网上很多人对这个技术很感兴趣，暂时还没有人出来具体解释这种技术，我在这里就大胆抛砖引玉，把我2004年时候做的研究生 项目拿出来解释一下原理，虽然时隔6年，各种技术，从互动程序到3D合成和电视播出，都比2004年要先进太多了，但是他们实现的基本原理还是相似的，我 就大胆揣测一下吧。<!--more--></p>
+<p>基本来说，这种技术的名称是AR(Augmented Reality)，也就是“增强现实”。AR(增强现实)与我们都很熟悉的VR(虚拟现实)的区别就在于，VR是“脱离”现实场景的，而AR是在真实场景 上增加虚拟内容。</p>
+<p>AR技术的应用从2000至今，还在不断探索和实验中，目前还没有出现所谓的Killer App，所以也就没有被广泛应用。至今为止，最具有实用意义的应用，应该是某家汽车品牌的专家级工程师所使用的AR 电子说明书，简言之，就是工程师戴上HMD(head mounted display)设备，通过HMD上的透明显示器，可以观察到现实中的汽车配件的各个细节(用肉眼也能看见的那些)，同时，HMD上会根据所观察的零件不 同，显示出该零件的一切数字化信息，这样，工程师就不需要爬到山一样的文档中去查找这些信息了。用电脑搜索不也是一样的吗，为什么要用AR?很简单，因为 并不是所有的零件上都有标号可以查询，面对一个光突突没有任何标记的螺丝帽，用电脑也无济于事，而AR技术是可以识别的。当然，这是一个高级的例子，言归 正传，《豪门盛宴》中所使用的AR技术并没有这么高级，而是像我当年做的那种最初级的技术。</p>
+<p>下面我们来看一下AR的原理，由于我太懒了，所以拿一段很早以前写的解释直接放上来，先看个大概，后面还有分析：cctv5豪门盛宴中的AR技 术</p>
+<p><strong>最终呈现在屏幕上的效果类似于这样：</strong></p>
+<p><img alt="" src="images/100613_AR001.jpg"> <strong>看过上面的原理，你就知道AR的几个基本设备了：</strong></p>
+<p>1.摄像头-用来捕捉标记图案</p>
+<p>2.可识别的唯一图案</p>
+<p>3.现实设备</p>
+<p>4.当然所有这些设备都需要连接到运行AR toolkit的电脑上</p>
+<p>这些都完成之后，摄像头就可以自由活动了，合成的3D内容(静态模型或动画都可以)也会随着摄像机镜头的活动而活动，当然视角很重要(当年为了 把视角调教一致，我就花了1整天时间)。</p>
+<p>cctv5南非世界杯《豪门盛宴》中的3D虚拟球场就是这么实现的：</p>
+<p><strong>用于识别的图案极可能是这个，或者部分：</strong></p>
+<p><img alt="" src="images/100613_AR002.jpg">图案识别后，合成任何3D模型和动画都可以，还可以与3D内容互动(需要类似电子手套或鼠标之类的输入设备)：</p>
+<p><img alt="" src="images/100613_AR003.jpg">最后，主持人走入3D球场区域后，可以看出cctv5世界杯豪门3D盛宴虚拟球场技术使用的是AR技术，而不是别的什么新技术，所以现场观众什 么都看不到。</p>
+          </section>
+
+
+          <section class="post-footer" >
+            <div class="post-share">
+              <span class="post-info-label">Share</span>
+              <a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text=（转）分析CCTV5直播世界杯的3D效果是如何实现的&amp;url=https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="icon icon-twitter" aria-hidden="true"></i><span class="hidden">Twitter</span>
+              </a>
+              <a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                <i class="icon icon-facebook" aria-hidden="true"></i><span class="hidden">Facebook</span>
+              </a>
+              <a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html&amp;title=（转）分析CCTV5直播世界杯的3D效果是如何实现的" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+                <i class="icon icon-linkedin" aria-hidden="true"></i><span class="hidden">LinkedIn</span>
+              </a>
+              <a title="Email" aria-label="Email" class="email" href="mailto:?subject=（转）分析CCTV5直播世界杯的3D效果是如何实现的&amp;body=https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html">
+                <i class="icon icon-mail" aria-hidden="true"></i><span class="hidden">Email</span>
+              </a>
+              <div class="clear"></div>
+            </div>
+
+
+            <div class="clear"></div>
+
+
+          </section>
+
+
+          <div id="sssc-iframe-container"
+            data-host="https://comment.bobobo80.com"
+            data-slug="/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html"
+            data-url="https://bobobo80.com/2010/zhuan-fen-xi-cctv5zhi-bo-shi-jie-bei-de-3dxiao-guo-shi-ru-he-shi-xian-de.html"
+            data-title="（转）分析CCTV5直播世界杯的3D效果是如何实现的">
+          </div>
+          <script async src="https://comment.bobobo80.com/dist/js/sssc.js"></script>
+
+          <aside class="post-nav">
+            <div class="clear"></div>
+          </aside>
+
+        </div>
+      </article>
+    </main>
+    <div class="nav-footer">
+      <nav class="nav-wrapper" aria-label="Footer">
+        <span class="nav-copy">On the wing 展翼 &copy; 2023
+        </span>
+        <span class="nav-credits">
+
+
+
+          Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a> &bull; Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a> &bull;
+          <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme">
+            <span class="theme-icon"></span><span class="theme-text">System theme</span>
+          </a>
+        </span>
+      </nav>
+    </div>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/jquery.fitvids.js"></script>
+  <script type="text/javascript" src="https://bobobo80.com/theme/js/script.js"></script>
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVEBH5JMJB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NVEBH5JMJB', { 'anonymize_ip': true });
+    </script>
+
+  <!-- 	The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in article.html, but it needs to be included down here, after jQuery has already loaded. -->
+
+<script>
+  $(document).ready(function () {
+    var viewport = $(window);
+    var post = $('.post-content');
+    // Responsive videos with fitVids
+    post.fitVids();
+
+    var mdSelector=".highlight pre";
+    var rstSelector=".highlight pre";
+    var selector=mdSelector;
+    // Format code blocks and add line numbers
+    function codestyling() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+        // No lines for plain text blocks
+        if (!$(this).hasClass('language-text')) {
+          var code = $(this);
+          // Calculate amount of lines
+          var lines = code.html().split(/\n(?!$)/g).length;
+          var numbers = [];
+          if (lines > 1) {
+            lines++;
+          }
+          for (i = 1; i < lines; i++) {
+            numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+          }
+          code.parent().append('<div class="lines">' + numbers + '</div>');
+        }
+      });
+    }
+
+    // Format code blocks only
+    function codestylingWithoutLineNumbers() {
+      $(selector).each(function(i, e) {
+        // Code highlight
+        hljs.highlightElement(e);
+      });
+    }
+
+    codestylingWithoutLineNumbers();
+    // Reading progress bar on window top
+    function readingProgress() {
+      var postBottom = post.offset().top + post.height();
+      var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+    }
+    readingProgress();
+    // Trigger reading progress
+    viewport.on({
+      'scroll': function() {
+        readingProgress();
+      },
+      'resize': function() {
+        readingProgress();
+      },
+      'orientationchange': function() {
+        readingProgress();
+      }
+    });
+
+  });
+</script>
+</body>
+
+</html>
